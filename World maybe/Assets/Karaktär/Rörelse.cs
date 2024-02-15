@@ -4,37 +4,49 @@ using UnityEngine;
 
 public class Rörelse : MonoBehaviour
 {
-    private float Speed;
-    private Rigidbody2D rb;
-    private Vector2 movementDirection;
-    private bool flipped;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        Speed = 5f;
-    }
+    private float speed = 5f;
+    private float horizontal;
+    private float jumpingpower = 10f;
+    private bool facingRight = false;
 
-    // Update is called once per frame
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private LayerMask groundLayer;
+    
     void Update()
     {
-        movementDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        flipped = movementDirection.x >= 0;
-
-        this.transform.rotation = Quaternion.Euler(new Vector3(0f, flipped ? 180f : 0f, 0f));
-
+        horizontal = Input.GetAxisRaw("Horizontal");
+        if (Input.GetButtonDown("Jump") && isGrounded()){
+            rb.velocity = new Vector2(rb.velocity.x, jumpingpower);
+        }
+        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f){
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+        }
+        Flip();
     }
 
     void FixedUpdate(){
-        rb.velocity = movementDirection*Speed;
+        rb.velocity = new Vector2(horizontal*speed, rb.velocity.y);
+    }
+
+    private bool isGrounded(){
+        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+    }
+
+    private void Flip(){
+        if (facingRight && horizontal < 0 || !facingRight && horizontal > 0){
+            facingRight = !facingRight;
+            Vector3 localScale = transform.localScale;
+            localScale.x *= -1f;
+            transform.localScale = localScale;
+        }
     }
     void OnTriggerEnter2D(Collider2D collision){
         if(collision.gameObject.tag == "Lera"){
-            Speed = 1f;
+            speed = 1f;
         }
         if(collision.gameObject.tag == "Gräs"){
-            Speed = 5f;
+            speed = 5f;
         }
     }
 }
