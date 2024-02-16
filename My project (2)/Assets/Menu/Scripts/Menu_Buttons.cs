@@ -8,38 +8,37 @@ public class Menu_Buttons : MonoBehaviour
 
     public GameObject MenuPanel; 
     public GameObject LevelSelectPanel; 
-
-    public GameObject LevelPanel; 
-    
+    public GameObject BinaryPuzzel; 
 
     // Start is called before the first frame update
     void Start()
     {
         MenuPanel.SetActive(true); 
         LevelSelectPanel.SetActive(false); 
-        LevelPanel.SetActive(false); 
+        BinaryPuzzel.SetActive(false); 
     }
 
     public void ShowLevelPanel()
     {
         MenuPanel.SetActive(false); 
         LevelSelectPanel.SetActive(true); 
-        LevelPanel.SetActive(false); 
+        BinaryPuzzel.SetActive(false); 
     }
 
     public void ShowMenuPanel()
     {
         MenuPanel.SetActive(true); 
         LevelSelectPanel.SetActive(false); 
-        LevelPanel.SetActive(false);
+        BinaryPuzzel.SetActive(false); 
     }
 
-    public void ShowLevel()
+
+    public void showBinaryPuzzel()
     {
         MenuPanel.SetActive(false); 
-        LevelSelectPanel.SetActive(false); 
-        LevelPanel.SetActive(true);
-    } 
+        LevelSelectPanel.SetActive(false);  
+        BinaryPuzzel.SetActive(true); 
+    }
 
     // Update is called once per frame
     void Update()

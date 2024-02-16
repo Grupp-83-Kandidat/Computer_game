@@ -245,10 +245,22 @@ PrefabInstance:
     - target: {fileID: 1214849993077847314, guid: 870b18f053fd215188f7625ba4321458, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2115663731}
+      objectReference: {fileID: 2115663733}
     - target: {fileID: 1214849993077847314, guid: 870b18f053fd215188f7625ba4321458, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214849993077847314, guid: 870b18f053fd215188f7625ba4321458, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: showBinaryPuzzel
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214849993077847314, guid: 870b18f053fd215188f7625ba4321458, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Menu_Buttons, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214849993077847314, guid: 870b18f053fd215188f7625ba4321458, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1633958166106414244, guid: 870b18f053fd215188f7625ba4321458, type: 3}
       propertyPath: m_Name
@@ -1048,7 +1060,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2115663732}
   - component: {fileID: 2115663733}
-  - component: {fileID: 2115663734}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -1085,22 +1096,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MenuPanel: {fileID: 32421438}
   LevelSelectPanel: {fileID: 1895810947}
-  LevelPanel: {fileID: 0}
---- !u!114 &2115663734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2115663731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 375cc184dcf78b50b8d0050441d7590a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MenuPanel: {fileID: 0}
-  LevelSelectPanel: {fileID: 0}
-  LevelPanel: {fileID: 0}
+  BinaryPuzzel: {fileID: 0}
 --- !u!1001 &7442441827490129488
 PrefabInstance:
   m_ObjectHideFlags: 0
