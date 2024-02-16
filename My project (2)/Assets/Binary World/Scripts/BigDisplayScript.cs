@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-
+//hej
 public class BigDisplayScript : MonoBehaviour
 {
     private Dictionary<int, Sprite> spriteDict = new Dictionary<int, Sprite>();
