@@ -29,8 +29,7 @@ public class BoxSpawnerScript : MonoBehaviour
         GameObject go = Instantiate(boxObject);
         int value = Random.Range(0,15);
         BoxScript bs = go.GetComponent<BoxScript>();
-        bs._value = 5;
-        bs.SetSprite(spriteDict[value]);
+        bs._value = value;
         bs.SetSprite(spriteDict[value]);
         //bs.SetValue(value);
     }

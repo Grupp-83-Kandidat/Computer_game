@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ButtonManagerScript : MonoBehaviour
 {
-    BinaryButtonScript[] buttons;
+    public BinaryButtonScript[] buttons;
     // Start is called before the first frame update
-    private int buttonsum;
-    private int targetsum;
+    private int buttonSum;
+    
     void Start()
     {
         buttons = FindObjectsOfType<BinaryButtonScript>();
@@ -17,14 +17,18 @@ public class ButtonManagerScript : MonoBehaviour
     void Update()
     {
         
+
     }
-    public void UpdateValue() {
+
+    public bool CompareValue(int targetSum) {
         int sum = 0;
         foreach (BinaryButtonScript button in buttons)
         {
-            sum += button.value;
+            if(button.GetOn()) sum += button.value;
         }
-        buttonsum = sum;
-        // Jämför sum med måltal
+        buttonSum = sum;
+        return buttonSum == targetSum;
     }
+
+    
 }

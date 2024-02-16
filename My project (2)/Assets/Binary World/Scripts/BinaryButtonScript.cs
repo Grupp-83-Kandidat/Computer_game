@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BinaryButtonScript : MonoBehaviour
@@ -25,6 +26,11 @@ public class BinaryButtonScript : MonoBehaviour
         _spriteRenderer.color = new Color32(255, 255, 255, 255);
         on = !on;
         display.Change(on);
+    }
+
+    public bool GetOn()
+    {
+        return on;
     }
 
    

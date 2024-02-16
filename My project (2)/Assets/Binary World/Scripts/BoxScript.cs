@@ -8,11 +8,7 @@ public class BoxScript : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer _spriteRenderer;
     public int _value;
-    // Start is called before the first frame update
-    void Start()
-    {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-    }
+    public Sprite sprite;
 
     // Update is called once per frame
     void Update()
@@ -30,6 +26,8 @@ public class BoxScript : MonoBehaviour
     }
 
     public void SetSprite(Sprite sprite){
-        _spriteRenderer.sprite = sprite;
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        this.sprite = sprite;
+        _spriteRenderer.sprite = this.sprite;
     }
 }
