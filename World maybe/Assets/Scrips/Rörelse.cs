@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Rörelse : MonoBehaviour
 {
-    private float speed = 5f;
+    [SerializeField] private float speed = 5f;
     private float horizontal;
     private float jumpingpower = 10f;
     private bool facingRight = false;
