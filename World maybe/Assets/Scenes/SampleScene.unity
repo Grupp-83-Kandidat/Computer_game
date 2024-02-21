@@ -764,7 +764,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 204784883065193489, guid: 594d9b00bb8bf9e4b98a232d8ba48559, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 305182464949871006, guid: 594d9b00bb8bf9e4b98a232d8ba48559, type: 3}
       propertyPath: m_Name
@@ -2375,6 +2375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NPCNameText: {fileID: 125081239}
   NPCDialogText: {fileID: 750040231}
+  skrivHastighet: 8
 --- !u!114 &2126088213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2748,7 +2749,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5773568695620070231, guid: 8919a47c3e47444478dec6fe4cde5ef3, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5773568695620070231, guid: 8919a47c3e47444478dec6fe4cde5ef3, type: 3}
       propertyPath: m_SpriteSortPoint

@@ -10,7 +10,7 @@ public class Interactable : KollisionObjekt
     protected override void OnCollission(GameObject collidedObject){
         if(Input.GetKey(KeyCode.E) && interacted == false){
             interacted = true;
-            Invoke("Reset", 1);
+            Invoke("Reset", 0.4f);
             Interact(); 
         }
     }
