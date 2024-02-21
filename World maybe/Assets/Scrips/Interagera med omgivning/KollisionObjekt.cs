@@ -6,8 +6,8 @@ using UnityEngine;
 public class KollisionObjekt : MonoBehaviour
 {
     private Collider2D collider;
-    [SerializeField]
-    private ContactFilter2D filter;
+
+    [SerializeField] private ContactFilter2D filter;
     private List<Collider2D> collidedObjects = new List<Collider2D>(1);
 
     protected virtual void Start(){

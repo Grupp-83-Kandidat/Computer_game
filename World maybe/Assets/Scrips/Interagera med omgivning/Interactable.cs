@@ -9,16 +9,15 @@ public class Interactable : KollisionObjekt
 
     protected override void OnCollission(GameObject collidedObject){
         if(Input.GetKey(KeyCode.E) && interacted == false){
-            Interact();
-        }
-    }
-    private void Interact(){
-        if (!interacted){
             interacted = true;
-            Debug.Log("Interact with: " + name);
             Invoke("Reset", 1);
+            Interact(); 
         }
     }
+    protected virtual void Interact(){
+        Debug.Log("This is the Interactable, Interact with: " + name);
+    }
+    
     private void Reset(){
         interacted = false;
     }

@@ -5,8 +5,8 @@ using UnityEngine;
 public class Rörelse : MonoBehaviour
 {
     [SerializeField] private float speed = 5f;
+    [SerializeField] private float jumpingpower = 10f;
     private float horizontal;
-    private float jumpingpower = 10f;
     private bool facingRight = false;
 
     [SerializeField] private Rigidbody2D rb;
@@ -39,14 +39,6 @@ public class Rörelse : MonoBehaviour
             Vector3 localScale = transform.localScale;
             localScale.x *= -1f;
             transform.localScale = localScale;
-        }
-    }
-    void OnTriggerEnter2D(Collider2D collision){
-        if(collision.gameObject.tag == "Lera"){
-            speed = 1f;
-        }
-        if(collision.gameObject.tag == "Gräs"){
-            speed = 5f;
         }
     }
 }
