@@ -53,6 +53,5 @@ public class BoxSpawnerScript : MonoBehaviour
             
             yield return new WaitForSeconds((float) 1.5);
         }
-        StopAllCoroutines();
     }
 }
