@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class KollisionObjekt : MonoBehaviour
 {
-    private Collider2D collider;
+    protected Collider2D collider;
 
     [SerializeField] private ContactFilter2D filter;
     private List<Collider2D> collidedObjects = new List<Collider2D>(1);
@@ -22,4 +22,5 @@ public class KollisionObjekt : MonoBehaviour
     protected virtual void OnCollission(GameObject collidedObject){
         Debug.Log("collided with" + collidedObject);
     }
+
 }
