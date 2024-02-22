@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.UIElements;
 
 public class BigDisplayScript : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class BigDisplayScript : MonoBehaviour
     private GameObject[] AssemblyLines;
     private ButtonManagerScript _buttonParent;
     private BoxSpawnerScript _boxSpawner;
+    private AssembledBoxSpawnerScript _assembledBoxSpawner;
     
     private bool _tryValue = false;
     private int _value;
@@ -29,6 +31,7 @@ public class BigDisplayScript : MonoBehaviour
         AddAssemblyLines();
         _buttonParent = FindFirstObjectByType<ButtonManagerScript>();
         _boxSpawner = FindFirstObjectByType<BoxSpawnerScript>();
+        _assembledBoxSpawner = FindAnyObjectByType<AssembledBoxSpawnerScript>();
         UpdateAssembly(false);
     }
 
@@ -78,6 +81,7 @@ public class BigDisplayScript : MonoBehaviour
         UpdateAssembly(true);
         _tryValue = false;
         _boxSpawner.StartBoxes();
+        _assembledBoxSpawner.CreateBox(_value);
         _boxSpawner.CreateBox();
         _score += 10;
     }
