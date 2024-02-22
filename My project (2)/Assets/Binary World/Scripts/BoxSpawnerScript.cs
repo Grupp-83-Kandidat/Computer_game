@@ -9,8 +9,6 @@ public class BoxSpawnerScript : MonoBehaviour
     private Dictionary<int, Sprite> _spriteDict = new Dictionary<int, Sprite>();
     public GameObject _boxObject;
     private List<GameObject> _boxes = new List<GameObject>();
-    public int delay = 1000;
-    private bool startDone = false;
 
     //private RandomNumberGenerator rand = new RandomNumberGenerator();
     // Start is called before the first frame update
@@ -19,21 +17,8 @@ public class BoxSpawnerScript : MonoBehaviour
         for(int i = 0; i < sprites.Length; i++){
             _spriteDict.Add(i, sprites[i]);
         }
-        CreateBox();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (startDone) return;
-        delay -= 1;
-        if(delay == 0)
-        {
-            CreateBox();
-            startDone = true;
-        }
-
-    }
     
     public void CreateBox(){
         GameObject go = Instantiate(_boxObject);
@@ -56,6 +41,17 @@ public class BoxSpawnerScript : MonoBehaviour
         foreach (GameObject box in _boxes)
         {
             box.GetComponent<BoxScript>().SetSpeed(5);
+        }
+    }
+
+    public IEnumerator OnStart()
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            CreateBox();
+            StartBoxes();
+            
+            yield return new WaitForSeconds((float) 1.5);
         }
     }
 }

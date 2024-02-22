@@ -29,7 +29,7 @@ public class BigDisplayScript : MonoBehaviour
         AddAssemblyLines();
         _buttonParent = FindFirstObjectByType<ButtonManagerScript>();
         _boxSpawner = FindFirstObjectByType<BoxSpawnerScript>();
-        UpdateDisplay(6);
+        UpdateAssembly(false);
     }
 
     private void Update()
@@ -100,6 +100,12 @@ public class BigDisplayScript : MonoBehaviour
         {
             line.GetComponent<Animator>().SetBool("isOn", on);
         }
+    }
+
+    public void OnDialogueEnd()
+    {
+        StartCoroutine(_boxSpawner.OnStart());
+        UpdateAssembly(true);
     }
 
 
