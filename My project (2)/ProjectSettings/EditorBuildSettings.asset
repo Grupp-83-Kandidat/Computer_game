@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/BinaryPuzzle.unity
+    path: Assets/Scenes/BinaryPuzzle1.unity
     guid: 257224647554dd8459e3e5307169e8a7
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
