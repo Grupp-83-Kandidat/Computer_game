@@ -13,6 +13,6 @@ public class NextScene : Interactable
         Invoke("ChangeScene", 4);
     }
     private void ChangeScene(){
-        SceneManager.LoadScene(scene);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

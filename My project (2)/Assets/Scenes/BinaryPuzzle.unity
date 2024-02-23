@@ -413,7 +413,7 @@ GameObject:
   - component: {fileID: 179197484}
   - component: {fileID: 179197487}
   m_Layer: 0
-  m_Name: Game Menu
+  m_Name: PuzzleMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -488,8 +488,8 @@ Canvas:
   m_GameObject: {fileID: 179197482}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 840947408}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -500,7 +500,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!114 &179197487
 MonoBehaviour:
@@ -514,7 +514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03e339770edbaa12caf4feb98beb4780, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mainMenu: {fileID: 485454261}
+  _backToWorld: {fileID: 485454261}
 --- !u!114 &353400983 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6936618652942000734, guid: 865c8e74b55eb0b4fabc31120654cff4, type: 3}
@@ -940,7 +940,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1214849993077847314, guid: 870b18f053fd215188f7625ba4321458, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadMainMenu
+      value: LoadPreviousScene
       objectReference: {fileID: 0}
     - target: {fileID: 1214849993077847314, guid: 870b18f053fd215188f7625ba4321458, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -952,7 +952,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1633958166106414244, guid: 870b18f053fd215188f7625ba4321458, type: 3}
       propertyPath: m_Name
-      value: MainMenu
+      value: BackToWorld
       objectReference: {fileID: 0}
     - target: {fileID: 2674358401028027486, guid: 870b18f053fd215188f7625ba4321458, type: 3}
       propertyPath: m_Pivot.x
@@ -980,11 +980,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674358401028027486, guid: 870b18f053fd215188f7625ba4321458, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 241.1985
+      value: 158.06
       objectReference: {fileID: 0}
     - target: {fileID: 2674358401028027486, guid: 870b18f053fd215188f7625ba4321458, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 33.9128
+      value: 27.97
       objectReference: {fileID: 0}
     - target: {fileID: 2674358401028027486, guid: 870b18f053fd215188f7625ba4321458, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1016,11 +1016,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674358401028027486, guid: 870b18f053fd215188f7625ba4321458, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1067
+      value: 906
       objectReference: {fileID: 0}
     - target: {fileID: 2674358401028027486, guid: 870b18f053fd215188f7625ba4321458, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 645
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2674358401028027486, guid: 870b18f053fd215188f7625ba4321458, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1036,7 +1036,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7076647024626833252, guid: 870b18f053fd215188f7625ba4321458, type: 3}
       propertyPath: m_text
-      value: Main Menu
+      value: Back
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
