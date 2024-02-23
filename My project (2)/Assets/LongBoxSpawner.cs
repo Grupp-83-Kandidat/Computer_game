@@ -4,27 +4,27 @@ using UnityEngine;
 
 public class LongBoxSpawner : MonoBehaviour
 {
-    public Sprite[] sprites = new Sprite[10];
+    public Sprite[] sprites = new Sprite[9];
     private Dictionary<int, Sprite> _spriteDict = new Dictionary<int, Sprite>();
     public GameObject _boxObject;
     private List<GameObject> _boxes = new List<GameObject>();
+    public float spawnHeight;
 
-    //private RandomNumberGenerator rand = new RandomNumberGenerator();
-    // Start is called before the first frame update
     void Start()
     {
         for (int i = 0; i < sprites.Length; i++)
         {
             _spriteDict.Add(i, sprites[i]);
         }
+        StartCoroutine(OnStart());
     }
 
 
     public void CreateBox()
     {
-        GameObject go = Instantiate(_boxObject);
+        GameObject go = Instantiate(_boxObject, new Vector3((float)-19.22, spawnHeight), Quaternion.identity);
         _boxes.Add(go);
-        int value = Random.Range(0, 15);
+        int value = Random.Range(0, sprites.Length - 1);
         BoxScript bs = go.GetComponent<BoxScript>();
         bs.Init(value, _spriteDict[value], _boxes);
     }
