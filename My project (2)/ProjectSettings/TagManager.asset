@@ -40,6 +40,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 731339533
+    locked: 0
   - name: AssemblyLine
     uniqueID: 4026212837
     locked: 0

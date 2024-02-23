@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class BinaryButtonScript : MonoBehaviour
 {
+    public bool awake;
     private bool on = false;
     public int value;
     private SpriteRenderer _spriteRenderer;
@@ -15,17 +16,22 @@ public class BinaryButtonScript : MonoBehaviour
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         bm = FindObjectOfType<ButtonManagerScript>();
+        awake = false;
     }
     private void OnMouseDown()
     {
-        _spriteRenderer.color = new Color32(255, 255, 255, 170);
+        if (awake)
+        {
+            _spriteRenderer.color = new Color32(255, 255, 255, 170);
+        }
     }
 
     private void OnMouseUp()
     {
-        _spriteRenderer.color = new Color32(255, 255, 255, 255);
-        on = !on;
-        display.Change(on);
+        if (awake)
+        {
+            ChangeOn();
+        }
     }
 
     public bool GetOn()
@@ -33,5 +39,16 @@ public class BinaryButtonScript : MonoBehaviour
         return on;
     }
 
-   
+    public void Awake()
+    {
+        awake = true;
+    }
+
+    public void ChangeOn()
+    {
+        _spriteRenderer.color = new Color32(255, 255, 255, 255);
+        on = !on;
+        display.Change(on);
+    }
+
 }
