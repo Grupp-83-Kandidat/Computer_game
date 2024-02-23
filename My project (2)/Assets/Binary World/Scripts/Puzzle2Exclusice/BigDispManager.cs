@@ -11,9 +11,10 @@ public class BigDispManager : MonoBehaviour
     private GameObject[] _boxes = new GameObject[2];
     private Animator[] _animators = new Animator[2];
 
-    private int val;
-    private int index;
-    private bool tryValue;
+    private int _val;
+    private int _index;
+    private bool _tryValue;
+    private int _score;
 
     void Start()
     {
@@ -27,8 +28,8 @@ public class BigDispManager : MonoBehaviour
 
         UpdateAssembly(true);
 
-        tryValue = false;
-        index = 0;
+        _tryValue = false;
+        _index = 0;
 
     }
 
@@ -41,9 +42,9 @@ public class BigDispManager : MonoBehaviour
 
     private void Update()
     {
-        if (!tryValue) return;
+        if (!_tryValue) return;
 
-        if (_buttonParent.CompareValue(val)) StartCoroutine(OnSuccess());
+        if (_buttonParent.CompareValue(_val)) StartCoroutine(OnSuccess());
         
     }
 
@@ -56,13 +57,13 @@ public class BigDispManager : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        val += collision.gameObject.GetComponent<BoxScript>().GetValue();
-        _boxes[index] = collision.gameObject;
-        index++;
-        if (index == 2)
+        _val += collision.gameObject.GetComponent<BoxScript>().GetValue();
+        _boxes[_index] = collision.gameObject;
+        _index++;
+        if (_index == 2)
         {
             StopBoxes();
-            tryValue = true;
+            _tryValue = true;
             UpdateAssembly(false);
         }
     }
@@ -97,6 +98,7 @@ public class BigDispManager : MonoBehaviour
     {
         ClosingFrames(true);
         yield return new WaitForSeconds((float)0.4);
+        _score += 30;
         DestroyBoxes();
         StartBoxes();
         ResetValues();
@@ -108,9 +110,9 @@ public class BigDispManager : MonoBehaviour
 
     private void ResetValues()
     {
-        val = 0;
-        tryValue = false;
-        index = 0;
+        _val = 0;
+        _tryValue = false;
+        _index = 0;
     }
 
     private void DestroyBoxes()
@@ -127,6 +129,9 @@ public class BigDispManager : MonoBehaviour
         _animators[1].SetBool("Closing", closing);
     }
 
-
+    public int GetScore()
+    {
+        return _score;
+    }
 
 }
