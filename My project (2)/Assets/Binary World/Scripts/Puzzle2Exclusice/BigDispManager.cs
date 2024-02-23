@@ -10,11 +10,12 @@ public class BigDispManager : MonoBehaviour
     private ButtonManagerScript _buttonParent;
     private GameObject[] _boxes = new GameObject[2];
     private Animator[] _animators = new Animator[2];
+    private AssembledBoxSpawnerScript _assembledBoxSpawner;
 
     private int _val;
     private int _index;
-    private bool _tryValue;
-    private int _score;
+    private bool _tryValue = false;
+    private int _score = 0;
 
     void Start()
     {
@@ -22,13 +23,14 @@ public class BigDispManager : MonoBehaviour
         _buttonParent = FindObjectOfType<ButtonManagerScript>();
         AddAssemblyLines();
         AddFrames();
+        _assembledBoxSpawner = FindAnyObjectByType<AssembledBoxSpawnerScript>();
 
-        //Ska bort om vi lägger till tutorial
-        _buttonParent.AwakenButtons();
+        //Ska bort om vi lï¿½gger till tutorial
+        //_buttonParent.AwakenButtons();
 
-        UpdateAssembly(true);
+        UpdateAssembly(false);
 
-        _tryValue = false;
+        //_tryValue = false;
         _index = 0;
 
     }
@@ -42,9 +44,9 @@ public class BigDispManager : MonoBehaviour
 
     private void Update()
     {
-        if (!_tryValue) return;
+        //if (!_tryValue) return;
 
-        if (_buttonParent.CompareValue(_val)) StartCoroutine(OnSuccess());
+        if (_tryValue && _buttonParent.CompareValue(_val)) StartCoroutine(OnSuccess());
         
     }
 
@@ -100,6 +102,7 @@ public class BigDispManager : MonoBehaviour
         yield return new WaitForSeconds((float)0.4);
         _score += 30;
         DestroyBoxes();
+        _assembledBoxSpawner.CreateBox(_val);
         StartBoxes();
         ResetValues();
         SpawnBoxes();
@@ -133,5 +136,12 @@ public class BigDispManager : MonoBehaviour
     {
         return _score;
     }
-
+    public void OnDialogueEnd()
+    {
+        foreach (LongBoxSpawner boxSpawner in _longBoxSpawners)
+        {
+            StartCoroutine(boxSpawner.OnStart());    
+        }
+        UpdateAssembly(true);
+    }
 }

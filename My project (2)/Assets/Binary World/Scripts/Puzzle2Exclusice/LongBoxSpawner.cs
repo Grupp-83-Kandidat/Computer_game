@@ -16,7 +16,7 @@ public class LongBoxSpawner : MonoBehaviour
         {
             _spriteDict.Add(i, sprites[i]);
         }
-        StartCoroutine(OnStart());
+        //StartCoroutine(OnStart());
     }
 
 
