@@ -695,7 +695,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: edb362ace26ea7e42a8031c84f75f5b3, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0
+  m_Volume: 0.17
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1544,7 +1544,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -702.3854, y: -238.84352, z: 7.2858005}
-  m_LocalScale: {x: 13, y: 13, z: 1}
+  m_LocalScale: {x: 7.6, y: 7.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 69698117}
@@ -1573,7 +1573,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 00309f62985a27944a30014da466f257, type: 3}
   - {fileID: 21300000, guid: 57054543bf280ca4f88e45b21eb9de1b, type: 3}
   - {fileID: 21300000, guid: b2240539d1cadaa48baee2c643b18a07, type: 3}
-  - {fileID: 21300000, guid: 094f40d65106f334aa64684c3dfddb4b, type: 3}
+  - {fileID: 21300000, guid: bf03d9dd4eec6904488927880a7abc47, type: 3}
   - {fileID: 21300000, guid: 4fad7024fc503bd42a46617faa973186, type: 3}
   - {fileID: 21300000, guid: 9c55842e4623f9944ae7579358568e7f, type: 3}
   - {fileID: 21300000, guid: 326d2ed36358bb3438ae54df4a80f3b0, type: 3}
@@ -1614,7 +1614,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 0.96, y: 0.64}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2305,6 +2305,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1388030617}
+  - component: {fileID: 1388030618}
   m_Layer: 0
   m_Name: AssembledBoxSpawner
   m_TagString: Untagged
@@ -2327,6 +2328,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 69698117}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1388030618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388030616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc539b0b79180e14aa893b84dfa8e751, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: de4ae572cc43eeb4f8fa79b9b295e4fc, type: 3}
+  - {fileID: 21300000, guid: e5d3ed82c85b8ba40a7c69e79f577e4d, type: 3}
+  - {fileID: 21300000, guid: 893b6768d51273b46abb813eb08f2ff0, type: 3}
+  - {fileID: 21300000, guid: fe5feec2132012544a7609b12ee705b2, type: 3}
+  - {fileID: 21300000, guid: 0150b694a822ba146a3fc0b1ce80928c, type: 3}
+  - {fileID: 21300000, guid: d2bf52514ef20374282ef608d4aad743, type: 3}
+  - {fileID: 21300000, guid: 3c24cdad7d468414aaa9a93d7c2b59e0, type: 3}
+  - {fileID: 21300000, guid: aec838dc7358a754683e61fbbf7edacd, type: 3}
+  - {fileID: 21300000, guid: b2ef21582d3148149b10caeb50ab077b, type: 3}
+  - {fileID: 21300000, guid: 5c569d59741e82a4cbfd77dcd483b7b0, type: 3}
+  - {fileID: 21300000, guid: cd193d48cd943cf43bb106d5decc1795, type: 3}
+  - {fileID: 21300000, guid: 15ef3c1d59f059f4dbd1a449eefb3894, type: 3}
+  - {fileID: 21300000, guid: feda65a2af4a9c043a2eb122a9a31687, type: 3}
+  - {fileID: 21300000, guid: 10b47c459f186b94e9616903544c6c82, type: 3}
+  - {fileID: 21300000, guid: 00afce1d119a7764d84a3c14457d0abe, type: 3}
+  - {fileID: 21300000, guid: 701a5af331715be4fb59090e3e6656bc, type: 3}
+  _boxObject: {fileID: 8701225991127783148, guid: 3691a54db75c56e4184586fc0a52babb, type: 3}
 --- !u!4 &1504756836 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6187804521384204253, guid: 9c37e2d5062a57d44a3d7cc73c1f5212, type: 3}
