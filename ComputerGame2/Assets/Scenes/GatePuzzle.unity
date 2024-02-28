@@ -605,8 +605,9 @@ GameObject:
   - component: {fileID: 372267110}
   - component: {fileID: 372267112}
   - component: {fileID: 372267111}
+  - component: {fileID: 372267113}
   m_Layer: 5
-  m_Name: InventoryGateSlots
+  m_Name: InventoryGates
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -675,6 +676,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 372267109}
   m_CullTransparentMesh: 1
+--- !u!114 &372267113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372267109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a323bccb25df03a41a570c8fab5a7629, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gates:
+  - {fileID: 1339415424207650920, guid: 22ced714d4720364196dbb6f1946b8f7, type: 3}
+  - {fileID: 5476719878765971825, guid: 253c69c93ae08ae4e9f2b2e1b5b1abff, type: 3}
+  - {fileID: 5022802196309246666, guid: ac86580dc01efe44eadb9c7fece1fbef, type: 3}
+  nr_of_gates: 020000000200000002000000
 --- !u!1001 &483687205
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1852,7 +1870,6 @@ GameObject:
   - component: {fileID: 1043502992}
   - component: {fileID: 1043502994}
   - component: {fileID: 1043502993}
-  - component: {fileID: 1043502995}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -1919,23 +1936,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1043502991}
   m_CullTransparentMesh: 1
---- !u!114 &1043502995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1043502991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a323bccb25df03a41a570c8fab5a7629, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Gates:
-  - {fileID: 5476719878765971825, guid: 253c69c93ae08ae4e9f2b2e1b5b1abff, type: 3}
-  - {fileID: 1339415424207650920, guid: 22ced714d4720364196dbb6f1946b8f7, type: 3}
-  - {fileID: 5022802196309246666, guid: ac86580dc01efe44eadb9c7fece1fbef, type: 3}
-  nr_of_gates: 020000000200000002000000
 --- !u!1001 &1105495118
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,5 +10,5 @@ public class CircuitBoardSlot : InventorySlot
         inventory = false;
         itemSlots = 1;
     }
-
+ 
 }
