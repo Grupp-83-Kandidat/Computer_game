@@ -10,7 +10,6 @@ using UnityEngine.EventSystems;
 public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     private Vector3 screenPos;
- 
     public UnityEngine.UI.Image image;
     public Transform previousParent;
     public Transform parentAfterDrag;
@@ -19,9 +18,15 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
     { 
         parentAfterDrag = transform.parent;
         previousParent = transform.parent;
+
         transform.SetParent(transform.root);
         transform.SetAsLastSibling();
+
         image.raycastTarget = false;
+
+        if (parentAfterDrag.childCount>0){
+            parentAfterDrag.GetChild(parentAfterDrag.childCount-1).GameObject().SetActive(true);
+        }
     }
     
     public void OnDrag(PointerEventData eventData)
@@ -33,13 +38,19 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (parentAfterDrag.childCount < 1){
+        if (parentAfterDrag.GetComponent<InventorySlot>().CanPlace()){
+            if(parentAfterDrag.childCount>0){
+                parentAfterDrag.GetChild(parentAfterDrag.childCount-1).GameObject().SetActive(false);
+            }
             transform.SetParent(parentAfterDrag);
         }
 
         else{
+            if (previousParent.childCount>0){
+                previousParent.GetChild(previousParent.childCount-1).GameObject().SetActive(false);
+            }
             transform.SetParent(previousParent);
-        }
+        }  
 
         Vector3 parentPos = transform.parent.transform.position;
         parentPos.z = 0;
