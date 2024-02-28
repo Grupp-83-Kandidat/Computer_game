@@ -8,6 +8,7 @@ public class CircuitBoardSlot : InventorySlot
     {
         instantiated = true;
         inventory = false;
+        itemSlots = 1;
     }
 
 }

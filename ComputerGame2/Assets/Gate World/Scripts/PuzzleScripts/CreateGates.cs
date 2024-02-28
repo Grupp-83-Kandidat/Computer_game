@@ -21,6 +21,7 @@ public class CreateGates : MonoBehaviour
         for(int i = 0; i<nr; i++){
             Instantiate(gate, transform.GetChild(placement));
         transform.GetChild(placement).GetComponent<InventorySlot>().instantiated = true;
+        transform.GetChild(placement).GetComponent<InventorySlot>().itemSlots = nr;
         if(nr>1){
             for(int u = 0; u<nr-1; u++){
                 transform.GetChild(placement).GetChild(u).GetComponent<DragAndDrop>().GameObject().SetActive(false);

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 public class InventorySlot : MonoBehaviour, IDropHandler
 {
-    [SerializeField] int itemSlots;
+    public int itemSlots;
     public bool instantiated;
     public bool inventory = true;
     public UnityEngine.UI.Image image;
