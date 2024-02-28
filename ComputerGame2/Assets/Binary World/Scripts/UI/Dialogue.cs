@@ -10,7 +10,8 @@ public class Dialogue : MonoBehaviour
     public TMP_Text lineText;
     private BigDisplayScript _bigDisp;
     private BinaryButtonScript[] _binaryButtonScripts;
-    public string[] startinglines;
+    public string[] startingLines;
+    public string[] endingLines;
     public float textSpeed;
     private int index;
     

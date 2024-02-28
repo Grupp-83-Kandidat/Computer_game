@@ -90,11 +90,7 @@ public class BigDisplayScript : MonoBehaviour
     }
     private void OnSuccess()
     {
-        UpdateAssembly(true);
         _tryValue = false;
-        _boxSpawner.StartBoxes();
-        _assembledBoxSpawner.CreateBox(_value);
-        _boxSpawner.CreateBox();
         IncScoreAndCleared();
         
         if (_boxesCleared == 15)
@@ -102,6 +98,10 @@ public class BigDisplayScript : MonoBehaviour
             onFinishedPuzzle();
         }
 
+        UpdateAssembly(true);
+        _boxSpawner.StartBoxes();
+        _assembledBoxSpawner.CreateBox(_value);
+        _boxSpawner.CreateBox();
     }
 
     IEnumerator UpdateMultiplier()
@@ -135,7 +135,6 @@ public class BigDisplayScript : MonoBehaviour
         _boxSpawner.StopBoxes();
         _tryValue = true;
     }
-
 
 
     private void UpdateAssembly(bool on)
