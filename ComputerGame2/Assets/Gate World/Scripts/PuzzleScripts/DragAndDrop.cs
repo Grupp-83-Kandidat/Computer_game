@@ -23,19 +23,20 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
         transform.SetAsLastSibling();
         image.raycastTarget = false;
     }
+    
     public void OnDrag(PointerEventData eventData)
     {
         screenPos = Input.mousePosition;
         screenPos.z = 0;
         transform.position = screenPos;
     }
+
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("This is count: " + parentAfterDrag.childCount);
         if (parentAfterDrag.childCount < 1){
             transform.SetParent(parentAfterDrag);
-            Debug.Log("This is count: " + parentAfterDrag.childCount);
         }
+
         else{
             transform.SetParent(previousParent);
         }
