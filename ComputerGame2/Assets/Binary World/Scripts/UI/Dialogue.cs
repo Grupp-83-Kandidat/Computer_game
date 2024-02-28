@@ -10,7 +10,7 @@ public class Dialogue : MonoBehaviour
     public TMP_Text lineText;
     private BigDisplayScript _bigDisp;
     private BinaryButtonScript[] _binaryButtonScripts;
-    public string[] lines;
+    public string[] startinglines;
     public float textSpeed;
     private int index;
     
@@ -44,14 +44,14 @@ public class Dialogue : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (lineText.text.ToString() == lines[index])
+            if (lineText.text.ToString() == startinglines[index])
             {
                 NextLine();
             }
             else
             {
                 StopAllCoroutines();
-                lineText.text = lines[index];
+                lineText.text = startinglines[index];
             }
         }
     }
@@ -64,7 +64,7 @@ public class Dialogue : MonoBehaviour
 
     IEnumerator TypeLine()
     {
-        foreach (char c in lines[index].ToCharArray()) {
+        foreach (char c in startinglines[index].ToCharArray()) {
             lineText.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
@@ -72,7 +72,7 @@ public class Dialogue : MonoBehaviour
 
     private void NextLine()
     {
-        if (index < lines.Length - 1)
+        if (index < startinglines.Length - 1)
         {
             index++;
             lineText.text = string.Empty;

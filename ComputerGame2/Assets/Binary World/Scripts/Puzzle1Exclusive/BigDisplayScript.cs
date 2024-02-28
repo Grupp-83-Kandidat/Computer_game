@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.UIElements;
+using System;
 
 public class BigDisplayScript : MonoBehaviour
 {
@@ -13,10 +14,12 @@ public class BigDisplayScript : MonoBehaviour
     private ButtonManagerScript _buttonParent;
     private BoxSpawnerScript _boxSpawner;
     private AssembledBoxSpawnerScript _assembledBoxSpawner;
-    
-    private bool _tryValue = false;
+
+    private bool _tryValue;
     private int _value;
-    private int _score = 0;
+    private int _score;
+    private int _boxesCleared;
+    private int _multiplier;
     
     void Start()
     {
@@ -33,6 +36,15 @@ public class BigDisplayScript : MonoBehaviour
         _boxSpawner = FindFirstObjectByType<BoxSpawnerScript>();
         _assembledBoxSpawner = FindAnyObjectByType<AssembledBoxSpawnerScript>();
         UpdateAssembly(false);
+        InitVals();
+    }
+
+    private void InitVals()
+    {
+        _tryValue = false;
+        _multiplier = 1;
+        _score = 0;
+        _boxesCleared = 0;
     }
 
     private void Update()
@@ -83,9 +95,37 @@ public class BigDisplayScript : MonoBehaviour
         _boxSpawner.StartBoxes();
         _assembledBoxSpawner.CreateBox(_value);
         _boxSpawner.CreateBox();
-        _score += 10;
+        IncScoreAndCleared();
+        
+        if (_boxesCleared == 15)
+        {
+            onFinishedPuzzle();
+        }
+
     }
 
+    IEnumerator UpdateMultiplier()
+    {
+
+        while (_multiplier > 1)
+        {
+            yield return new WaitForSeconds(4);
+            _multiplier -= 1;
+        }
+    }
+
+    private void onFinishedPuzzle()
+    {
+        throw new NotImplementedException();
+    }
+
+    private void IncScoreAndCleared()
+    {
+        _score += 10 * _multiplier;
+        _boxesCleared += 1;
+        _multiplier += 1;
+        StartCoroutine(UpdateMultiplier());
+    }
 
     void OnCollisionEnter2D(Collision2D col){
         BoxScript box = (BoxScript) col.gameObject.GetComponent(typeof(BoxScript)); 
