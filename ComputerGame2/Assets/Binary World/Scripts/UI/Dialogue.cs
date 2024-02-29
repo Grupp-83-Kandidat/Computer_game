@@ -52,7 +52,7 @@ public class Dialogue : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !disableClick)
+        if (Input.GetKeyDown(KeyCode.Space) && !disableClick)
         {
             if (!ending)
             {

@@ -17,7 +17,9 @@ public class ScenesManager : MonoBehaviour
     public enum Scene 
     {
         MainMenu,
-        BinaryPuzzle
+        BinaryPuzzle1,
+        BinaryPuzzle2,
+        Overworld
     }
 
     public void LoadScene(Scene scene)
@@ -27,7 +29,7 @@ public class ScenesManager : MonoBehaviour
 
     public void LoadNewGame()
     {
-        SceneManager.LoadScene(Scene.BinaryPuzzle.ToString()); 
+        SceneManager.LoadScene(Scene.Overworld.ToString()); 
     }
 
     public void LoadNextScene()
@@ -39,7 +41,7 @@ public class ScenesManager : MonoBehaviour
     public void LoadMainMenu()
     // On click action
     {
-        SceneManager.LoadScene(Scene.MainMenu.ToString()); 
+        SceneManager.LoadScene(Scene.MainMenu.ToString(), LoadSceneMode.Additive); 
     }
 
     public void QuitGame()
