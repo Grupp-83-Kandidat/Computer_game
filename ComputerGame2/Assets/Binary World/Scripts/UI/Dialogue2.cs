@@ -36,7 +36,7 @@ public class Dialogue2 : MonoBehaviour
         dialogueOver.AddListener(_bigDisp.OnDialogueEnd);
         foreach(BinaryButtonScript button in _binaryButtonScripts)
         {
-            dialogueOver.AddListener(button.Awake);
+            dialogueOver.AddListener(button.Awaken);
         }
     }
 

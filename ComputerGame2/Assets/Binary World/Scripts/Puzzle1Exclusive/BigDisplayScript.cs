@@ -14,12 +14,14 @@ public class BigDisplayScript : MonoBehaviour
     private ButtonManagerScript _buttonParent;
     private BoxSpawnerScript _boxSpawner;
     private AssembledBoxSpawnerScript _assembledBoxSpawner;
-
-    private bool _tryValue;
+    private Dialogue _dialogue;
+    
+    private bool _tryValue = false;
     private int _value;
-    private int _score;
-    private int _boxesCleared;
-    private int _multiplier;
+    private int _score = 0;
+    private int _multiplier = 1;
+    private int _boxesCompleted = 0;
+    private int _boxesToComplete = 5;
     
     void Start()
     {
@@ -35,16 +37,8 @@ public class BigDisplayScript : MonoBehaviour
         _buttonParent = FindFirstObjectByType<ButtonManagerScript>();
         _boxSpawner = FindFirstObjectByType<BoxSpawnerScript>();
         _assembledBoxSpawner = FindAnyObjectByType<AssembledBoxSpawnerScript>();
+        _dialogue = FindObjectOfType<Dialogue>();
         UpdateAssembly(false);
-        InitVals();
-    }
-
-    private void InitVals()
-    {
-        _tryValue = false;
-        _multiplier = 1;
-        _score = 0;
-        _boxesCleared = 0;
     }
 
     private void Update()
@@ -81,6 +75,11 @@ public class BigDisplayScript : MonoBehaviour
         return _score;
     }
 
+    public int GetMultiplier()
+    {
+        return _multiplier;
+    }
+
     // ------------ Methods ------------------------- //
 
     public void UpdateDisplay(int val)
@@ -90,41 +89,58 @@ public class BigDisplayScript : MonoBehaviour
     }
     private void OnSuccess()
     {
-        _tryValue = false;
-        IncScoreAndCleared();
-        
-        if (_boxesCleared == 15)
-        {
-            onFinishedPuzzle();
-        }
-
+        _boxesCompleted += 1;
         UpdateAssembly(true);
+        _tryValue = false;
         _boxSpawner.StartBoxes();
         _assembledBoxSpawner.CreateBox(_value);
-        _boxSpawner.CreateBox();
+        
+        if (_boxesCompleted < _boxesToComplete - 1)
+        {
+            _boxSpawner.CreateBox();
+        }
+        
+        _score += 10 * _multiplier;
+
+        if (_boxesCompleted < _boxesToComplete)
+        {
+            UpdateMultiplier();
+        }
+        else
+        {
+            EndPuzzle();
+        }
     }
 
-    IEnumerator UpdateMultiplier()
+    private void EndPuzzle()
     {
+        StopAllCoroutines();
+        _dialogue.gameObject.SetActive(true);
+        _dialogue.StartEnd();
+        StartCoroutine(RollOutAssembly());
+    }
 
+    IEnumerator RollOutAssembly()
+    {
+        yield return new WaitForSeconds(3);
+        UpdateAssembly(false);
+        StopAllCoroutines();
+    }
+
+    private void UpdateMultiplier()
+    {
+        StopAllCoroutines();
+        if(_multiplier < 5) _multiplier += 1;
+        StartCoroutine(CountdownMult());
+    }
+
+    IEnumerator CountdownMult()
+    {
         while (_multiplier > 1)
         {
             yield return new WaitForSeconds(4);
-            _multiplier -= 1;
+            if (_multiplier > 1) _multiplier -= 1;
         }
-    }
-
-    private void onFinishedPuzzle()
-    {
-        throw new NotImplementedException();
-    }
-
-    private void IncScoreAndCleared()
-    {
-        _score += 10 * _multiplier;
-        _boxesCleared += 1;
-        _multiplier += 1;
-        StartCoroutine(UpdateMultiplier());
     }
 
     void OnCollisionEnter2D(Collision2D col){
@@ -135,6 +151,7 @@ public class BigDisplayScript : MonoBehaviour
         _boxSpawner.StopBoxes();
         _tryValue = true;
     }
+
 
 
     private void UpdateAssembly(bool on)
