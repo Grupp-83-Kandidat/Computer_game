@@ -6,12 +6,13 @@ using UnityEngine.SceneManagement;
 public class ScenesManager : MonoBehaviour
 {
 
-    public static ScenesManager Instance; 
-
+    public static ScenesManager Instance;
+    private bool menuOpen;
 
     private void Awake()
     {
-        Instance = this; 
+        Instance = this;
+        menuOpen = false;
     }
 
     public enum Scene 
@@ -38,10 +39,37 @@ public class ScenesManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); 
     }
 
+    public void OpenOrCloseMenu()
+    {
+        if (!menuOpen) {
+            LoadMainMenu();
+        }
+        else
+        {
+            UnloadMainMenu();
+        }
+        menuOpen = !menuOpen;
+    }
+
     public void LoadMainMenu()
     // On click action
     {
         SceneManager.LoadScene(Scene.MainMenu.ToString(), LoadSceneMode.Additive); 
+    }
+
+    public void UnloadMainMenu()
+    {
+        StartCoroutine(UnloadMainAsync());
+    }
+
+    IEnumerator UnloadMainAsync()
+    {
+        AsyncOperation loaded = SceneManager.UnloadSceneAsync(Scene.MainMenu.ToString());
+        while (!loaded.isDone)
+        {
+            yield return null;
+        }
+        Debug.Log(loaded.isDone);
     }
 
     public void QuitGame()
