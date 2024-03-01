@@ -39,16 +39,16 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
     public void OnEndDrag(PointerEventData eventData)
     {
         if (parentAfterDrag.GetComponent<InventorySlot>().CanPlace()){
-            if(parentAfterDrag.childCount>0){
-                parentAfterDrag.GetChild(parentAfterDrag.childCount-1).GameObject().SetActive(false);
-            }
+            //if(parentAfterDrag.childCount>0){
+            //    parentAfterDrag.GetChild(parentAfterDrag.childCount-1).GameObject().SetActive(false);
+            //}
             transform.SetParent(parentAfterDrag);
         }
 
         else{
-            if (previousParent.childCount>0){
-                previousParent.GetChild(previousParent.childCount-1).GameObject().SetActive(false);
-            }
+            //if (previousParent.childCount>0){
+            //    previousParent.GetChild(previousParent.childCount-1).GameObject().SetActive(false);
+            //}
             transform.SetParent(previousParent);
         }  
 
@@ -57,6 +57,5 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
         transform.position = parentPos;
         image.raycastTarget = true;
     }
-
 }
 

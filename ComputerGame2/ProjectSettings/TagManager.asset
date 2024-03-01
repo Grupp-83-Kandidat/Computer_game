@@ -9,6 +9,11 @@ TagManager:
   - Frame
   - Wire
   - Pulse
+  - CircuitSlot
+  - AND
+  - OR
+  - NOR
+  - XOR
   layers:
   - Default
   - TransparentFX

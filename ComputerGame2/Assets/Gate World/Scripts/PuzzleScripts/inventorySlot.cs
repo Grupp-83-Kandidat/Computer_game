@@ -9,7 +9,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
     public bool inventory = true;
     public UnityEngine.UI.Image image;
 
-    protected void Update(){
+    protected virtual void Update(){
         if(instantiated && inventory)
             if(transform.childCount >=2){
                 image.gameObject.SetActive(true);
@@ -25,7 +25,6 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         dragAndDrop.parentAfterDrag = transform;
     }
     public virtual bool CanPlace(){
-
         if (transform.childCount < itemSlots && instantiated){
             return true;
         }
