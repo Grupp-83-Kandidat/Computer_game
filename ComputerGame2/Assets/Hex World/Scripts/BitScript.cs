@@ -27,8 +27,8 @@ public class BitScript : MonoBehaviour
 /*    public void SetValue(int val) {
         value = val;
     }*/
-    public void ChangeNumber(bool isOne) {
-        if (isOne) {
+    public void ChangeNumber(int oneOrZero) {
+        if (oneOrZero == 1) {
             SetSprite(sprites[1]);
         }
         else {
