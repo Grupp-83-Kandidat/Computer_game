@@ -9,7 +9,8 @@ public class BinaryEightBoxScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        BitScript bit = bits[3].bitObject;
+        bit.ChangeNumber(true);
     }
 
     // Update is called once per frame
@@ -22,4 +23,5 @@ public class BinaryEightBoxScript : MonoBehaviour
 public struct DictEntry {
     public int bitNo;
     public BitScript bitObject;
+
 }
