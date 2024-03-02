@@ -24,7 +24,7 @@ public class CircuitBoardSlot : InventorySlot
         itemSlots = 1 + 3;
 
         input1 = transform.GetChild(0).GetComponent<Collider2D>();
-        input2 = transform.GetChild(1).GetComponent<Collider2D>();
+        input2 = transform.GetChild(1).GetComponent<Collider2D>(); 
         electricControl = gameObject.AddComponent<ElectricityControll>();
     }
 
@@ -38,7 +38,7 @@ public class CircuitBoardSlot : InventorySlot
         foreach(Collider2D collision in input2List){
             input2Conducting = electricControl.CollisionHandler(collision);
         }
-        IsConducting();
+        Invoke("IsConducting", 0.02f);
     }
 
     protected void IsConducting(){
@@ -57,11 +57,12 @@ public class CircuitBoardSlot : InventorySlot
         else if (gate == "NOR"){
             NOR_Gate();
         }
-        
         else if (gate == "XOR"){
             XOR_Gate();
         }
-
+        else if (gate == "XNOR"){
+            XNOR_Gate();
+        }   
         else if (gate == "NAND"){
             NAND_Gate();
         }
@@ -111,8 +112,17 @@ public class CircuitBoardSlot : InventorySlot
         if (or_combinations.Contains((input1Conducting, input2Conducting))){
             Conduncting = true;
         }
-    }
+    }   
+    protected void XNOR_Gate(){
+        var or_combinations = new List<(bool, bool)>{
+            (true, false),
+            (true, true)
+        };
 
+        if (or_combinations.Contains((input1Conducting, input2Conducting))){
+            Conduncting = true;
+        }
+    }
     protected void NAND_Gate(){
         var or_combinations = new List<(bool, bool)>{
             (true, false),

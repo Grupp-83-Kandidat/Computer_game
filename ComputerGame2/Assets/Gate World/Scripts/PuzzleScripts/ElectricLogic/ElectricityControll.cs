@@ -7,10 +7,10 @@ public class ElectricityControll : MonoBehaviour
         public bool CollisionHandler(Collider2D collision){
         Debug.Log("HItting: " + collision.tag + "   THis is name: " + collision.name);
         switch (collision.tag){
-            case "Wire":  
+            case "Wire":
                 return collision.transform.parent.GetComponent<WireCode>().Conduncting;
-            case "Pulse":
-                return collision.GetComponent<Outlet>().Conduncting;
+            case "Output":
+                return collision.transform.parent.GetComponent<Outlet>().Conduncting;
             case "CircuitSlot":
                 return collision.transform.parent.GetComponent<CircuitBoardSlot>().Conduncting;
             default:

@@ -14,6 +14,7 @@ TagManager:
   - OR
   - NOR
   - XOR
+  - Output
   layers:
   - Default
   - TransparentFX
