@@ -14,23 +14,22 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
     public Transform previousParent;
     public Transform parentAfterDrag;
 
+    public void Awake(){
+        previousParent = transform.parent;
+    }
     public void OnBeginDrag(PointerEventData eventData)
     { 
         parentAfterDrag = transform.parent;
-        previousParent = transform.parent;
-
+        
         transform.SetParent(transform.root);
         transform.SetAsLastSibling();
-
+        //This will make the gate you are currently draggin "Invisible" to the cursor, now the program will sense what inventory slot we are currently hovering
         image.raycastTarget = false;
-
-        if (parentAfterDrag.childCount>0){
-            parentAfterDrag.GetChild(parentAfterDrag.childCount-1).GameObject().SetActive(true);
-        }
     }
     
     public void OnDrag(PointerEventData eventData)
     {
+        //Makes the gate follow the mouse when left click is pressed down
         screenPos = Input.mousePosition;
         screenPos.z = 0;
         transform.position = screenPos;
@@ -38,20 +37,16 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        //This will check that the slot you wish to drop the gate has capacity and is instantiated
         if (parentAfterDrag.GetComponent<InventorySlot>().CanPlace()){
-            //if(parentAfterDrag.childCount>0){
-            //    parentAfterDrag.GetChild(parentAfterDrag.childCount-1).GameObject().SetActive(false);
-            //}
             transform.SetParent(parentAfterDrag);
         }
 
         else{
-            //if (previousParent.childCount>0){
-            //    previousParent.GetChild(previousParent.childCount-1).GameObject().SetActive(false);
-            //}
             transform.SetParent(previousParent);
         }  
 
+        //This past sets position of the gate to the parents position and lets it be "seen" by the program again, needs to be done otherwise you cant pick it up again
         Vector3 parentPos = transform.parent.transform.position;
         parentPos.z = 0;
         transform.position = parentPos;

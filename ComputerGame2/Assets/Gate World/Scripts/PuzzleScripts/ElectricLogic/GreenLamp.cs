@@ -6,8 +6,7 @@ using UnityEngine.UI;
 
 public class GreenLamp : ElectricityControll
 {
-    public bool Conduncting = false;
-
+    public bool conduncting = false;
     private Collider2D input;
     private List<Collider2D> inputList = new(1);
     private ContactFilter2D contactFilter2D;
@@ -19,11 +18,12 @@ public class GreenLamp : ElectricityControll
     }
 
     void Update(){
+        //same as the other ones
         input.OverlapCollider(contactFilter2D, inputList);  
         foreach(Collider2D collision in inputList){
-            Conduncting = CollisionHandler(collision);
+            conduncting = CollisionHandler(collision);
         }
-        if(Conduncting){
+        if(conduncting){
              GetComponent<UnityEngine.UI.Image>().sprite = litLamp;
         }
         else{

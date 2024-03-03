@@ -16,6 +16,7 @@ public class OutletControl : MonoBehaviour
     }
 
     protected void Pattern(){
+        //Invoke repeating will call the function every
         switch (pattern){
             case "oneAtATime":
                 InvokeRepeating("OneAtATime", 1, flickerSpeed);
@@ -24,15 +25,15 @@ public class OutletControl : MonoBehaviour
     }
 
     protected void OneAtATime(){
-        transform.GetChild(currentChild).GetComponent<Outlet>().Conduncting = false;
+        //Will essentially loop through the children, set conducting to false child on and true on next child
+        transform.GetChild(currentChild).GetComponent<Outlet>().conduncting = false;
         if(currentChild>=numberOfOutlets -1){
             currentChild = 0;
         }
         else{
             currentChild++;
         }
-        Debug.Log("Current: " + currentChild);
-        transform.GetChild(currentChild).GetComponent<Outlet>().Conduncting = true;
+        transform.GetChild(currentChild).GetComponent<Outlet>().conduncting = true;
     }
 
 }

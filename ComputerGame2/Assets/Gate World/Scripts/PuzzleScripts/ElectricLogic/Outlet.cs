@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class Outlet : MonoBehaviour
 {
-    public bool Conduncting = false;
+    //All this thing does is light up lamps, all the control is in OutletControl
+    public bool conduncting = false;
     [SerializeField] private Sprite unlitLamp;
     [SerializeField] private Sprite litLamp;
 
     void Update(){  
-        if(Conduncting){
+        if(conduncting){
             transform.GetChild(0).GetComponent<Image>().sprite = litLamp;
         }
         else{

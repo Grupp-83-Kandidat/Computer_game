@@ -6,7 +6,7 @@ using UnityEngine.Windows;
  
 public class WireCode :ElectricityControll
 {   
-    public bool Conduncting = false;
+    public bool conduncting = false;
     private Collider2D input;
     private List<Collider2D> inputList = new(1);
     private ContactFilter2D contactFilter2D;
@@ -15,9 +15,10 @@ public class WireCode :ElectricityControll
     }
 
     void Update(){
+        //Check for collisions and state of Conducting of collided object
         input.OverlapCollider(contactFilter2D, inputList);  
         foreach(Collider2D collision in inputList){
-            Conduncting = CollisionHandler(collision);
+            conduncting = CollisionHandler(collision);
         }
     }
 }
