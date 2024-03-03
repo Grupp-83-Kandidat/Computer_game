@@ -62,14 +62,28 @@ public class ScenesManager : MonoBehaviour
         StartCoroutine(UnloadMainAsync());
     }
 
-    IEnumerator UnloadMainAsync()
+    private IEnumerator UnloadMainAsync()
     {
         AsyncOperation loaded = SceneManager.UnloadSceneAsync(Scene.MainMenu.ToString());
         while (!loaded.isDone)
         {
             yield return null;
         }
-        Debug.Log(loaded.isDone);
+    }
+
+    public void LoadOverworld()
+    {
+        StartCoroutine(LoadOverworldAsync());   
+    }
+
+    private IEnumerator LoadOverworldAsync()
+    {
+        AsyncOperation loaded = SceneManager.LoadSceneAsync(Scene.Overworld.ToString());
+        while (!loaded.isDone)
+        {
+            yield return null;
+        }
+
     }
 
     public void QuitGame()
