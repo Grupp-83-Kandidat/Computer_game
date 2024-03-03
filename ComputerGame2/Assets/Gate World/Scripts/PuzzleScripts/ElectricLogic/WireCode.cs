@@ -16,9 +16,6 @@ public class WireCode :ElectricityControll
 
     void Update(){
         //Check for collisions and state of Conducting of collided object
-        input.OverlapCollider(contactFilter2D, inputList);  
-        foreach(Collider2D collision in inputList){
-            conduncting = CollisionHandler(collision);
-        }
+        conduncting = OnCollision(input, inputList);
     }
 }

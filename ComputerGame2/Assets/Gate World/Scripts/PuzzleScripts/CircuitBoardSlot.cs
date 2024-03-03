@@ -17,6 +17,8 @@ public class CircuitBoardSlot : InventorySlot
     public bool input2Conducting = false;
     private string gate;
     ElectricityControll electricControl;
+    Dictionary<string, List<(bool, bool)>> truth_Table;
+
     void Start()
     {
         //Do this to differentiate them from the inventory slots
@@ -28,20 +30,24 @@ public class CircuitBoardSlot : InventorySlot
         input1 = transform.GetChild(0).GetComponent<Collider2D>();
         input2 = transform.GetChild(1).GetComponent<Collider2D>(); 
         electricControl = gameObject.AddComponent<ElectricityControll>();
+        //Creates a truth table for the gates
+        truth_Table = new Dictionary<string, List<(bool, bool)>>() {
+            {"OR" , new List<(bool, bool)> {(true, false), (false, true), (true, true)}},
+            {"AND" , new List<(bool, bool)> {(true, true)}},
+            {"NOR" , new List<(bool, bool)> {(false, false)}},
+            {"XOR" , new List<(bool, bool)> {(true, false), (false, true)}},
+            {"XNOR" , new List<(bool, bool)> {(false, false), (true, true)}},
+            {"NAND" , new List<(bool, bool)> {(false, false), (true, false), (false, true)}}
+        };
     }
 
     protected override void Update(){
         //Will look for collision and if the collided object is conducting set input1/2 to conducting
-        input1.OverlapCollider(contactFilter2D, input1List);  
-        foreach(Collider2D collision in input1List){
-            input1Conducting = electricControl.CollisionHandler(collision);
-        }
+        input1Conducting = electricControl.OnCollision(input1, input1List);
 
         //Will look for collision and if the collided object is conducting set input1/2 to conducting
-        input2.OverlapCollider(contactFilter2D, input2List);
-        foreach(Collider2D collision in input2List){
-            input2Conducting = electricControl.CollisionHandler(collision);
-        }
+        input2Conducting = electricControl.OnCollision(input2, input2List);
+
         //Needs a small delay to counter different lenght wires and issues with that
         Invoke("IsConducting", 0.02f);
     }
@@ -50,109 +56,18 @@ public class CircuitBoardSlot : InventorySlot
         //The gate in the slot will appear as a child that is last in the list of children, the gates are all tagged as "AND", "OR" and so on
         if(transform.childCount>3){
             gate = transform.GetChild(3).tag;
-        }
-        
-        if (gate == "OR"){
-            OR_Gate();
-        }
-
-        else if (gate == "AND"){
-            AND_Gate();
-        }
-
-        else if (gate == "NOR"){
-            NOR_Gate();
-        }
-        else if (gate == "XOR"){
-            XOR_Gate();
-        }
-        else if (gate == "XNOR"){
-            XNOR_Gate();
-        }   
-        else if (gate == "NAND"){
-            NAND_Gate();
-        }
-        //If no gate slotted
-        else{
-            conduncting = false;
-        }
-        gate = "";
-    }
-
-    protected void OR_Gate(){
-        //A list of tuples with the different combinations of true and false that that gate will let through
-        var or_combinations = new List<(bool, bool)>{
-            (true, false),
-            (false, true),
-            (true, true)
-        };
-
-        if (or_combinations.Contains((input1Conducting, input2Conducting))){
-            conduncting = true;
+            TableCheck(gate);
         }
         else{
             conduncting = false;
-        }
-    }
-    protected void AND_Gate(){
-        var or_combinations = new List<(bool, bool)>{
-            (true, true)
-        };
-
-        if (or_combinations.Contains((input1Conducting, input2Conducting))){
-            conduncting = true;
-        }
-        else{
-            conduncting = false;
-        }
-    }
-
-    protected void NOR_Gate(){
-        var or_combinations = new List<(bool, bool)>{
-            (false, false)
-        };
-
-        if (or_combinations.Contains((input1Conducting, input2Conducting))){
-            conduncting = true;
-        }
-        else{
-            conduncting = false;
-        }
-    }
-    protected void XOR_Gate(){
-        var or_combinations = new List<(bool, bool)>{
-            (true, false),
-            (false, true)
-        };
-
-        if (or_combinations.Contains((input1Conducting, input2Conducting))){
-            conduncting = true;
-        }
-        else{
-            conduncting = false;
+            gate = "";
         }
     }   
-    protected void XNOR_Gate(){
-        var or_combinations = new List<(bool, bool)>{
-            (true, false),
-            (true, true)
-        };
 
-        if (or_combinations.Contains((input1Conducting, input2Conducting))){
-            conduncting = true;
-        }
-        else{
-            conduncting = false;
-        }
-    }
-    protected void NAND_Gate(){
-        var or_combinations = new List<(bool, bool)>{
-            (true, false),
-            (false, true),
-            (false, false)
-        };
-
-        if (or_combinations.Contains((input1Conducting, input2Conducting))){
+    protected void TableCheck(string gate){   
+        //Checks current input against the truth table
+        if(truth_Table[gate].Contains((input1Conducting, input2Conducting))){
+            Debug.Log(truth_Table[gate]);
             conduncting = true;
         }
         else{

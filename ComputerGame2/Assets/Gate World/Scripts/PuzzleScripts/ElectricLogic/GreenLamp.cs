@@ -19,10 +19,7 @@ public class GreenLamp : ElectricityControll
 
     void Update(){
         //same as the other ones
-        input.OverlapCollider(contactFilter2D, inputList);  
-        foreach(Collider2D collision in inputList){
-            conduncting = CollisionHandler(collision);
-        }
+        conduncting = OnCollision(input, inputList);
         if(conduncting){
              GetComponent<UnityEngine.UI.Image>().sprite = litLamp;
         }
