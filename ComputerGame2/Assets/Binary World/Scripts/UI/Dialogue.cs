@@ -195,6 +195,7 @@ public class Dialogue : MonoBehaviour
         ending = true;
         disableClick = false;
         lineText.text = string.Empty;
+        LevelsDoneManager.SetLevelDone("BinaryPuzzle1");
 
         foreach (BinaryButtonScript button in _binaryButtonScripts)
         {
