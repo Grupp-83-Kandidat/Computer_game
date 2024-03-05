@@ -28,7 +28,7 @@ public class BinaryEightDisplayScript : MonoBehaviour
     void Start()
     {
         //Init(); 
-        UpdateBits(16);
+        //UpdateBits(16);
     }
 
     // Update is called once per frame
@@ -111,7 +111,7 @@ public class BinaryEightDisplayScript : MonoBehaviour
         _boxSpawner.StopBoxes();
         _tryValue = true;
     }*/
-    private void UpdateBits(int val) {
+    public void UpdateBits(int val) {
         int[] binaryArray = DecimalToBinaryArray(val);
         for (int i = 0; i < 8; i++)
         {

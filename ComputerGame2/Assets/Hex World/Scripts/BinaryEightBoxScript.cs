@@ -9,21 +9,42 @@ public class BinaryEightBoxScript : MonoBehaviour
     public DictEntry[] bits = new DictEntry[8];
     private int value;
     // Start is called before the first frame update
+    private List<GameObject> _boxes;
+    private Rigidbody2D rb;
+    private int _speed = 3;
     void Start()
     {
         //BitScript bit = bits[3].bitObject;
         //bit.ChangeNumber(1);
-        UpdateBits(255);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
+        rb.velocity = Vector2.right * _speed;
+    
+    }
+    public void Init(int val, List<GameObject> boxes)
+    {
+        SetValue(val);
+        //SetSprite(sprite);
+        _boxes = boxes;
+
     }
     private void SetValue(int val) {
+        UpdateBits(val);
         value = val;
     }
+    public void SetSpeed(int speed)
+    {
+        _speed = speed;
+    }
+    public int GetValue() {
+        return value;
+    }
+
     private void UpdateBits(int val) {
         int[] binaryArray = DecimalToBinaryArray(val);
         for (int i = 0; i < 8; i++)
@@ -42,6 +63,10 @@ public class BinaryEightBoxScript : MonoBehaviour
         }
 
         return binaryArray;
+    }
+    void OnDestroy()
+    {
+        _boxes.Remove(this.gameObject);
     }
 }
 [Serializable]
