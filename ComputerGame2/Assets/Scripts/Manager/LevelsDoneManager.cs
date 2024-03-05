@@ -1,19 +1,20 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class LevelsDoneManager
 {
-    static List<String> LevelDoneKeys = new List<String>() {"BinaryPuzzle1", "BinaryPuzzle2"};
+    static List<ScenesManager.Scene> LevelDoneKeys = new List<ScenesManager.Scene>() { ScenesManager.Scene.BinaryPuzzle1, ScenesManager.Scene.BinaryPuzzle2};
 
     
 
     public static bool GetLevelDone(string key)
     {
-        if (LevelDoneKeys.Contains(key))
+        foreach(var scene in LevelDoneKeys)
         {
-            return IntToBool(PlayerPrefs.GetInt(key, 0));
+            if(scene.ToString() == key) return IntToBool(PlayerPrefs.GetInt(key, 0));
         }
         throw new Exception("Level not in LevelsDoneManager List");
     }
@@ -28,14 +29,14 @@ public class LevelsDoneManager
 
     public static void SetLevelDone(string key)
     {
-        if (LevelDoneKeys.Contains(key))
+        foreach (var scene in LevelDoneKeys)
         {
-            PlayerPrefs.SetInt(key, 1);
-        }
-        else
-        {
-            throw new Exception("Level not in LevelsDoneManager List");
-        }
-        
+            if (scene.ToString() == key)
+            {
+                PlayerPrefs.SetInt(key, 1);
+                return;
+            }
+        }     
     }
+
 }

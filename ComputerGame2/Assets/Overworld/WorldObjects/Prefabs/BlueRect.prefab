@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: 4941273120057338249}
   - component: {fileID: 717355797475915003}
   m_Layer: 7
-  m_Name: "BL\xC5REKTANGEL 1"
+  m_Name: BlueRect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -320,7 +320,7 @@ SpriteRenderer:
   m_Size: {x: 1.92, y: 4.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &4941273120057338249
@@ -394,6 +394,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  interactIcon: {fileID: 0}
   dialoguetext: {fileID: 11400000, guid: e08e37ecc9f365242badecd8408603ca, type: 2}
   dialogKontroll: {fileID: 6730184298530472240}
 --- !u!1 &4226732887757229593
@@ -488,6 +489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NPCNameText: {fileID: 1878309989988172230}
   NPCDialogText: {fileID: 9117851883009544475}
+  skrivHastighet: 8
 --- !u!1 &5906005491797778787
 GameObject:
   m_ObjectHideFlags: 0

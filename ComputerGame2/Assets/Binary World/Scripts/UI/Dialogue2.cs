@@ -111,6 +111,7 @@ public class Dialogue2 : MonoBehaviour
         }
         else
         {
+            LevelsDoneManager.SetLevelDone("BinaryPuzzle2");
             StartCoroutine(LoadOverworld());
         }
     }

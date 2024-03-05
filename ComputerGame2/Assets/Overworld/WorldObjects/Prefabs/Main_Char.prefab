@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 518140734119013206}
   - component: {fileID: 1032062782316230767}
   m_Layer: 0
-  m_Name: Test_gubbe
+  m_Name: Main_Char
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_Size: {x: 1.92, y: 4.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &518140734119013206
@@ -98,6 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd0445d403e4f7e4b83c45bfca25fa8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
+  jumpingpower: 10
   rb: {fileID: 0}
   groundCheck: {fileID: 0}
   groundLayer:
