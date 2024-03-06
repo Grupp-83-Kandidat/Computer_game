@@ -20,37 +20,46 @@ public class HexDisplayManagerScipt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftArrow)) {
+        if (Input.GetKeyDown(KeyCode.LeftArrow)) {
             activeDisplay = displays[0];
             index = 0;
         }
-        if (Input.GetKey(KeyCode.RightArrow)) {
+        if (Input.GetKeyDown(KeyCode.RightArrow)) {
             activeDisplay = displays[1];
             index = 1;
         }
-        if(Input.GetKey(KeyCode.Alpha0)) UpdateDisplay(0);
-        if(Input.GetKey(KeyCode.Alpha1)) UpdateDisplay(1);
-        if(Input.GetKey(KeyCode.Alpha2)) UpdateDisplay(2);
-        if(Input.GetKey(KeyCode.Alpha3)) UpdateDisplay(3);
-        if(Input.GetKey(KeyCode.Alpha4)) UpdateDisplay(4);
-        if(Input.GetKey(KeyCode.Alpha5)) UpdateDisplay(5);
-        if(Input.GetKey(KeyCode.Alpha6)) UpdateDisplay(6);
-        if(Input.GetKey(KeyCode.Alpha7)) UpdateDisplay(7);
-        if(Input.GetKey(KeyCode.Alpha8)) UpdateDisplay(8);
-        if(Input.GetKey(KeyCode.Alpha9)) UpdateDisplay(9);
-        if(Input.GetKey(KeyCode.A)) UpdateDisplay(10);
-        if(Input.GetKey(KeyCode.B)) UpdateDisplay(11);
-        if(Input.GetKey(KeyCode.C)) UpdateDisplay(12);
-        if(Input.GetKey(KeyCode.D)) UpdateDisplay(13);
-        if(Input.GetKey(KeyCode.E)) UpdateDisplay(14);
-        if(Input.GetKey(KeyCode.F)) UpdateDisplay(15);
+        if(Input.GetKeyDown(KeyCode.Alpha0)) UpdateDisplay(0);
+        if(Input.GetKeyDown(KeyCode.Alpha1)) UpdateDisplay(1);
+        if(Input.GetKeyDown(KeyCode.Alpha2)) UpdateDisplay(2);
+        if(Input.GetKeyDown(KeyCode.Alpha3)) UpdateDisplay(3);
+        if(Input.GetKeyDown(KeyCode.Alpha4)) UpdateDisplay(4);
+        if(Input.GetKeyDown(KeyCode.Alpha5)) UpdateDisplay(5);
+        if(Input.GetKeyDown(KeyCode.Alpha6)) UpdateDisplay(6);
+        if(Input.GetKeyDown(KeyCode.Alpha7)) UpdateDisplay(7);
+        if(Input.GetKeyDown(KeyCode.Alpha8)) UpdateDisplay(8);
+        if(Input.GetKeyDown(KeyCode.Alpha9)) UpdateDisplay(9);
+        if(Input.GetKeyDown(KeyCode.A)) UpdateDisplay(10);
+        if(Input.GetKeyDown(KeyCode.B)) UpdateDisplay(11);
+        if(Input.GetKeyDown(KeyCode.C)) UpdateDisplay(12);
+        if(Input.GetKeyDown(KeyCode.D)) UpdateDisplay(13);
+        if(Input.GetKeyDown(KeyCode.E)) UpdateDisplay(14);
+        if(Input.GetKeyDown(KeyCode.F)) UpdateDisplay(15);
     }
     private void UpdateDisplay(int val) {
         activeDisplay.SetSprite(sprites[val]);
         hexValues[index] = val;
     }
+    public void ResetDisplays(){
+        displays[0].SetSprite(sprites[0]);
+        displays[1].SetSprite(sprites[0]);
+        hexValues[0] = 0;
+        hexValues[1] = 0;
+    }
     public bool CompareValue(int value) {
         int displayValue = hexValues[0] * 16 + hexValues[1];
         return displayValue == value;
+    }
+    public int[] GetValues() {
+        return hexValues;
     }
 }
