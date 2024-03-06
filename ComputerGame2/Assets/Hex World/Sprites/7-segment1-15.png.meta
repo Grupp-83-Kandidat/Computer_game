@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9c70f251ce1fe758f88d7ad9b4b1e4f4
+guid: d1c326a919202c18184fed818ae33c30
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,91 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 7-segment_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ee2a53267a9f1f5ba90a5f236def3df0
-      internalID: 1378594029
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 7-segment_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 01f0e30c17ae83afc9072556e6717e5f
-      internalID: 925929107
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 7-segment_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d40c195cce1d7c8f8be81ee0de4b073c
-      internalID: 639400136
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 7-segment_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 66798a88e2f762e4c98a4bc4b3aa52a0
-      internalID: -1276238377
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 7-segment_4
+      name: 7-segment1-15_0
       rect:
         serializedVersion: 2
         x: 0
@@ -208,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebf1af6c047d85bbfb871425ef472157
-      internalID: -2141110109
+      spriteID: 31696313e8d43360c8fd10e52ff4e413
+      internalID: -1166436633
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 7-segment_5
+      name: 7-segment1-15_1
       rect:
         serializedVersion: 2
         x: 32
@@ -229,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0293036afbac9e169ea34744c79011a
-      internalID: -201908119
+      spriteID: 6c1cd44bcf5be882e96f7287777155b3
+      internalID: -462349901
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 7-segment_6
+      name: 7-segment1-15_2
       rect:
         serializedVersion: 2
         x: 64
@@ -250,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11aecfedf4944c52fb26faf7934742a5
-      internalID: -1395446296
+      spriteID: a22acc1eabac0bcb4be426bf0c01f186
+      internalID: 1114116188
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 7-segment_7
+      name: 7-segment1-15_3
       rect:
         serializedVersion: 2
         x: 96
@@ -271,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e01b1b36602083464ae2680613b1a791
-      internalID: 1496867701
+      spriteID: b12364ce330d996dab5316f364bb86fa
+      internalID: 1347683016
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 7-segment_8
+      name: 7-segment1-15_4
       rect:
         serializedVersion: 2
         x: 0
@@ -292,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d0eda7f014e1235e9313820c2329ebc
-      internalID: -1608903193
+      spriteID: a5293627d6cc36a6ebeef9c50ecd7c6b
+      internalID: 409214729
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 7-segment_9
+      name: 7-segment1-15_5
       rect:
         serializedVersion: 2
         x: 32
@@ -313,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e9fad357e6978f0aa9608515f8d2f79
-      internalID: -1676570432
+      spriteID: 0297858d2e6cc2ca787256f071addc78
+      internalID: 1755146670
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 7-segment_10
+      name: 7-segment1-15_6
       rect:
         serializedVersion: 2
         x: 64
@@ -334,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5663631f7af06020ae0fb6323d4b873
-      internalID: 659749543
+      spriteID: 7b2274c9b0cf6965182bbe07963cf199
+      internalID: -1410612316
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 7-segment_11
+      name: 7-segment1-15_7
       rect:
         serializedVersion: 2
         x: 96
@@ -355,14 +271,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2ca2df38aa16481e8bd446d9eefbcbb
-      internalID: -288708956
+      spriteID: 76818ec355dcf7dd1871920f6a68a479
+      internalID: 1592862861
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 7-segment_12
+      name: 7-segment1-15_8
       rect:
         serializedVersion: 2
         x: 0
@@ -376,14 +292,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6e82d113a549693ba37309c490ebdd2
-      internalID: 565690399
+      spriteID: 80f9d1beb52fb28c08760007010acb3b
+      internalID: -1805173445
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 7-segment_13
+      name: 7-segment1-15_9
       rect:
         serializedVersion: 2
         x: 32
@@ -397,14 +313,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2929ff8a37e98cbda8236890e2cababf
-      internalID: -1796450131
+      spriteID: 0bc8e54ba49007323825b305474c1d60
+      internalID: 416573641
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 7-segment_14
+      name: 7-segment1-15_10
       rect:
         serializedVersion: 2
         x: 64
@@ -418,14 +334,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bcad49fac42f03032a688180311947ea
-      internalID: 1556432978
+      spriteID: 213faa644d89335ebb7601f698cfa67e
+      internalID: 117385456
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 7-segment_15
+      name: 7-segment1-15_11
       rect:
         serializedVersion: 2
         x: 96
@@ -439,14 +355,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4944f37ada06a201c9bd9ccdf553f36d
-      internalID: 1226323370
+      spriteID: 511b946f03265cf8c87e2036151dc33d
+      internalID: 580326268
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 7-segment_16
+      name: 7-segment1-15_12
       rect:
         serializedVersion: 2
         x: 0
@@ -460,14 +376,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e0d97b8226e518c783d09a57008a257
-      internalID: 664346790
+      spriteID: a33164860e8263ccdac8878bae47bfd8
+      internalID: 1637111281
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 7-segment_17
+      name: 7-segment1-15_13
       rect:
         serializedVersion: 2
         x: 32
@@ -481,8 +397,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad0e1903c1432d75a8bd00b85185b0aa
-      internalID: -344560359
+      spriteID: ca97c75dbca3078ac84d314d086b9128
+      internalID: -2077182629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7-segment1-15_14
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67e0e94bc4cd11d969ecee7dd5fcc089
+      internalID: 1233648817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7-segment1-15_15
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49f85acd0fbd54fc0b62e7e654a76f09
+      internalID: -606747647
       vertices: []
       indices: 
       edges: []
@@ -498,24 +456,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      7-segment_0: 1378594029
-      7-segment_1: 925929107
-      7-segment_10: 659749543
-      7-segment_11: -288708956
-      7-segment_12: 565690399
-      7-segment_13: -1796450131
-      7-segment_14: 1556432978
-      7-segment_15: 1226323370
-      7-segment_16: 664346790
-      7-segment_17: -344560359
-      7-segment_2: 639400136
-      7-segment_3: -1276238377
-      7-segment_4: -2141110109
-      7-segment_5: -201908119
-      7-segment_6: -1395446296
-      7-segment_7: 1496867701
-      7-segment_8: -1608903193
-      7-segment_9: -1676570432
+      7-segment1-15_0: -1166436633
+      7-segment1-15_1: -462349901
+      7-segment1-15_10: 117385456
+      7-segment1-15_11: 580326268
+      7-segment1-15_12: 1637111281
+      7-segment1-15_13: -2077182629
+      7-segment1-15_14: 1233648817
+      7-segment1-15_15: -606747647
+      7-segment1-15_2: 1114116188
+      7-segment1-15_3: 1347683016
+      7-segment1-15_4: 409214729
+      7-segment1-15_5: 1755146670
+      7-segment1-15_6: -1410612316
+      7-segment1-15_7: 1592862861
+      7-segment1-15_8: -1805173445
+      7-segment1-15_9: 416573641
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
