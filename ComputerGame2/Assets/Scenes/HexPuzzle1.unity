@@ -417,24 +417,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c60ff048372a4e2ba968784971c6d43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: -1166436633, guid: d1c326a919202c18184fed818ae33c30, type: 3}
-  - {fileID: -462349901, guid: d1c326a919202c18184fed818ae33c30, type: 3}
-  - {fileID: 1114116188, guid: d1c326a919202c18184fed818ae33c30, type: 3}
-  - {fileID: 1347683016, guid: d1c326a919202c18184fed818ae33c30, type: 3}
-  - {fileID: 409214729, guid: d1c326a919202c18184fed818ae33c30, type: 3}
-  - {fileID: 1755146670, guid: d1c326a919202c18184fed818ae33c30, type: 3}
-  - {fileID: -1410612316, guid: d1c326a919202c18184fed818ae33c30, type: 3}
-  - {fileID: 1592862861, guid: d1c326a919202c18184fed818ae33c30, type: 3}
-  - {fileID: -1805173445, guid: d1c326a919202c18184fed818ae33c30, type: 3}
-  - {fileID: 416573641, guid: d1c326a919202c18184fed818ae33c30, type: 3}
-  - {fileID: 117385456, guid: d1c326a919202c18184fed818ae33c30, type: 3}
-  - {fileID: 580326268, guid: d1c326a919202c18184fed818ae33c30, type: 3}
-  - {fileID: 1637111281, guid: d1c326a919202c18184fed818ae33c30, type: 3}
-  - {fileID: -2077182629, guid: d1c326a919202c18184fed818ae33c30, type: 3}
-  - {fileID: 1233648817, guid: d1c326a919202c18184fed818ae33c30, type: 3}
-  - {fileID: -606747647, guid: d1c326a919202c18184fed818ae33c30, type: 3}
-  - {fileID: -454866064, guid: 9186ac88b152d891792aa16f204f63ce, type: 3}
 --- !u!212 &199913704
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -584,24 +566,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c60ff048372a4e2ba968784971c6d43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: -1166436633, guid: d1c326a919202c18184fed818ae33c30, type: 3}
-  - {fileID: -462349901, guid: d1c326a919202c18184fed818ae33c30, type: 3}
-  - {fileID: 1114116188, guid: d1c326a919202c18184fed818ae33c30, type: 3}
-  - {fileID: 1347683016, guid: d1c326a919202c18184fed818ae33c30, type: 3}
-  - {fileID: 409214729, guid: d1c326a919202c18184fed818ae33c30, type: 3}
-  - {fileID: 1755146670, guid: d1c326a919202c18184fed818ae33c30, type: 3}
-  - {fileID: -1410612316, guid: d1c326a919202c18184fed818ae33c30, type: 3}
-  - {fileID: 1592862861, guid: d1c326a919202c18184fed818ae33c30, type: 3}
-  - {fileID: -1805173445, guid: d1c326a919202c18184fed818ae33c30, type: 3}
-  - {fileID: 416573641, guid: d1c326a919202c18184fed818ae33c30, type: 3}
-  - {fileID: 117385456, guid: d1c326a919202c18184fed818ae33c30, type: 3}
-  - {fileID: 580326268, guid: d1c326a919202c18184fed818ae33c30, type: 3}
-  - {fileID: 1637111281, guid: d1c326a919202c18184fed818ae33c30, type: 3}
-  - {fileID: -2077182629, guid: d1c326a919202c18184fed818ae33c30, type: 3}
-  - {fileID: 1233648817, guid: d1c326a919202c18184fed818ae33c30, type: 3}
-  - {fileID: -606747647, guid: d1c326a919202c18184fed818ae33c30, type: 3}
-  - {fileID: -454866064, guid: 9186ac88b152d891792aa16f204f63ce, type: 3}
 --- !u!4 &319071579 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3881022339619344498, guid: ce6d1d8475110194d9d1cd4eaeba75c3, type: 3}
@@ -1137,6 +1101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1639765926}
+  - component: {fileID: 1639765927}
   m_Layer: 0
   m_Name: 7-SegmentDisplays
   m_TagString: Untagged
@@ -1161,6 +1126,39 @@ Transform:
   - {fileID: 294302680}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1639765927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639765925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec849ae84fb06a04286169bd36bbe2a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displays:
+  - {fileID: 294302682}
+  - {fileID: 199913703}
+  sprites:
+  - {fileID: -1166436633, guid: d1c326a919202c18184fed818ae33c30, type: 3}
+  - {fileID: -462349901, guid: d1c326a919202c18184fed818ae33c30, type: 3}
+  - {fileID: 1114116188, guid: d1c326a919202c18184fed818ae33c30, type: 3}
+  - {fileID: 1347683016, guid: d1c326a919202c18184fed818ae33c30, type: 3}
+  - {fileID: 409214729, guid: d1c326a919202c18184fed818ae33c30, type: 3}
+  - {fileID: 1755146670, guid: d1c326a919202c18184fed818ae33c30, type: 3}
+  - {fileID: -1410612316, guid: d1c326a919202c18184fed818ae33c30, type: 3}
+  - {fileID: 1592862861, guid: d1c326a919202c18184fed818ae33c30, type: 3}
+  - {fileID: -1805173445, guid: d1c326a919202c18184fed818ae33c30, type: 3}
+  - {fileID: 416573641, guid: d1c326a919202c18184fed818ae33c30, type: 3}
+  - {fileID: 117385456, guid: d1c326a919202c18184fed818ae33c30, type: 3}
+  - {fileID: 580326268, guid: d1c326a919202c18184fed818ae33c30, type: 3}
+  - {fileID: 1637111281, guid: d1c326a919202c18184fed818ae33c30, type: 3}
+  - {fileID: -2077182629, guid: d1c326a919202c18184fed818ae33c30, type: 3}
+  - {fileID: 1233648817, guid: d1c326a919202c18184fed818ae33c30, type: 3}
+  - {fileID: -606747647, guid: d1c326a919202c18184fed818ae33c30, type: 3}
+  - {fileID: -454866064, guid: 9186ac88b152d891792aa16f204f63ce, type: 3}
 --- !u!4 &1753237354 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3881022339619344498, guid: ce6d1d8475110194d9d1cd4eaeba75c3, type: 3}
@@ -1505,7 +1503,7 @@ SpriteRenderer:
   m_SortingLayerID: 135135225
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1e9c0e05d80570743a9add123aa48968, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 459f4dcee6200aa40a7497f7c8405818, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
