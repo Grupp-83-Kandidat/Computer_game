@@ -5,8 +5,9 @@ using UnityEngine.PlayerLoop;
 
 public class DisplayManagerScript : MonoBehaviour
 {
-    public BinaryEightDisplayScript DisplayUnder;
+    public BinaryEightDisplayScript displayUnder;
     private BinEightBoxSpawnerScript _boxSpawner;
+    private HexDisplayManagerScipt _inputManager;
     private int _value;
     private int _score;
     private bool _tryValue = false;
@@ -19,13 +20,14 @@ public class DisplayManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_tryValue )
+        if (_tryValue && _inputManager.CompareValue(_value))
         {
-            //OnSuccess();
+            OnSuccess();
         }
     }
     private void Init() {
         _boxSpawner = FindFirstObjectByType<BinEightBoxSpawnerScript>();
+        _inputManager = FindAnyObjectByType<HexDisplayManagerScipt>();
         StartCoroutine(_boxSpawner.OnStart());
     }
     // ---------------------- Getters -----------------------
@@ -51,7 +53,7 @@ public class DisplayManagerScript : MonoBehaviour
 
     public void UpdateDisplay(int val)
     {
-        DisplayUnder.UpdateBits(val);
+        displayUnder.UpdateBits(val);
         //Change stored _value variable
         _value = val;
     }
