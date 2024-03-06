@@ -70,7 +70,7 @@ public class Dialogue : MonoBehaviour
                 if (index == endingLines.Length)
                 {
                     StopAllCoroutines();
-                    StartCoroutine(LoadOverworld());
+                    ScenesManager.Instance.LoadOverworld();
                 }
                 else if (lineText.text.ToString() == endingLines[index])
                 {
@@ -83,14 +83,6 @@ public class Dialogue : MonoBehaviour
                 }
 
             }
-        }
-    }
-
-    private IEnumerator LoadOverworld()
-    {
-        AsyncOperation loaded = SceneManager.LoadSceneAsync("Overworld");
-        while (!loaded.isDone) {
-            yield return null;
         }
     }
 
@@ -195,7 +187,7 @@ public class Dialogue : MonoBehaviour
         ending = true;
         disableClick = false;
         lineText.text = string.Empty;
-        LevelsDoneManager.SetLevelDone("BinaryPuzzle1");
+        LevelsDoneManager.SetLevelDone(ScenesManager.Scene.BinaryPuzzle1);
 
         foreach (BinaryButtonScript button in _binaryButtonScripts)
         {

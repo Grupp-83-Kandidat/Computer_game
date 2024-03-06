@@ -10,11 +10,11 @@ public class LevelsDoneManager
 
     
 
-    public static bool GetLevelDone(string key)
+    public static bool GetLevelDone(ScenesManager.Scene scene)
     {
-        foreach(var scene in LevelDoneKeys)
+        foreach(var sceneKey in LevelDoneKeys)
         {
-            if(scene.ToString() == key) return IntToBool(PlayerPrefs.GetInt(key, 0));
+            if(sceneKey.ToString() == scene.ToString()) return IntToBool(PlayerPrefs.GetInt(scene.ToString(), 0));
         }
         throw new Exception("Level not in LevelsDoneManager List");
     }
@@ -27,13 +27,13 @@ public class LevelsDoneManager
             return false;
     }
 
-    public static void SetLevelDone(string key)
+    public static void SetLevelDone(ScenesManager.Scene scene)
     {
-        foreach (var scene in LevelDoneKeys)
+        foreach (var sceneKey in LevelDoneKeys)
         {
-            if (scene.ToString() == key)
+            if (scene.ToString() == sceneKey.ToString())
             {
-                PlayerPrefs.SetInt(key, 1);
+                PlayerPrefs.SetInt(scene.ToString(), 1);
                 return;
             }
         }     

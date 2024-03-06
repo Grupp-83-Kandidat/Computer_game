@@ -78,7 +78,7 @@ public class Dialogue2 : MonoBehaviour
 
     private IEnumerator LoadOverworld()
     {
-        AsyncOperation loaded = SceneManager.LoadSceneAsync("Overworld");
+        AsyncOperation loaded = SceneManager.LoadSceneAsync("Overworld1");
         while (!loaded.isDone)
         {
             yield return null;
@@ -111,7 +111,7 @@ public class Dialogue2 : MonoBehaviour
         }
         else
         {
-            LevelsDoneManager.SetLevelDone("BinaryPuzzle2");
+            LevelsDoneManager.SetLevelDone(ScenesManager.Scene.BinaryPuzzle2);
             StartCoroutine(LoadOverworld());
         }
     }

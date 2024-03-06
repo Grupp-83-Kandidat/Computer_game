@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class NextScene : Interactable
 {
-    [SerializeField] private int scene;
+    [SerializeField] private ScenesManager.Scene scene;
     [SerializeField] private Animator animation;
     [SerializeField] private bool requiresPrevious;
-    [SerializeField] private string PreviousLevelRequiredKey;
+    [SerializeField] ScenesManager.Scene PreviousLevelRequiredKey;
     protected override void Interact()
     {
         if (requiresPrevious)
@@ -23,6 +23,6 @@ public class NextScene : Interactable
     }
 
     private void ChangeScene(){
-        SceneManager.LoadScene(scene);
+        SceneManager.LoadScene(scene.ToString());
     }
 }
