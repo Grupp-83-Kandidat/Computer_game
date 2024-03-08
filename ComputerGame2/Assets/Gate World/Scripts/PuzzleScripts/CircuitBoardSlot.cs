@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class CircuitBoardSlot : InventorySlot
 {
@@ -11,10 +12,9 @@ public class CircuitBoardSlot : InventorySlot
 
     private List<Collider2D> input1List = new(1);
     private List<Collider2D> input2List = new(1);
-    private ContactFilter2D contactFilter2D;
-    public bool conduncting = false;
-    public bool input1Conducting = false;
-    public bool input2Conducting = false;
+    public bool conduncting;
+    public bool input1Conducting;
+    public bool input2Conducting;
     private string gate;
     ElectricityControll electricControl;
     Dictionary<string, List<(bool, bool)>> truth_Table;
@@ -29,7 +29,9 @@ public class CircuitBoardSlot : InventorySlot
         //Get all components we need
         input1 = transform.GetChild(0).GetComponent<Collider2D>();
         input2 = transform.GetChild(1).GetComponent<Collider2D>(); 
+
         electricControl = gameObject.AddComponent<ElectricityControll>();
+
         //Creates a truth table for the gates
         truth_Table = new Dictionary<string, List<(bool, bool)>>() {
             {"OR" , new List<(bool, bool)> {(true, false), (false, true), (true, true)}},
@@ -49,7 +51,7 @@ public class CircuitBoardSlot : InventorySlot
         input2Conducting = electricControl.OnCollision(input2, input2List);
 
         //Needs a small delay to counter different lenght wires and issues with that
-        Invoke("IsConducting", 0.02f);
+        Invoke("IsConducting", 0.02f*Time.deltaTime);
     }
 
     protected void IsConducting(){

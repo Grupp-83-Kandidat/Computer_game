@@ -92,6 +92,7 @@ MonoBehaviour:
   image: {fileID: 687171254207301191}
   previousParent: {fileID: 0}
   parentAfterDrag: {fileID: 0}
+  newParent: {fileID: 0}
 --- !u!61 &-5136408952126555230
 BoxCollider2D:
   m_ObjectHideFlags: 0

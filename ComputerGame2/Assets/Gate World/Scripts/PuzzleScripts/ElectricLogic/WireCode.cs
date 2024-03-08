@@ -9,7 +9,6 @@ public class WireCode :ElectricityControll
     public bool conduncting = false;
     private Collider2D input;
     private List<Collider2D> inputList = new(1);
-    private ContactFilter2D contactFilter2D;
     protected void Start(){
         input = transform.GetChild(0).GetComponent<Collider2D>();
     }

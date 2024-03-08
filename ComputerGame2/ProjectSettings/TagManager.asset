@@ -8,13 +8,13 @@ TagManager:
   - Assembly
   - Frame
   - Wire
-  - Pulse
   - CircuitSlot
   - AND
   - OR
   - NOR
   - XOR
   - Output
+  - InventorySlot
   layers:
   - Default
   - TransparentFX

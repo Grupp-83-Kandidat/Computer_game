@@ -91,3 +91,4 @@ MonoBehaviour:
   image: {fileID: 6407042631500629625}
   previousParent: {fileID: 0}
   parentAfterDrag: {fileID: 0}
+  newParent: {fileID: 0}

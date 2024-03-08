@@ -14,13 +14,11 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
     public Transform previousParent;
     public Transform parentAfterDrag;
 
-    public void Awake(){
-        previousParent = transform.parent;
-    }
+    public Transform newParent;
+
     public void OnBeginDrag(PointerEventData eventData)
     { 
-        parentAfterDrag = transform.parent;
-        
+        //parentAfterDrag = transform.parent;
         transform.SetParent(transform.root);
         transform.SetAsLastSibling();
         //This will make the gate you are currently draggin "Invisible" to the cursor, now the program will sense what inventory slot we are currently hovering
@@ -37,20 +35,24 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        //This will check that the slot you wish to drop the gate has capacity and is instantiated
-        if (parentAfterDrag.GetComponent<InventorySlot>().CanPlace()){
+
+        //This will check that the slot you wish to drop the gate has capacity and is instantiated otherwise 
+
+        if (parentAfterDrag && parentAfterDrag.GetComponent<InventorySlot>().CanPlace(transform)){
             transform.SetParent(parentAfterDrag);
         }
 
         else{
             transform.SetParent(previousParent);
-        }  
-
+        }
+ 
         //This past sets position of the gate to the parents position and lets it be "seen" by the program again, needs to be done otherwise you cant pick it up again
         Vector3 parentPos = transform.parent.transform.position;
         parentPos.z = 0;
         transform.position = parentPos;
         image.raycastTarget = true;
+
+        parentAfterDrag = null;
     }
 }
 
