@@ -4,6 +4,7 @@ using TMPro;
 using System;
 using UnityEditor;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class Dialogue2 : MonoBehaviour
 {
@@ -11,8 +12,10 @@ public class Dialogue2 : MonoBehaviour
     private BigDispManager _bigDisp;
     private BinaryButtonScript[] _binaryButtonScripts;
     public string[] lines;
+    public string[] endingLines;
     public float textSpeed;
     private int index;
+    private bool ending;
     
     UnityEvent dialogueOver;
    
@@ -28,6 +31,7 @@ public class Dialogue2 : MonoBehaviour
         _bigDisp = FindObjectOfType<BigDispManager>();
         _binaryButtonScripts = FindObjectsOfType<BinaryButtonScript>();
         CreateEvent();
+        ending = false;
     }
 
     private void CreateEvent()
@@ -36,38 +40,91 @@ public class Dialogue2 : MonoBehaviour
         dialogueOver.AddListener(_bigDisp.OnDialogueEnd);
         foreach(BinaryButtonScript button in _binaryButtonScripts)
         {
-            dialogueOver.AddListener(button.Awake);
+            dialogueOver.AddListener(button.Awaken);
         }
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (lineText.text.ToString() == lines[index])
+            if (!ending)
             {
-                NextLine();
+                if (lineText.text.ToString() == lines[index])
+                {
+                    NextLine();
+                }
+                else
+                {
+                    StopAllCoroutines();
+                    lineText.text = lines[index];
+                }
             }
             else
             {
-                StopAllCoroutines();
-                lineText.text = lines[index];
+                if (lineText.text.ToString() == endingLines[index])
+                {
+                    NextEndingLine();
+                }
+                else
+                {
+                    StopAllCoroutines();
+                    lineText.text = endingLines[index];
+                }
+
             }
         }
     }
+
+    private IEnumerator LoadOverworld()
+    {
+        AsyncOperation loaded = SceneManager.LoadSceneAsync("Overworld");
+        while (!loaded.isDone)
+        {
+            yield return null;
+        }
+    }
+
 
     void startDialogue()
     {
         index = 0;
-        StartCoroutine(TypeLine());
+        StartCoroutine(TypeLine(lines));
     }
 
-    IEnumerator TypeLine()
+    IEnumerator TypeLine(string[] linesToWrite)
     {
-        foreach (char c in lines[index].ToCharArray()) {
+        foreach (char c in linesToWrite[index].ToCharArray()) {
             lineText.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
+    }
+
+    private void NextEndingLine()
+    {
+
+        if (index < endingLines.Length - 1)
+        {
+            index++;
+            lineText.text = string.Empty;
+            StartCoroutine(TypeLine(endingLines));
+        }
+        else
+        {
+            StartCoroutine(LoadOverworld());
+        }
+    }
+
+    public void StartEnd()
+    {
+        index = 0;
+        ending = true;
+        lineText.text = string.Empty;
+        foreach (BinaryButtonScript button in _binaryButtonScripts)
+        {
+            button.Sleep();
+        }
+        StartCoroutine(TypeLine(endingLines));
     }
 
     private void NextLine()
@@ -76,24 +133,17 @@ public class Dialogue2 : MonoBehaviour
         {
             index++;
             lineText.text = string.Empty;
-            StartCoroutine(TypeLine());
-            //if (index == 9)
-            //{
-            //    _bigDisp.UpdateDisplay(10);
-            //}
-            //if (index == 12)
-            //{
-            //    _binaryButtonScripts[0].ChangeOn();
-            //    _binaryButtonScripts[2].ChangeOn();
-            //}
+            StartCoroutine(TypeLine(lines));
         }
         else
         {
-        //    _binaryButtonScripts[0].ChangeOn();
-        //    _binaryButtonScripts[2].ChangeOn();
-            //_bigDisp.UpdateDisplay(0);
-            dialogueOver.Invoke();
-            gameObject.SetActive(false);
+            OnFinished();
         }
+    }
+
+    public void OnFinished()
+    {
+        dialogueOver.Invoke();
+        gameObject.SetActive(false);
     }
 }
