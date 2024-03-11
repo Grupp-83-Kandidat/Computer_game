@@ -11,21 +11,13 @@ public class NextLevelOverworld : MonoBehaviour
     [SerializeField] private TMP_Text _interactTxt;
     [SerializeField] private ScenesManager.Scene sceneToBeat;
     [SerializeField] private ScenesManager.Scene nextScene;
-
+    [SerializeField] private bool exitRight;
 
     private void Start()
     {
         _playerTransform = FindObjectOfType<Movement>().gameObject.GetComponent<Transform>();
         _interactTxt.gameObject.SetActive(false);
         _playerIn = false;
-    }
-
-    private void Update()
-    {
-      if (_playerIn && Input.GetKeyDown(KeyCode.Space))
-      { 
-           ScenesManager.Instance.LoadScene(nextScene);
-      }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -39,10 +31,29 @@ public class NextLevelOverworld : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject == _playerTransform.gameObject)
+        if (collision.gameObject == _playerTransform.gameObject && exitRight)
         {
-            if(_interactTxt != null) _interactTxt.gameObject.SetActive(false);
-            _playerIn = false;
+            if (_playerTransform.position.x - transform.position.x > 0)
+            {
+                ScenesManager.Instance.LoadScene(nextScene);
+            }
+            else
+            {
+                if (_interactTxt != null) _interactTxt.gameObject.SetActive(false);
+                _playerIn = false;
+            }
+        }
+        else if (collision.gameObject == _playerTransform.gameObject)
+        {
+            if (_playerTransform.position.x - transform.position.x < 0)
+            {
+                ScenesManager.Instance.LoadScene(nextScene);
+            }
+            else
+            {
+                if (_interactTxt != null) _interactTxt.gameObject.SetActive(false);
+                _playerIn = false;
+            }
         }
     }
 
