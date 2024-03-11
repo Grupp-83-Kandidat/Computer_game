@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
@@ -13,10 +14,16 @@ public class DisplayManagerScript : MonoBehaviour
     public BluePaintManager bluePaint;
     public GreenPaintManager greenPaint;
     public HexUpperLEDScript[] UpperLEDs = new HexUpperLEDScript[6];
+    public BucketPaintScript bucketPaint1;
+    public BucketPaintScript bucketPaint2;
+    public BucketPaintScript bucketPaint3;
     private int _value;
     private int _score;
     private bool _tryValue = false;
     private int _stage;
+    private Animator _bucketAnimator1;
+    private Animator _bucketAnimator2;
+    private Animator _bucketAnimator3;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +41,9 @@ public class DisplayManagerScript : MonoBehaviour
     private void Init() {
         _boxSpawner = FindFirstObjectByType<BinEightBoxSpawnerScript>();
         _inputManager = FindAnyObjectByType<HexDisplayManagerScipt>();
+        _bucketAnimator1 = bucketPaint1.GetComponent<Animator>();
+        _bucketAnimator2 = bucketPaint2.GetComponent<Animator>();
+        _bucketAnimator3 = bucketPaint3.GetComponent<Animator>();
         _stage = 0;
         StartCoroutine(_boxSpawner.OnStart());
     }
@@ -76,22 +86,29 @@ public class DisplayManagerScript : MonoBehaviour
                 UpperLEDs[1].ChangeNumber(values[0]);
                 
                 bluePaint.SpawnObject();
+                _bucketAnimator1.SetTrigger("TriggerBlue");
+                bucketPaint1.GetComponent<SpriteRenderer>().material.SetColor("_Color", Color.blue);
                 _stage += 1;
+
                 break;
             case 1:
                 UpperLEDs[2].ChangeNumber(values[1]);
                 UpperLEDs[3].ChangeNumber(values[0]);
                 _stage += 1;
-                
                 greenPaint.SpawnObject();
+                _bucketAnimator2.SetTrigger("TriggerGreen");
+                bucketPaint2.GetComponent<SpriteRenderer>().material.SetColor("_Color", Color.green);
+
                 break;
             case 2:
                 UpperLEDs[4].ChangeNumber(values[1]);
                 UpperLEDs[5].ChangeNumber(values[0]);
                 _stage = 0;
-                
                 redPaint.SpawnObject();
+                _bucketAnimator3.SetTrigger("TriggerRed");
+                bucketPaint3.GetComponent<SpriteRenderer>().material.SetColor("_Color", Color.red);
                 ResetLEDs();
+                StartCoroutine(ResetBucket());
                 break;
             default:
                 break;
@@ -108,6 +125,12 @@ public class DisplayManagerScript : MonoBehaviour
         {
             led.ChangeNumber(0);
         }
+    }
+    IEnumerator ResetBucket() {
+        yield return new WaitForSeconds(2f);
+        _bucketAnimator1.SetTrigger("Reset");
+        _bucketAnimator2.SetTrigger("Reset");
+        _bucketAnimator3.SetTrigger("Reset");
     }
 
 }
