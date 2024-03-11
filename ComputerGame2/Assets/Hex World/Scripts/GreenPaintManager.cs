@@ -10,13 +10,13 @@ public class GreenPaintManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        /*if (Input.GetKeyDown(KeyCode.Return))
         {
             SpawnObject();
-        }
+        }*/
     }
 
-    private void SpawnObject()
+    public void SpawnObject()
     {
         GameObject newObj = Instantiate(greenPaint, spawnPosition, Quaternion.identity);
         // Run animation here

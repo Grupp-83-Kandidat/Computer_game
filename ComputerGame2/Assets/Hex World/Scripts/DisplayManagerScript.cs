@@ -9,6 +9,9 @@ public class DisplayManagerScript : MonoBehaviour
     public BinaryEightDisplayScript displayUnder;
     private BinEightBoxSpawnerScript _boxSpawner;
     private HexDisplayManagerScipt _inputManager;
+    public RedPaintManager redPaint;
+    public BluePaintManager bluePaint;
+    public GreenPaintManager greenPaint;
     public HexUpperLEDScript[] UpperLEDs = new HexUpperLEDScript[6];
     private int _value;
     private int _score;
@@ -71,20 +74,23 @@ public class DisplayManagerScript : MonoBehaviour
             case 0:
                 UpperLEDs[0].ChangeNumber(values[1]);
                 UpperLEDs[1].ChangeNumber(values[0]);
-                // TODO: call on function that sprays blue color
+                
+                bluePaint.SpawnObject();
                 _stage += 1;
                 break;
             case 1:
                 UpperLEDs[2].ChangeNumber(values[1]);
                 UpperLEDs[3].ChangeNumber(values[0]);
                 _stage += 1;
-                // TODO: call on function that sprays green color
+                
+                greenPaint.SpawnObject();
                 break;
             case 2:
                 UpperLEDs[4].ChangeNumber(values[1]);
                 UpperLEDs[5].ChangeNumber(values[0]);
                 _stage = 0;
-                // TODO: call on function that sprays red color
+                
+                redPaint.SpawnObject();
                 ResetLEDs();
                 break;
             default:

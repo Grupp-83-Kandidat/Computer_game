@@ -11,13 +11,13 @@ public class RedPaintManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        /*if (Input.GetKeyDown(KeyCode.Return))
         {
             SpawnObject();
-        }
+        }*/
     }
 
-    private void SpawnObject()
+    public void SpawnObject()
     {
         GameObject newObj = Instantiate(redPaint, spawnPosition, Quaternion.identity);
         // Run animation here

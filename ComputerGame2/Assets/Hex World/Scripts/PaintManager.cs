@@ -18,6 +18,7 @@ public class PaintManager : MonoBehaviour
 
     private void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.Return) & index == 0)
         {
             SpawnObject(redPaint);
@@ -34,7 +35,7 @@ public class PaintManager : MonoBehaviour
         {
             SpawnObject(bluePaint);
             index += 1; 
-        }
+        }*/
 
     }
 
@@ -45,6 +46,7 @@ public class PaintManager : MonoBehaviour
         GameObject newObj = Instantiate(Paint, spawnPosition, Quaternion.identity);
         // Run animation here
         newObj.GetComponent<Animator>().Play("red_Animation");
+        
 
         // Schedule the destruction of the object after animationDuration seconds
         Destroy(newObj, animationDuration);

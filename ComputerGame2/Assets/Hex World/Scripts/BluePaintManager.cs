@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class BluePaintManager : MonoBehaviour
 {
     public GameObject bluePaint;
     public Vector3 spawnPosition;
@@ -10,13 +10,13 @@ public class NewBehaviourScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        /*if (Input.GetKeyDown(KeyCode.Return))
         {
             SpawnObject();
-        }
+        }*/
     }
 
-    private void SpawnObject()
+    public void SpawnObject()
     {
         GameObject newObj = Instantiate(bluePaint, spawnPosition, Quaternion.identity);
         // Run animation here

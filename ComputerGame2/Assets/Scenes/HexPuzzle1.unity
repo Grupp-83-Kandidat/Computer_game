@@ -1858,6 +1858,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayUnder: {fileID: 1928440204}
+  redPaint: {fileID: 932803845}
+  bluePaint: {fileID: 1246635689}
+  greenPaint: {fileID: 314461610}
   UpperLEDs:
   - {fileID: 242868200}
   - {fileID: 29711525}
