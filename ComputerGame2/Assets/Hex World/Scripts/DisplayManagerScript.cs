@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 //using System.Drawing;
 using Unity.VisualScripting;
 using UnityEditor.SceneManagement;
@@ -55,6 +56,7 @@ public class DisplayManagerScript : MonoBehaviour
         _bucketAnimator3 = bucketPaint3.GetComponent<Animator>();
         //background.GetComponents(_bricks);
         background.GetComponentsInChildren(_bricks);
+        _bricks = _bricks.OrderBy( x => Random.value ).ToList();
         _bricksLength = _bricks.Count;
         Debug.Log(_bricksLength);
 
