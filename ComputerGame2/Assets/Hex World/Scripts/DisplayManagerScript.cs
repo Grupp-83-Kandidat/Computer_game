@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+//using System.Drawing;
 using Unity.VisualScripting;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -24,6 +25,9 @@ public class DisplayManagerScript : MonoBehaviour
     private Animator _bucketAnimator1;
     private Animator _bucketAnimator2;
     private Animator _bucketAnimator3;
+    private float blueVal;
+    private float greenVal;
+    private float redVal;
     // Start is called before the first frame update
     void Start()
     {
@@ -87,8 +91,10 @@ public class DisplayManagerScript : MonoBehaviour
                 
                 bluePaint.SpawnObject();
                 _bucketAnimator1.SetTrigger("TriggerBlue");
-                bucketPaint1.GetComponent<SpriteRenderer>().material.SetColor("_Color", Color.blue);
+                blueVal = (values[0] * 16 + values[1])/255f;
+                bucketPaint1.GetComponent<SpriteRenderer>().material.SetColor("_Color", new Color(0f,0f,blueVal,1f));
                 _stage += 1;
+                
 
                 break;
             case 1:
@@ -97,7 +103,9 @@ public class DisplayManagerScript : MonoBehaviour
                 _stage += 1;
                 greenPaint.SpawnObject();
                 _bucketAnimator2.SetTrigger("TriggerGreen");
-                bucketPaint2.GetComponent<SpriteRenderer>().material.SetColor("_Color", Color.green);
+                greenVal = (values[0] * 16 + values[1])/255f;
+                bucketPaint2.GetComponent<SpriteRenderer>().material.SetColor("_Color", new Color(0f,greenVal,blueVal,1f));
+                bucketPaint1.GetComponent<SpriteRenderer>().material.SetColor("_Color", new Color(0f,greenVal,blueVal,1f));
 
                 break;
             case 2:
@@ -106,7 +114,10 @@ public class DisplayManagerScript : MonoBehaviour
                 _stage = 0;
                 redPaint.SpawnObject();
                 _bucketAnimator3.SetTrigger("TriggerRed");
-                bucketPaint3.GetComponent<SpriteRenderer>().material.SetColor("_Color", Color.red);
+                redVal = (values[0] * 16 + values[1])/255f;
+                bucketPaint3.GetComponent<SpriteRenderer>().material.SetColor("_Color", new Color(redVal, greenVal, blueVal, 1f));
+                bucketPaint2.GetComponent<SpriteRenderer>().material.SetColor("_Color", new Color(redVal,greenVal,blueVal,1f));
+                bucketPaint1.GetComponent<SpriteRenderer>().material.SetColor("_Color", new Color(redVal,greenVal,blueVal,1f));
                 ResetLEDs();
                 StartCoroutine(ResetBucket());
                 break;
