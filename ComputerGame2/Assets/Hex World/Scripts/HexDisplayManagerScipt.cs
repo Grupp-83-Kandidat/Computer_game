@@ -34,16 +34,16 @@ public class HexDisplayManagerScipt : MonoBehaviour
             _BinDispRenderer.sprite = binDisplaySprites[1];
             index = 1;
         }
-        if(Input.GetKeyDown(KeyCode.Alpha0)) UpdateDisplay(0);
-        if(Input.GetKeyDown(KeyCode.Alpha1)) UpdateDisplay(1);
-        if(Input.GetKeyDown(KeyCode.Alpha2)) UpdateDisplay(2);
-        if(Input.GetKeyDown(KeyCode.Alpha3)) UpdateDisplay(3);
-        if(Input.GetKeyDown(KeyCode.Alpha4)) UpdateDisplay(4);
-        if(Input.GetKeyDown(KeyCode.Alpha5)) UpdateDisplay(5);
-        if(Input.GetKeyDown(KeyCode.Alpha6)) UpdateDisplay(6);
-        if(Input.GetKeyDown(KeyCode.Alpha7)) UpdateDisplay(7);
-        if(Input.GetKeyDown(KeyCode.Alpha8)) UpdateDisplay(8);
-        if(Input.GetKeyDown(KeyCode.Alpha9)) UpdateDisplay(9);
+        if(Input.GetKeyDown(KeyCode.Alpha0) || Input.GetKeyDown(KeyCode.Keypad0)) UpdateDisplay(0);
+        if(Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1)) UpdateDisplay(1);
+        if(Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2)) UpdateDisplay(2);
+        if(Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3)) UpdateDisplay(3);
+        if(Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Keypad4)) UpdateDisplay(4);
+        if(Input.GetKeyDown(KeyCode.Alpha5) || Input.GetKeyDown(KeyCode.Keypad5)) UpdateDisplay(5);
+        if(Input.GetKeyDown(KeyCode.Alpha6) || Input.GetKeyDown(KeyCode.Keypad6)) UpdateDisplay(6);
+        if(Input.GetKeyDown(KeyCode.Alpha7) || Input.GetKeyDown(KeyCode.Keypad7)) UpdateDisplay(7);
+        if(Input.GetKeyDown(KeyCode.Alpha8) || Input.GetKeyDown(KeyCode.Keypad8)) UpdateDisplay(8);
+        if(Input.GetKeyDown(KeyCode.Alpha9) || Input.GetKeyDown(KeyCode.Keypad9)) UpdateDisplay(9);
         if(Input.GetKeyDown(KeyCode.A)) UpdateDisplay(10);
         if(Input.GetKeyDown(KeyCode.B)) UpdateDisplay(11);
         if(Input.GetKeyDown(KeyCode.C)) UpdateDisplay(12);
