@@ -128,20 +128,14 @@ public class DisplayManagerScript : MonoBehaviour
                 bucketPaint3.GetComponent<SpriteRenderer>().material.SetColor("_Color", new Color(redVal, greenVal, blueVal, 1f));
                 bucketPaint2.GetComponent<SpriteRenderer>().material.SetColor("_Color", new Color(redVal,greenVal,blueVal,1f));
                 bucketPaint1.GetComponent<SpriteRenderer>().material.SetColor("_Color", new Color(redVal,greenVal,blueVal,1f));
-                if (_bricksIndex < _bricksLength) {
-                    _bricks[_bricksIndex].GetComponent<SpriteRenderer>().material.SetColor("_Color", new Color(redVal,greenVal,blueVal,1f));
-                    _bricksIndex++;
-                }
-                else {
-                    // TODO: Exit Game
-                }
+                StartCoroutine(ColorBrick());
                 ResetLEDs();
                 StartCoroutine(ResetBucket());
                 break;
             default:
                 break;
         }
-        _inputManager.ResetDisplays();
+        StartCoroutine(_inputManager.ResetDisplays());
         _tryValue = false;
         _boxSpawner.StartBoxes();
         //_assembledBoxSpawner.CreateBox(_value);
@@ -154,8 +148,19 @@ public class DisplayManagerScript : MonoBehaviour
             led.ChangeNumber(0);
         }
     }
+
+    IEnumerator ColorBrick() {
+        yield return new WaitForSeconds(2.2f);
+        if (_bricksIndex < _bricksLength) {
+                    _bricks[_bricksIndex].GetComponent<SpriteRenderer>().material.SetColor("_Color", new Color(redVal,greenVal,blueVal,1f));
+                    _bricksIndex++;
+                }
+        else {
+                    // TODO: Exit Game
+                }
+    }
     IEnumerator ResetBucket() {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.8f);
         _bucketAnimator1.SetTrigger("Reset");
         _bucketAnimator2.SetTrigger("Reset");
         _bucketAnimator3.SetTrigger("Reset");

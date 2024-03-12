@@ -6917,7 +6917,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8495857792815912785, guid: fc139a71f78a6654081a164b53e150f8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.0005
       objectReference: {fileID: 0}
     - target: {fileID: 8495857792815912785, guid: fc139a71f78a6654081a164b53e150f8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7452,6 +7452,10 @@ MonoBehaviour:
   - {fileID: 657181188, guid: 9c70f251ce1fe758f88d7ad9b4b1e4f4, type: 3}
   - {fileID: -703557903, guid: 9c70f251ce1fe758f88d7ad9b4b1e4f4, type: 3}
   - {fileID: -458814729, guid: 9c70f251ce1fe758f88d7ad9b4b1e4f4, type: 3}
+  binaryDisplay: {fileID: 1928440204}
+  binDisplaySprites:
+  - {fileID: 21300000, guid: 34eb80309de517e4cae011e83424bfe2, type: 3}
+  - {fileID: 21300000, guid: 3400a0b0c157a8e40ba299271ee2c4f8, type: 3}
 --- !u!4 &1641780253 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7501054142496361118, guid: 2adadd41c9bfec145a5384d88add6a86, type: 3}
@@ -7499,7 +7503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8495857792815912785, guid: fc139a71f78a6654081a164b53e150f8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.0005
       objectReference: {fileID: 0}
     - target: {fileID: 8495857792815912785, guid: fc139a71f78a6654081a164b53e150f8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8585,7 +8589,7 @@ SpriteRenderer:
   m_SortingLayerID: 135135225
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 459f4dcee6200aa40a7497f7c8405818, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 34eb80309de517e4cae011e83424bfe2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9417,7 +9421,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8495857792815912785, guid: fc139a71f78a6654081a164b53e150f8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.0005
       objectReference: {fileID: 0}
     - target: {fileID: 8495857792815912785, guid: fc139a71f78a6654081a164b53e150f8, type: 3}
       propertyPath: m_LocalPosition.z

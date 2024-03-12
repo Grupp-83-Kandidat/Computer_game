@@ -10,11 +10,15 @@ public class HexDisplayManagerScipt : MonoBehaviour
     public Sprite[] sprites = new Sprite[17];
     private int[] hexValues = new int[2];
     private int index;
+    public BinaryEightDisplayScript binaryDisplay;
+    public Sprite[] binDisplaySprites = new Sprite[2];
+    private SpriteRenderer _BinDispRenderer;
     
     // Start is called before the first frame update
     void Start()
     {
         activeDisplay = displays[0];
+        _BinDispRenderer = binaryDisplay.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -22,10 +26,12 @@ public class HexDisplayManagerScipt : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow)) {
             activeDisplay = displays[0];
+            _BinDispRenderer.sprite = binDisplaySprites[0];
             index = 0;
         }
         if (Input.GetKeyDown(KeyCode.RightArrow)) {
             activeDisplay = displays[1];
+            _BinDispRenderer.sprite = binDisplaySprites[1];
             index = 1;
         }
         if(Input.GetKeyDown(KeyCode.Alpha0)) UpdateDisplay(0);
@@ -49,7 +55,8 @@ public class HexDisplayManagerScipt : MonoBehaviour
         activeDisplay.SetSprite(sprites[val]);
         hexValues[index] = val;
     }
-    public void ResetDisplays(){
+    public IEnumerator ResetDisplays(){
+        yield return new WaitForSeconds(2f);
         displays[0].SetSprite(sprites[0]);
         displays[1].SetSprite(sprites[0]);
         hexValues[0] = 0;
