@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.UIElements;
 
 public class DisplayManagerScript : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class DisplayManagerScript : MonoBehaviour
     public BucketPaintScript bucketPaint1;
     public BucketPaintScript bucketPaint2;
     public BucketPaintScript bucketPaint3;
+    public BackgroundScript background;
     private int _value;
     private int _score;
     private bool _tryValue = false;
@@ -28,6 +30,9 @@ public class DisplayManagerScript : MonoBehaviour
     private float blueVal;
     private float greenVal;
     private float redVal;
+    private List<BrickScript> _bricks = new List<BrickScript>();
+    private int _bricksLength;
+    private int _bricksIndex = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +53,11 @@ public class DisplayManagerScript : MonoBehaviour
         _bucketAnimator1 = bucketPaint1.GetComponent<Animator>();
         _bucketAnimator2 = bucketPaint2.GetComponent<Animator>();
         _bucketAnimator3 = bucketPaint3.GetComponent<Animator>();
+        //background.GetComponents(_bricks);
+        background.GetComponentsInChildren(_bricks);
+        _bricksLength = _bricks.Count;
+        Debug.Log(_bricksLength);
+
         _stage = 0;
         StartCoroutine(_boxSpawner.OnStart());
     }
@@ -118,6 +128,13 @@ public class DisplayManagerScript : MonoBehaviour
                 bucketPaint3.GetComponent<SpriteRenderer>().material.SetColor("_Color", new Color(redVal, greenVal, blueVal, 1f));
                 bucketPaint2.GetComponent<SpriteRenderer>().material.SetColor("_Color", new Color(redVal,greenVal,blueVal,1f));
                 bucketPaint1.GetComponent<SpriteRenderer>().material.SetColor("_Color", new Color(redVal,greenVal,blueVal,1f));
+                if (_bricksIndex < _bricksLength) {
+                    _bricks[_bricksIndex].GetComponent<SpriteRenderer>().material.SetColor("_Color", new Color(redVal,greenVal,blueVal,1f));
+                    _bricksIndex++;
+                }
+                else {
+                    // TODO: Exit Game
+                }
                 ResetLEDs();
                 StartCoroutine(ResetBucket());
                 break;
