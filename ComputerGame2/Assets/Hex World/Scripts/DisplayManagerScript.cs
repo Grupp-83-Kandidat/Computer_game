@@ -34,6 +34,7 @@ public class DisplayManagerScript : MonoBehaviour
     private List<BrickScript> _bricks = new List<BrickScript>();
     private int _bricksLength;
     private int _bricksIndex = 0;
+    private GameObject[] AssemblyLines;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,16 +50,17 @@ public class DisplayManagerScript : MonoBehaviour
         }
     }
     private void Init() {
+        AddAssemblyLines();
         _boxSpawner = FindFirstObjectByType<BinEightBoxSpawnerScript>();
         _inputManager = FindAnyObjectByType<HexDisplayManagerScipt>();
         _bucketAnimator1 = bucketPaint1.GetComponent<Animator>();
         _bucketAnimator2 = bucketPaint2.GetComponent<Animator>();
         _bucketAnimator3 = bucketPaint3.GetComponent<Animator>();
-        //background.GetComponents(_bricks);
         background.GetComponentsInChildren(_bricks);
         _bricks = _bricks.OrderBy( x => Random.value ).ToList();
         _bricksLength = _bricks.Count;
-        Debug.Log(_bricksLength);
+        UpdateAssembly(true);
+        //Debug.Log(_bricksLength);
 
         _stage = 0;
         StartCoroutine(_boxSpawner.OnStart());
@@ -82,6 +84,7 @@ public class DisplayManagerScript : MonoBehaviour
         //UpdateAssembly(false);
         _boxSpawner.StopBoxes();
         _tryValue = true;
+        UpdateAssembly(false);
     }
 
     public void UpdateDisplay(int val)
@@ -94,6 +97,7 @@ public class DisplayManagerScript : MonoBehaviour
     private void OnSuccess()
     {
         //UpdateAssembly(true);
+        UpdateAssembly(true);
         int[] values = _inputManager.GetValues();
         switch (_stage)
         {
@@ -168,6 +172,18 @@ public class DisplayManagerScript : MonoBehaviour
         _bucketAnimator3.SetTrigger("Reset");
     }
 
+    private void UpdateAssembly(bool on)
+    {
+        foreach(GameObject line in AssemblyLines)
+        {
+            line.GetComponent<Animator>().SetBool("isOn", on);
+        }
+    }
+
+    private void AddAssemblyLines()
+    {
+        AssemblyLines = GameObject.FindGameObjectsWithTag("Assembly");
+    }
 }
 
 
