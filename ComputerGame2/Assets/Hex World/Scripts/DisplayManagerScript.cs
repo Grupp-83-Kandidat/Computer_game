@@ -135,7 +135,8 @@ public class DisplayManagerScript : MonoBehaviour
                 bucketPaint2.GetComponent<SpriteRenderer>().material.SetColor("_Color", new Color(redVal,greenVal,blueVal,1f));
                 bucketPaint1.GetComponent<SpriteRenderer>().material.SetColor("_Color", new Color(redVal,greenVal,blueVal,1f));
                 StartCoroutine(ColorBrick());
-                ResetLEDs();
+                StartCoroutine(ResetLEDs());
+                // ResetLEDs(); 
                 StartCoroutine(ResetBucket());
                 break;
             default:
@@ -148,12 +149,20 @@ public class DisplayManagerScript : MonoBehaviour
         _boxSpawner.CreateBox();
         //_score += 50;
     }
-    private void ResetLEDs(){
+
+    public IEnumerator ResetLEDs(){
+        yield return new WaitForSeconds(2f); 
         foreach (HexUpperLEDScript led in UpperLEDs)
         {
-            led.ChangeNumber(0);
+            led.ChangeNumber(0); 
         }
     }
+    // private void ResetLEDs(){
+    //     foreach (HexUpperLEDScript led in UpperLEDs)
+    //     {
+    //         led.ChangeNumber(0);
+    //     }
+    // }
 
     IEnumerator ColorBrick() {
         yield return new WaitForSeconds(2.2f);
