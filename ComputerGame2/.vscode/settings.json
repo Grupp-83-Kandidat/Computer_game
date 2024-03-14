@@ -56,5 +56,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "ComputerGame2.sln"
+    "dotnet.defaultSolution": "ComputerGame2.sln",
+    "liveshare.publishWorkspaceInfo": true
 }
