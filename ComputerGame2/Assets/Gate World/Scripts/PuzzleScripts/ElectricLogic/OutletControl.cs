@@ -21,6 +21,8 @@ public class OutletControl : MonoBehaviour
             case "oneAtATime":
                 InvokeRepeating("OneAtATime", 1, flickerSpeed);
             break;
+            case "Switches": 
+                break;
         }
     }
 
