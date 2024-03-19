@@ -154,7 +154,7 @@ public class BigDispManager : MonoBehaviour
     {
         while (_multiplier > 1)
         {
-            yield return new WaitForSeconds((float) 4.4);
+            yield return new WaitForSeconds((float) 10);
             if (_multiplier > 1) _multiplier -= 1;
         }
     }

@@ -20,7 +20,8 @@ public class ScenesManager : MonoBehaviour
         MainMenu,
         BinaryPuzzle1,
         BinaryPuzzle2,
-        Overworld
+        Overworld1,
+        Overworld2
     }
 
     public void LoadScene(Scene scene)
@@ -30,7 +31,8 @@ public class ScenesManager : MonoBehaviour
 
     public void LoadNewGame()
     {
-        SceneManager.LoadScene(Scene.Overworld.ToString()); 
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene(Scene.Overworld1.ToString()); 
     }
 
     public void LoadNextScene()
@@ -62,14 +64,28 @@ public class ScenesManager : MonoBehaviour
         StartCoroutine(UnloadMainAsync());
     }
 
-    IEnumerator UnloadMainAsync()
+    private IEnumerator UnloadMainAsync()
     {
         AsyncOperation loaded = SceneManager.UnloadSceneAsync(Scene.MainMenu.ToString());
         while (!loaded.isDone)
         {
             yield return null;
         }
-        Debug.Log(loaded.isDone);
+    }
+
+    public void LoadOverworld()
+    {
+        StartCoroutine(LoadOverworldAsync());   
+    }
+
+    private IEnumerator LoadOverworldAsync()
+    {
+        AsyncOperation loaded = SceneManager.LoadSceneAsync(Scene.Overworld1.ToString());
+        while (!loaded.isDone)
+        {
+            yield return null;
+        }
+
     }
 
     public void QuitGame()
