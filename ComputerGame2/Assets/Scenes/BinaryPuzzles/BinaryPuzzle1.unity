@@ -700,8 +700,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -420, y: 245}
-  m_SizeDelta: {x: 70, y: 70}
+  m_AnchoredPosition: {x: -426, y: 211}
+  m_SizeDelta: {x: 70, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &373316309
 MonoBehaviour:
@@ -716,11 +716,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: -837980095, guid: 737d47eab872f7549bcd8bd9f4c3ef0c, type: 3}
-  - {fileID: 231896289, guid: 737d47eab872f7549bcd8bd9f4c3ef0c, type: 3}
-  - {fileID: 509682637, guid: 737d47eab872f7549bcd8bd9f4c3ef0c, type: 3}
-  - {fileID: 548772978, guid: 737d47eab872f7549bcd8bd9f4c3ef0c, type: 3}
-  - {fileID: 286642406, guid: 737d47eab872f7549bcd8bd9f4c3ef0c, type: 3}
+  - {fileID: 1571957622, guid: 3e9cd0f00fe79324a8fdcdbde345e464, type: 3}
+  - {fileID: 2085693560, guid: 3e9cd0f00fe79324a8fdcdbde345e464, type: 3}
+  - {fileID: 1222536260, guid: 3e9cd0f00fe79324a8fdcdbde345e464, type: 3}
+  - {fileID: 772625606, guid: 3e9cd0f00fe79324a8fdcdbde345e464, type: 3}
+  - {fileID: -63070690, guid: 3e9cd0f00fe79324a8fdcdbde345e464, type: 3}
 --- !u!114 &373316310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1625,7 +1625,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 135135225
-  m_SortingLayer: 1
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ba53c2b6a8a3be64c9c7a2302846409c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
