@@ -21,7 +21,8 @@ public class ScenesManager : MonoBehaviour
         BinaryPuzzle1,
         BinaryPuzzle2,
         Overworld1,
-        Overworld2
+        Overworld2,
+        HexPuzzle1
     }
 
     public void LoadScene(Scene scene)

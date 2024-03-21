@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Overworld2.unity
     guid: eb1459394c4a2834cbebea74e50cb898
+  - enabled: 1
+    path: Assets/Scenes/HexPuzzle1.unity
+    guid: 5aadbac749764fc4da1d2e025ed2ecc2
   m_configObjects: {}
