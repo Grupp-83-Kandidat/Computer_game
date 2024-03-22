@@ -3247,8 +3247,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 21300000, guid: 8a76b01d998f6584fa62f0973e220063, type: 3}
-  - {fileID: 21300000, guid: 989941294c9e6554c97ce43b01e58688, type: 3}
+  - {fileID: 21300000, guid: 57da1b2c55afa3c40908a2383b6d92d2, type: 3}
+  - {fileID: 21300000, guid: 5944d931fe4621e4ebfe09e0a5ff3168, type: 3}
   img: {fileID: 2097521468}
   parent: {fileID: 1893206145}
 --- !u!114 &1555470493

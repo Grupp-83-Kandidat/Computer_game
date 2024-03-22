@@ -13,6 +13,7 @@ public class BigDispManager : MonoBehaviour
     private AssembledBoxSpawnerScript _assembledBoxSpawner;
     private Dialogue2 _dialogue;
     [SerializeField] GameObject HintPrompt;
+    [SerializeField] GameObject WellDoneTxt;
 
     private int _val;
     private int _index;
@@ -108,6 +109,7 @@ public class BigDispManager : MonoBehaviour
         yield return new WaitForSeconds((float)0.4);
         _score += 30 * _multiplier;
         _boxesCompleted++;
+        WellDoneTxt.SetActive(true);
         DestroyBoxes();
         _assembledBoxSpawner.CreateBox(_val);
         StartBoxes();
