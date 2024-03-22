@@ -630,7 +630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _newGame: {fileID: 1868587858}
-  _exitGame: {fileID: 0}
+  _exitGame: {fileID: 2077941080}
 --- !u!1 &1705863559
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,6 +866,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2674358401028027486, guid: 870b18f053fd215188f7625ba4321458, type: 3}
   m_PrefabInstance: {fileID: 2077941077}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2077941080 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1214849993077847314, guid: 870b18f053fd215188f7625ba4321458, type: 3}
+  m_PrefabInstance: {fileID: 2077941077}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -22,7 +22,9 @@ public class ScenesManager : MonoBehaviour
         BinaryPuzzle2,
         Overworld1,
         Overworld2,
-        HexPuzzle1
+        HexPuzzle1,
+        TerminalIntro,
+        TerminalHex
     }
 
     public void LoadScene(Scene scene)
@@ -33,7 +35,7 @@ public class ScenesManager : MonoBehaviour
     public void LoadNewGame()
     {
         PlayerPrefs.DeleteAll();
-        SceneManager.LoadScene(Scene.Overworld1.ToString()); 
+        SceneManager.LoadScene(Scene.TerminalIntro.ToString()); 
     }
 
     public void LoadNextScene()
