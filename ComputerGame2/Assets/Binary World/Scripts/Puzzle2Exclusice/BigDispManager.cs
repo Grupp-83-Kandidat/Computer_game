@@ -12,6 +12,7 @@ public class BigDispManager : MonoBehaviour
     private Animator[] _animators = new Animator[2];
     private AssembledBoxSpawnerScript _assembledBoxSpawner;
     private Dialogue2 _dialogue;
+    [SerializeField] GameObject HintPrompt;
 
     private int _val;
     private int _index;
@@ -71,6 +72,7 @@ public class BigDispManager : MonoBehaviour
             StopBoxes();
             _tryValue = true;
             UpdateAssembly(false);
+            StartCoroutine(CountdownDispHint());
         }
     }
 
@@ -125,6 +127,12 @@ public class BigDispManager : MonoBehaviour
         {
             EndPuzzle();
         }
+    }
+
+    IEnumerator CountdownDispHint()
+    {
+        yield return new WaitForSeconds(10);
+        HintPrompt.SetActive(true);
     }
 
     private void EndPuzzle()
