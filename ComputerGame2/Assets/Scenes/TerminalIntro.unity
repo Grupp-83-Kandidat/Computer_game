@@ -478,8 +478,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
+  m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -566,13 +566,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - "Hej och varmt valkommen till den bin\xE4ra v\xE4rlden!"
-  - 'Binara tal ar en viktig komponent i den grundlaggande datortekniken. Du forstar,
-    datorer forstar bara ettor och nollor sa for att verkligen forsta hur en dator
-    fungerar ar det viktigt att forsta binara tal. For en dator kallas detta maskinkod
-    och det ar sa den komunicerar. '
-  - 'Din uppgift ar att hjalpa arbetaren i datorn att oversatta och utfora operationer
-    med binara tal och decimala tal. '
+  - "Hej och varmt v\xE4lkommen till den bin\xE4ra v\xE4rlden!"
+  - "Bin\xE4ra tal \xE4r en viktig komponent i den grundl\xE4ggande datortekniken.
+    Datorer f\xF6rst\xE5r bara ettor och nollor. Detta kallas f\xF6r maskinkod och
+    det \xE4r d\xE4rf\xF6r det \xE4r viktigt att veta hur bin\xE4ra tal fungerar."
+  - "I den h\xE4r modulen kommer du f\xE5 l\xE4ra dig hur man \xF6vers\xE4tter decimala
+    tal till bin\xE4ra tal och hur man adderar bin\xE4ra tal med varandra. "
+  - "Datorn best\xE5r av m\xE4ngder av olika komponenter. Ett exempel p\xE5 en s\xE5dan
+    komponent \xE4r ALUn som utf\xF6r aritmetiska operationer p\xE5 just bin\xE4ra
+    tal."
   - Lycka till!
   text: {fileID: 1225779275}
   promptText: {fileID: 1730002739}

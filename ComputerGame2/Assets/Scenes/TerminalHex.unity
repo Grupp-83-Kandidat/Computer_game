@@ -612,8 +612,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
+  m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -700,8 +700,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - "Hej och v\xE4lkommen till hex-v\xE4rlden!"
-  - Blablabla
+  - "Grattis! Du har nu klarat dig genom den bin\xE4ra v\xE4rlden och forts\xE4tter
+    nu in i den hexadecimala v\xE4rlden."
+  - "Hexadecimala tal \xE4r tal med basen 16. Dessa tal \xE4r v\xE4ldigt anv\xE4ndbara
+    i datorsammanhang eftersom det \xE4r v\xE4ldigt l\xE4tt att gruppera tal i hela
+    bytes. En byte \xE4r 8 bitar och varje bit kan representeras av en etta eller
+    en nolla. De \xE4r \xE4ven v\xE4ldigt l\xE4tta att \xF6vers\xE4tta i bin\xE4ra
+    tal. "
+  - "I den h\xE4r v\xE4rlden kommer du f\xE5 l\xE4ra dig hur du konverterar bin\xE4ra
+    tal till hexadecimala tal och f\xE5 se hur f\xE4rg kan representeras med hexadecimala
+    tal. "
   - Lycka till!
   text: {fileID: 1293833529}
   promptText: {fileID: 1589860730}
