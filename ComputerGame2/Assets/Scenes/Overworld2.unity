@@ -8217,7 +8217,7 @@ MonoBehaviour:
   interactIcon: {fileID: 795893963}
   scene: 5
   animation: {fileID: 1218413977}
-  requiresPrevious: 1
+  requiresPrevious: 0
   PreviousLevelRequiredKey: 2
 --- !u!61 &1218413976
 BoxCollider2D:
