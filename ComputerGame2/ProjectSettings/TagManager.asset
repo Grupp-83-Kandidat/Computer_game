@@ -7,6 +7,17 @@ TagManager:
   - Slot
   - Assembly
   - Frame
+  - Wire
+  - CircuitSlot
+  - AND
+  - OR
+  - NOR
+  - XOR
+  - Output
+  - InventorySlot
+  - Pulse
+  - NAND
+  - XNOR
   layers:
   - Default
   - TransparentFX
