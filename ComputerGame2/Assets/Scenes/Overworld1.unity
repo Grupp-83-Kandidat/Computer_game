@@ -7917,7 +7917,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interactTxt: {fileID: 454082625}
   sceneToBeat: 2
-  nextScene: 4
+  nextScene: 7
   exitRight: 1
 --- !u!61 &1719971943
 BoxCollider2D:
