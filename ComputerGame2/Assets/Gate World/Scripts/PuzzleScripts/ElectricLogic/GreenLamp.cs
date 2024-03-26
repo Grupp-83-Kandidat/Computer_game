@@ -21,10 +21,15 @@ public class GreenLamp : ElectricityControll
         conduncting = OnCollision(input, inputList);
 
         if(conduncting){
-             GetComponent<UnityEngine.UI.Image>().sprite = litLamp;
+            GetComponent<UnityEngine.UI.Image>().sprite = litLamp;
+            Invoke("CompletedLevel", 500*Time.deltaTime);
         }
+
         else{
             GetComponent<UnityEngine.UI.Image>().sprite = unlitLamp;
         }
+    }
+    void CompletedLevel(){
+        transform.root.Find("Victory").gameObject.SetActive(true);
     }
 }

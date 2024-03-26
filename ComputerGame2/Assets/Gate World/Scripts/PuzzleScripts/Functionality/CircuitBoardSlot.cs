@@ -24,7 +24,7 @@ public class CircuitBoardSlot : InventorySlot
         //Do this to differentiate them from the inventory slots
         instantiated = true;
         inventory = false;
-        itemSlots = 1 + 3;
+        itemSlots = 1 + 4;
 
         //Get all components we need
         input1 = transform.GetChild(0).GetComponent<Collider2D>();
@@ -43,7 +43,7 @@ public class CircuitBoardSlot : InventorySlot
         };
     }
 
-    protected override void Update(){
+    protected void Update(){
         //Will look for collision and if the collided object is conducting set input1/2 to conducting
         input1Conducting = electricControl.OnCollision(input1, input1List);
 
@@ -56,8 +56,8 @@ public class CircuitBoardSlot : InventorySlot
 
     protected void IsConducting(){
         //The gate in the slot will appear as a child that is last in the list of children, the gates are all tagged as "AND", "OR" and so on
-        if(transform.childCount>3){
-            gate = transform.GetChild(3).tag;
+        if(transform.childCount>4){
+            gate = transform.GetChild(4).tag;
             TableCheck(gate);
         }
         else{

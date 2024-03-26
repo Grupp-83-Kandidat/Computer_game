@@ -15,6 +15,9 @@ TagManager:
   - XOR
   - Output
   - InventorySlot
+  - Pulse
+  - NAND
+  - XNOR
   layers:
   - Default
   - TransparentFX

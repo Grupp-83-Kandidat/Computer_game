@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.EventSystems;
 
 
 public class DialogKontroll : MonoBehaviour
@@ -12,7 +13,9 @@ public class DialogKontroll : MonoBehaviour
     private Queue<string> paragrafer = new Queue<string>();
 
     private bool konversation_klar = false;
-    private bool isTyping;
+    public bool isTyping;
+
+    public bool click;
 
     private string p;
 
@@ -41,6 +44,7 @@ public class DialogKontroll : MonoBehaviour
             konversation_klar = true;
         }
     }
+
 
     private void StartConversation(Dialoguetext dialoguetext){
         if (!gameObject.activeSelf){
@@ -74,11 +78,12 @@ public class DialogKontroll : MonoBehaviour
 
             visadText = NPCDialogText.text.Insert(alpha, HTML_ALPHA);
             NPCDialogText.text = visadText;
-
-            yield return new WaitForSeconds(MAX_TID / skrivHastighet);
+            if(!click){
+                yield return new WaitForSeconds(MAX_TID / skrivHastighet);
+            }
         }
 
-
         isTyping = false;
+        click = false;
     }
 }

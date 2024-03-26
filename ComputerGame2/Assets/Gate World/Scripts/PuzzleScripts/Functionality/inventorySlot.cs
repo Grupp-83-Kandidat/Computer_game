@@ -2,23 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 public class InventorySlot : MonoBehaviour, IDropHandler
 {
     public int itemSlots;
     public bool instantiated;
     public bool inventory = true;
-    public UnityEngine.UI.Image image;
 
-    protected virtual void Update(){
-        //This activates the small box above the inventory slot, was planned to be a counter, but might be uneccesary
-        if(instantiated && inventory)
-            if(transform.childCount >=2){
-                image.gameObject.SetActive(true);
-            }
-            else{
-                image.gameObject.SetActive(false);
-            }
-    }
+    [SerializeField] private AudioClip _clip;
+
+    [SerializeField] private AudioSource _source;
+
+
     //The OnDrop function will detect when a object is "dropped", when a EndDrag event ends, all this is part of the eventsystems package
     public void OnDrop(PointerEventData eventData)
     {
@@ -29,11 +24,13 @@ public class InventorySlot : MonoBehaviour, IDropHandler
     }
 
     public virtual bool CanPlace(Transform gate){
+
         if (transform.childCount < itemSlots && instantiated){
             if(transform.tag == "inventory" && gate.tag == transform.GetChild(0).tag){
+                _source.PlayOneShot(_clip);
                 return true;
             }
-
+            _source.PlayOneShot(_clip);
             return CompareTag("CircuitSlot");
         }
         else{

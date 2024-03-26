@@ -49,7 +49,8 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
         //This past sets position of the gate to the parents position and lets it be "seen" by the program again, needs to be done otherwise you cant pick it up again
         Vector3 parentPos = transform.parent.transform.position;
         parentPos.z = 0;
-        transform.position = parentPos;
+        Vector3 offset = new(-1, 0, 0);
+        transform.position = parentPos + offset;
         image.raycastTarget = true;
 
         parentAfterDrag = null;

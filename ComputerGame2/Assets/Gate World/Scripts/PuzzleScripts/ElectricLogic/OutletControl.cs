@@ -32,6 +32,7 @@ public class OutletControl : MonoBehaviour
         if(currentChild>=numberOfOutlets -1){
             currentChild = 0;
         }
+        //
         else{
             currentChild++;
         }
