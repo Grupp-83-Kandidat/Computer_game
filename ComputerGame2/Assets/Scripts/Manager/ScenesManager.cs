@@ -76,19 +76,33 @@ public class ScenesManager : MonoBehaviour
         }
     }
 
-    public void LoadOverworld()
+    public void LoadOverworld1()
     {
-        StartCoroutine(LoadOverworldAsync());   
+        StartCoroutine(LoadOverworld1Async());   
     }
 
-    private IEnumerator LoadOverworldAsync()
+    private IEnumerator LoadOverworld1Async()
     {
         AsyncOperation loaded = SceneManager.LoadSceneAsync(Scene.Overworld1.ToString());
         while (!loaded.isDone)
         {
             yield return null;
         }
+    }
 
+
+    public void LoadOverworld2()
+    {
+        StartCoroutine(LoadOverworld2Async()); 
+    }
+
+    private IEnumerator LoadOverworld2Async()
+    {
+        AsyncOperation loaded = SceneManager.LoadSceneAsync(Scene.Overworld2.ToString()); 
+        while (!loaded.isDone)
+        {
+            yield return null; 
+        }
     }
 
     public void QuitGame()

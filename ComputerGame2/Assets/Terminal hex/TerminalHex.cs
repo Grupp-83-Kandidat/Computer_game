@@ -29,7 +29,7 @@ public class TerminalHex : MonoBehaviour
                 {
                     Debug.Log("Got here");
                     StopAllCoroutines();
-                    ScenesManager.Instance.LoadScene(ScenesManager.Scene.Overworld2);
+                    ScenesManager.Instance.LoadOverworld2(); 
                 }
             if (text.text.ToString() == lines[index]){
                 promptText.gameObject.SetActive(false);
@@ -65,7 +65,7 @@ public class TerminalHex : MonoBehaviour
         else{
             Debug.Log("Got here");
             StopAllCoroutines();
-            ScenesManager.Instance.LoadScene(ScenesManager.Scene.Overworld2);
+            ScenesManager.Instance.LoadOverworld2(); 
         }
     }
 }

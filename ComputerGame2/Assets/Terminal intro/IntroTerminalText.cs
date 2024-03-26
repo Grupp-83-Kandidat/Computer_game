@@ -30,7 +30,7 @@ public class IntroTerminalText : MonoBehaviour
                 {
                     Debug.Log("Got here");
                     StopAllCoroutines();
-                    ScenesManager.Instance.LoadOverworld();
+                    ScenesManager.Instance.LoadOverworld1();
                 }
             if (text.text.ToString() == lines[index]){
                 promptText.gameObject.SetActive(false);
@@ -66,7 +66,7 @@ public class IntroTerminalText : MonoBehaviour
         else{
             Debug.Log("Got here");
             StopAllCoroutines();
-            ScenesManager.Instance.LoadOverworld();
+            ScenesManager.Instance.LoadOverworld1();
         }
     }
 }

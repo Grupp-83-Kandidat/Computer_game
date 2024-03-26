@@ -70,7 +70,7 @@ public class Dialogue : MonoBehaviour
                 if (index == endingLines.Length)
                 {
                     StopAllCoroutines();
-                    ScenesManager.Instance.LoadOverworld();
+                    ScenesManager.Instance.LoadOverworld1();
                 }
                 else if (lineText.text.ToString() == endingLines[index])
                 {
