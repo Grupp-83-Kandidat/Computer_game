@@ -39,9 +39,14 @@ public class BinaryButtonScript : MonoBehaviour
         return on;
     }
 
-    public void Awake()
+    public void Awaken()
     {
         awake = true;
+    }
+
+    public void Sleep()
+    {
+        awake = false;
     }
 
     public void ChangeOn()

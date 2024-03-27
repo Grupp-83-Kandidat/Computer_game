@@ -9,7 +9,8 @@ public class UIGameMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _mainMenu.onClick.AddListener(LoadMainMenu); 
+        //This leads to double loading
+        //_mainMenu.onClick.AddListener(LoadMainMenu); 
     }
 
     private void LoadMainMenu()

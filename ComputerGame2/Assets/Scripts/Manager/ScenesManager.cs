@@ -6,18 +6,25 @@ using UnityEngine.SceneManagement;
 public class ScenesManager : MonoBehaviour
 {
 
-    public static ScenesManager Instance; 
-
+    public static ScenesManager Instance;
+    private bool menuOpen;
 
     private void Awake()
     {
-        Instance = this; 
+        Instance = this;
+        menuOpen = false;
     }
 
     public enum Scene 
     {
         MainMenu,
-        BinaryPuzzle
+        BinaryPuzzle1,
+        BinaryPuzzle2,
+        Overworld1,
+        Overworld2,
+        HexPuzzle1,
+        TerminalIntro,
+        TerminalHex
     }
 
     public void LoadScene(Scene scene)
@@ -27,7 +34,8 @@ public class ScenesManager : MonoBehaviour
 
     public void LoadNewGame()
     {
-        SceneManager.LoadScene(Scene.BinaryPuzzle.ToString()); 
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene(Scene.TerminalIntro.ToString()); 
     }
 
     public void LoadNextScene()
@@ -36,10 +44,65 @@ public class ScenesManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); 
     }
 
+    public void OpenOrCloseMenu()
+    {
+        if (!menuOpen) {
+            LoadMainMenu();
+        }
+        else
+        {
+            UnloadMainMenu();
+        }
+        menuOpen = !menuOpen;
+    }
+
     public void LoadMainMenu()
     // On click action
     {
-        SceneManager.LoadScene(Scene.MainMenu.ToString()); 
+        SceneManager.LoadScene(Scene.MainMenu.ToString(), LoadSceneMode.Additive); 
+    }
+
+    public void UnloadMainMenu()
+    {
+        StartCoroutine(UnloadMainAsync());
+    }
+
+    private IEnumerator UnloadMainAsync()
+    {
+        AsyncOperation loaded = SceneManager.UnloadSceneAsync(Scene.MainMenu.ToString());
+        while (!loaded.isDone)
+        {
+            yield return null;
+        }
+    }
+
+    public void LoadOverworld1()
+    {
+        StartCoroutine(LoadOverworld1Async());   
+    }
+
+    private IEnumerator LoadOverworld1Async()
+    {
+        AsyncOperation loaded = SceneManager.LoadSceneAsync(Scene.Overworld1.ToString());
+        while (!loaded.isDone)
+        {
+            yield return null;
+        }
+    }
+
+
+    public void LoadOverworld2()
+    {
+        StartCoroutine(LoadOverworld2Async()); 
+    }
+
+    private IEnumerator LoadOverworld2Async()
+    {
+        AsyncOperation loaded = SceneManager.LoadSceneAsync(Scene.Overworld2.ToString()); 
+        while (!loaded.isDone)
+        {
+            yield return null; 
+        }
     }
 
     public void QuitGame()

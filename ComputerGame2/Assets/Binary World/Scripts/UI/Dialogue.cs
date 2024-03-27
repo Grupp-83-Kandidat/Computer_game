@@ -4,15 +4,22 @@ using TMPro;
 using System;
 using UnityEditor;
 using UnityEngine.Events;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Dialogue : MonoBehaviour
 {
     public TMP_Text lineText;
+    public TMP_Text speakingCharText;
     private BigDisplayScript _bigDisp;
     private BinaryButtonScript[] _binaryButtonScripts;
+    private AssembledBoxSpawnerScript _assembledBoxSpawner;
     public string[] lines;
+    public string[] endingLines;
     public float textSpeed;
     private int index;
+    private bool disableClick;
+    private bool ending;
     
     UnityEvent dialogueOver;
    
@@ -27,6 +34,9 @@ public class Dialogue : MonoBehaviour
     {
         _bigDisp = FindObjectOfType<BigDisplayScript>();
         _binaryButtonScripts = FindObjectsOfType<BinaryButtonScript>();
+        _assembledBoxSpawner = FindObjectOfType<AssembledBoxSpawnerScript>();
+        disableClick = false;
+        ending = false;
         CreateEvent();
     }
 
@@ -36,38 +46,73 @@ public class Dialogue : MonoBehaviour
         dialogueOver.AddListener(_bigDisp.OnDialogueEnd);
         foreach(BinaryButtonScript button in _binaryButtonScripts)
         {
-            dialogueOver.AddListener(button.Awake);
+            dialogueOver.AddListener(button.Awaken);
         }
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Space) && !disableClick)
         {
-            if (lineText.text.ToString() == lines[index])
+            if (!ending)
             {
-                NextLine();
-            }
-            else
+                if (lineText.text.ToString() == lines[index])
+                {
+                    NextLine();
+                }
+                else
+                {
+                    StopAllCoroutines();
+                    lineText.text = lines[index];
+                }
+            }else
             {
-                StopAllCoroutines();
-                lineText.text = lines[index];
+                if (index == endingLines.Length)
+                {
+                    StopAllCoroutines();
+                    ScenesManager.Instance.LoadOverworld1();
+                }
+                else if (lineText.text.ToString() == endingLines[index])
+                {
+                    NextEndingLine();
+                }
+                else
+                {
+                    StopAllCoroutines();
+                    lineText.text = endingLines[index];
+                }
+
             }
         }
     }
 
-    void startDialogue()
+    private void startDialogue()
     {
         index = 0;
-        StartCoroutine(TypeLine());
+        StartCoroutine(TypeLine(lines));
     }
 
-    IEnumerator TypeLine()
+    private IEnumerator TypeLine(String[] linesToType)
     {
-        foreach (char c in lines[index].ToCharArray()) {
+        foreach (char c in linesToType[index].ToCharArray()) {
             lineText.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
+    }
+
+    private IEnumerator TurnOnButtons()
+    {
+        yield return new WaitForSeconds(1);
+        ChangeOnButton(2);
+        yield return new WaitForSeconds(1);
+        ChangeOnButton(8);
+        yield return new WaitForSeconds(1);
+        _assembledBoxSpawner.CreateBox(10);
+        gameObject.GetComponent<Image>().color = new Color32(248, 242, 209, 226);
+        speakingCharText.text = "Sr.Bit";
+        disableClick = false;
+        StopAllCoroutines();
+        StartCoroutine(TypeLine(lines));
     }
 
     private void NextLine()
@@ -76,24 +121,80 @@ public class Dialogue : MonoBehaviour
         {
             index++;
             lineText.text = string.Empty;
-            StartCoroutine(TypeLine());
+            StartCoroutine(TypeLine(lines));
             if (index == 9)
             {
                 _bigDisp.UpdateDisplay(10);
             }
-            if (index == 12)
+            if (index == 13)
             {
-                _binaryButtonScripts[0].ChangeOn();
-                _binaryButtonScripts[2].ChangeOn();
+                PlayInteractiveTutorial();
             }
+
         }
         else
         {
-            _binaryButtonScripts[0].ChangeOn();
-            _binaryButtonScripts[2].ChangeOn();
-            _bigDisp.UpdateDisplay(0);
-            dialogueOver.Invoke();
-            gameObject.SetActive(false);
+            OnFinished();
         }
     }
+
+    private void NextEndingLine()
+    {
+        index++;
+        if (index < endingLines.Length - 1)
+        {
+            lineText.text = string.Empty;
+            StartCoroutine(TypeLine(endingLines));
+        }
+    }
+
+    private void PlayInteractiveTutorial()
+    {
+        gameObject.GetComponent<Image>().color = Color.clear;
+        speakingCharText.text = string.Empty;
+        lineText.text = string.Empty;
+        disableClick = true;
+        StopAllCoroutines();
+        StartCoroutine(TurnOnButtons());
+        
+    }
+
+    private void OnFinished()
+    {
+        if (index > 12)
+        {
+            ChangeOnButton(2);
+            ChangeOnButton(8);
+        }
+
+        _bigDisp.UpdateDisplay(0);
+        dialogueOver.Invoke();
+        gameObject.SetActive(false);
+    }
+
+
+    private void ChangeOnButton(int val)
+    {
+        foreach (BinaryButtonScript button in _binaryButtonScripts)
+        {
+            if (button.value == val) button.ChangeOn();
+        }
+    }
+
+    public void StartEnd()
+    {
+        index = 0;
+        ending = true;
+        disableClick = false;
+        lineText.text = string.Empty;
+        LevelsDoneManager.SetLevelDone(ScenesManager.Scene.BinaryPuzzle1);
+
+        foreach (BinaryButtonScript button in _binaryButtonScripts)
+        {
+            button.Sleep();
+        }
+
+        StartCoroutine(TypeLine(endingLines));
+    }
+
 }
