@@ -348,7 +348,7 @@ MonoBehaviour:
   itemSlots: 1
   instantiated: 0
   inventory: 0
-  _clip: {fileID: 8300000, guid: dfb7d3b987ee4df49aa906fc5d3c0697, type: 3}
+  _clip: {fileID: 8300000, guid: 408fa16950c5da04bad8ee40a2fff1e3, type: 3}
   _source: {fileID: 3646207530120492910}
   conduncting: 0
   input1Conducting: 0
