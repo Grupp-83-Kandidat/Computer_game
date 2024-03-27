@@ -5,14 +5,15 @@ using UnityEngine;
 public class QuizManager : MonoBehaviour
 {
     [SerializeField] private QuizUI quizUI;
-    [SerializeField]
+    [SerializeField] private QuizDataScriptable quizData;
     private List<Question> questions;
 
-    private Question selectedQuestion = new Question();
+    private Question selectedQuestion;
 
     // Start is called before the first frame update
     void Start()
     {
+        questions = quizData.questions;
         SelectQuestion(); 
     }
 

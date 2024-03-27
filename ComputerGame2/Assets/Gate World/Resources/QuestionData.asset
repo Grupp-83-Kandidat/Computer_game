@@ -13,38 +13,50 @@ MonoBehaviour:
   m_Name: QuestionData
   m_EditorClassIdentifier: 
   questions:
-  - questionInfo: 
+  - questionInfo: "Vilken gate ska ers\xE4tta nuvarande AND-gate med ing\xE5ngar
+      x &y"
     questionType: 1
-    questionImg: {fileID: 0}
+    questionImg: {fileID: 21300000, guid: 227fd417caecf4a6d8b6008ac7d0cd00, type: 3}
     questionClip: {fileID: 0}
     questionVideo: {fileID: 0}
-    options: []
-    correctAns: 
-  - questionInfo: 
+    options:
+    - OR
+    - NOR
+    - NAND
+    - XOR
+    correctAns: NAND
+  - questionInfo: "Vilken gate ska ers\xE4tta nuvarande AND-gate med ing\xE5ngar
+      x&w"
     questionType: 1
-    questionImg: {fileID: 0}
+    questionImg: {fileID: 21300000, guid: 227fd417caecf4a6d8b6008ac7d0cd00, type: 3}
     questionClip: {fileID: 0}
     questionVideo: {fileID: 0}
-    options: []
-    correctAns: 
-  - questionInfo: 
+    options:
+    - NOR
+    - NAND
+    - XOR
+    - OR
+    correctAns: NAND
+  - questionInfo: "Vilken gate ska ers\xE4tta nuvarande AND-gate med ing\xE5ngar
+      y&z"
     questionType: 1
-    questionImg: {fileID: 0}
+    questionImg: {fileID: 21300000, guid: 227fd417caecf4a6d8b6008ac7d0cd00, type: 3}
     questionClip: {fileID: 0}
     questionVideo: {fileID: 0}
-    options: []
-    correctAns: 
-  - questionInfo: 
+    options:
+    - NAND
+    - NOR
+    - XOR
+    - OR
+    correctAns: NAND
+  - questionInfo: "Vilken gate ska ers\xE4tta nuvarande OR-gate"
     questionType: 1
-    questionImg: {fileID: 0}
+    questionImg: {fileID: 21300000, guid: 227fd417caecf4a6d8b6008ac7d0cd00, type: 3}
     questionClip: {fileID: 0}
     questionVideo: {fileID: 0}
-    options: []
-    correctAns: 
-  - questionInfo: 
-    questionType: 1
-    questionImg: {fileID: 0}
-    questionClip: {fileID: 0}
-    questionVideo: {fileID: 0}
-    options: []
-    correctAns: 
+    options:
+    - NOR
+    - XOR
+    - OR
+    - NAND
+    correctAns: NAND
