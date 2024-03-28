@@ -161,15 +161,22 @@ public class Dialogue : MonoBehaviour
 
     private void OnFinished()
     {
-        if (index > 12)
+        if (ending)
         {
-            ChangeOnButton(2);
-            ChangeOnButton(8);
+            ScenesManager.Instance.LoadOverworld1();
         }
+        else
+        {
+            if (index > 12)
+            {
+                ChangeOnButton(2);
+                ChangeOnButton(8);
+            }
 
-        _bigDisp.UpdateDisplay(0);
-        dialogueOver.Invoke();
-        gameObject.SetActive(false);
+            _bigDisp.UpdateDisplay(0);
+            dialogueOver.Invoke();
+            gameObject.SetActive(false);
+        }
     }
 
 

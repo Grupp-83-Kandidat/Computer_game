@@ -10,12 +10,10 @@ public class BinaryButtonScript : MonoBehaviour
     public int value;
     private SpriteRenderer _spriteRenderer;
     public SevensegmentScript display;
-    private ButtonManagerScript bm;
 
     private void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        bm = FindObjectOfType<ButtonManagerScript>();
         awake = false;
     }
     private void OnMouseDown()
@@ -54,6 +52,12 @@ public class BinaryButtonScript : MonoBehaviour
         _spriteRenderer.color = new Color32(255, 255, 255, 255);
         on = !on;
         display.Change(on);
+    }
+
+    public void SetOn(bool val)
+    {
+        on = val;
+        display.Change(val);
     }
 
 }
