@@ -1036,7 +1036,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1214849993077847314, guid: 870b18f053fd215188f7625ba4321458, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadOverworld
+      value: LoadOverworld1
       objectReference: {fileID: 0}
     - target: {fileID: 1214849993077847314, guid: 870b18f053fd215188f7625ba4321458, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
