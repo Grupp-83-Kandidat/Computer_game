@@ -9,6 +9,9 @@ public class FactoryScript : MonoBehaviour
     private Transform player_pos;
     private SpriteRenderer spriteRenderer;
     private float x_pos;
+    public float x_max = 10.5f;
+    public float x_min = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +23,7 @@ public class FactoryScript : MonoBehaviour
     void Update()
     {
         x_pos = player_pos.position.x;
-        if (x_pos < 10.5 && x_pos > 0) {
+        if (x_pos < x_max && x_pos > x_min) {
             spriteRenderer.sprite = outsideWallTransparent;
         }
         else {
