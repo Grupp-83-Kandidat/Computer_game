@@ -8,6 +8,9 @@ using UnityEngine.EventSystems;
 public class Switches : MonoBehaviour, IPointerClickHandler
 {
     public bool switchedOn;
+    public bool locked = true;
+
+    private bool conducting;
     [SerializeField] Sprite switchOn;
     [SerializeField] Sprite switchOff;
     [SerializeField] private AudioClip _clip;
@@ -16,16 +19,21 @@ public class Switches : MonoBehaviour, IPointerClickHandler
     // Start is called before the first frame update
     public void OnPointerClick(PointerEventData eventData)
     {
-        switchedOn = !switchedOn;
-        _source.PlayOneShot(_clip);
-        if(switchedOn){
-            transform.GetComponent<UnityEngine.UI.Image>().sprite = switchOn;
-            transform.parent.GetComponent<Outlet>().conduncting = true;
-        }
-        
-        else{
-            transform.GetComponent<UnityEngine.UI.Image>().sprite = switchOff;
-            transform.parent.GetComponent<Outlet>().conduncting = false;
+
+        if(!locked){
+            switchedOn = !switchedOn;
+            _source.PlayOneShot(_clip);
+            conducting = transform.parent.GetComponent<Outlet>().conducting;
+
+            if(switchedOn && !conducting){
+                transform.GetComponent<UnityEngine.UI.Image>().sprite = switchOn;
+                transform.parent.GetComponent<Outlet>().conducting = true;
+            }
+
+            else{
+                transform.GetComponent<UnityEngine.UI.Image>().sprite = switchOff;
+                transform.parent.GetComponent<Outlet>().conducting = false;
+            }
         }
     }
 }

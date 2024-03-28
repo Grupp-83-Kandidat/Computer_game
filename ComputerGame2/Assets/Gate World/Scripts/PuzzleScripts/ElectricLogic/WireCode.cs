@@ -6,7 +6,7 @@ using UnityEngine.Windows;
  
 public class WireCode :ElectricityControll
 {   
-    public bool conduncting = false;
+    public bool conducting = false;
     private Collider2D input;
     private List<Collider2D> inputList = new(1);
     protected void Start(){
@@ -15,6 +15,6 @@ public class WireCode :ElectricityControll
 
     void Update(){
         //Check for collisions and state of Conducting of collided object
-        conduncting = OnCollision(input, inputList);
+        conducting = OnCollision(input, inputList);
     }
 }
