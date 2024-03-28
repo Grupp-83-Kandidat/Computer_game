@@ -8487,7 +8487,7 @@ MonoBehaviour:
   interactIcon: {fileID: 1726933197}
   scene: 2
   animation: {fileID: 1979619945}
-  requiresPrevious: 0
+  requiresPrevious: 1
   PreviousLevelRequiredKey: 1
 --- !u!61 &1979619944
 BoxCollider2D:
@@ -8620,8 +8620,8 @@ Transform:
   m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1726933200}
   - {fileID: 2016297311}
+  - {fileID: 1726933200}
   m_Father: {fileID: 1264027032}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2016188080
@@ -8739,7 +8739,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 3b70a41ea033927c9ae29028e38d055c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -8808,7 +8808,7 @@ Transform:
   m_GameObject: {fileID: 2016297308}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.000415643, y: 0.0008333722, z: 0}
+  m_LocalPosition: {x: 0.0020003316, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

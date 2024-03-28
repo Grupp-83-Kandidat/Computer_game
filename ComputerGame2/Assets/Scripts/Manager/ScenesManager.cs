@@ -24,7 +24,8 @@ public class ScenesManager : MonoBehaviour
         Overworld2,
         HexPuzzle1,
         TerminalIntro,
-        TerminalHex
+        TerminalHex,
+        TerminalGate
     }
 
     public void LoadScene(Scene scene)

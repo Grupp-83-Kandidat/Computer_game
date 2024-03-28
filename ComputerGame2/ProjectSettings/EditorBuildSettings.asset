@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TerminalIntro.unity
     guid: a7734e2d52a36a34aa5406521bf9b187
   - enabled: 1
+    path: Assets/Scenes/TerminalGate.unity
+    guid: 2b76f42d202c10f5e82a9fb2ce09c7d0
+  - enabled: 1
     path: Assets/Scenes/TerminalHex.unity
     guid: c90d705c0b80a26a9980317781520f44
   m_configObjects: {}
