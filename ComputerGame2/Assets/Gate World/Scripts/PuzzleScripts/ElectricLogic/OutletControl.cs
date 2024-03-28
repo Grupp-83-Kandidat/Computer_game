@@ -5,7 +5,7 @@ using UnityEngine;
 public class OutletControl : MonoBehaviour
 {
     [SerializeField] int numberOfOutlets = 2;
-    [SerializeField] string pattern = "oneAtATime";
+    [SerializeField] string pattern = "Switches";
 
     [SerializeField] float flickerSpeed = 3;
 
@@ -18,17 +18,18 @@ public class OutletControl : MonoBehaviour
     protected void Pattern(){
         //Invoke repeating will call the function every
         switch (pattern){
-            case "oneAtATime":
+            case "OneAtATime":
                 InvokeRepeating("OneAtATime", 1, flickerSpeed);
             break;
-            case "Switches": 
-                break;
+            case "Switches":
+                Unlock();
+            break;
         }
     }
 
     protected void OneAtATime(){
         //Will essentially loop through the children, set conducting to false child on and true on next child
-        transform.GetChild(currentChild).GetComponent<Outlet>().conduncting = false;
+        transform.GetChild(currentChild).GetComponent<Outlet>().conducting = false;
         if(currentChild>=numberOfOutlets -1){
             currentChild = 0;
         }
@@ -36,7 +37,14 @@ public class OutletControl : MonoBehaviour
         else{
             currentChild++;
         }
-        transform.GetChild(currentChild).GetComponent<Outlet>().conduncting = true;
+        transform.GetChild(currentChild).GetComponent<Outlet>().conducting = true;
+    }
+
+    private void Unlock(){
+        for(int i = 0; i < transform.childCount; i++){
+            transform.GetChild(i).Find("Switch").GetComponent<Switches>().locked = false;
+        }
+        
     }
 
 }

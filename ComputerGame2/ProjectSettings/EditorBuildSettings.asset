@@ -32,4 +32,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TerminalHex.unity
     guid: c90d705c0b80a26a9980317781520f44
+  - enabled: 1
+    path: Assets/Scenes/GatePuzzles/GatePuzzle1.unity
+    guid: ebedabb6f9ff7ba4cb36dc7889782c03
+  - enabled: 1
+    path: Assets/Scenes/GatePuzzles/GatePuzzle2.unity
+    guid: dbe86e295e108b24e9640bc918591e53
+  - enabled: 1
+    path: Assets/Scenes/GatePuzzles/GatePuzzle3.unity
+    guid: 1a22f820d8349c148af783d0f7d984ce
   m_configObjects: {}

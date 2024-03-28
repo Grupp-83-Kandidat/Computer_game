@@ -9,7 +9,7 @@ public class Lamp : MonoBehaviour
     [SerializeField] private Sprite litLamp;
 
     void Update(){  
-        if(transform.parent.GetComponent<CircuitBoardSlot>().conduncting){
+        if(transform.parent.GetComponent<CircuitBoardSlot>().conducting){
             transform.GetComponent<Image>().sprite = litLamp;
         }
         else{
