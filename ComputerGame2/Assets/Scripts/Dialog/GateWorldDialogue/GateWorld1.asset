@@ -14,32 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   namn: Mr. Bit
   paragrafer:
-  - 'Over here chap!
-
-'
-  - These logic gates wont fix themselfs
-  - WHAT?!?! You really dont understand how it works?
-  - 'Alright alright ill explain it, but you better get it. '
-  - Listen up! A logic gate takes two inputs, in this case two wires that conduct
-    electricity, and allows the electricity to flow through it depending on if none,
-    one or both of the wires are conducting electricity.
-  - Following so far?
-  - Hmmm we will see about that...
-  - Wether a wire is conducting electricity or not can be seen as a 1 or 0, a 1 if
-    it is conducting and a 0 if it is not.
-  - 'So the gate gets a combination of two one''s or zero''s, HUAH HUAH HUAH A ZERO!!!
-    Just like you.
-
-    *cough* *cough* Anyway...
-
-'
-  - 'There are a bunch of different so called "Logic gates".
-
-    One of which is
-    the "AND" gate. It allows electricity through(The output becomes a 1) if both
-    the inputs are 1. '
-  - Or the "OR" gate, which allows electricity through if one or both of the connected
-    wires are a 1.
-  - If you forget you can have a look in the instruction manual at the top left corner.
-    But dont dally too long.
-  - NOW GET TO WORK!!!!
+  - "Kom hit din sl\xF6fock!\n"
+  - "Dessa logiska grindar kommer inte koppla sig sj\xE4lva!"
+  - 'VA?!?! Vet du verkligen inte hur detta fungerar? '
+  - "N\xE5v\xE4l, l\xE5t mig f\xF6rklara. Lyssna noga nu. "
+  - "En logisk grind tar tv\xE5 ing\xE5ngar, i detta fall tv\xE5 ledare som leder
+    elektricitet, och l\xE5ter elektriciteten fl\xF6da genom den beroende p\xE5 om
+    ingen, en eller b\xE5da ledningarna leder elektricitet."
+  - "\xC4r du med s\xE5 l\xE5ngt?"
+  - "Hmmmm... Jag tror det n\xE4r jag ser det. "
+  - "Om en ledning leder elektricitet eller inte kan ses som 1 eller 0, 1 om den
+    leder och 0 om den inte g\xF6r det."
+  - "S\xE5 grinden f\xE5r en kombination av tv\xE5 ettor eller nollor. HAHAHA, EN
+    NOLLA! Precis som du.\n*host* *host* Hur som helst..."
+  - "Det finns en m\xE4ngd olika s\xE5 kallade \"logiska grindar\".\nEn av dem \xE4r
+    AND-grinden. Den sl\xE4pper igenom elektricitet (Utg\xE5ngen blir en 1) om b\xE5da
+    ing\xE5ngarna \xE4r 1."
+  - "Eller OR-grinden, som sl\xE4pper igenom elektricitet om en eller b\xE5da av
+    de anslutna ledningarna \xE4r en 1."
+  - "Om du gl\xF6mmer kan du titta i instruktionsboken i det \xF6vre h\xF6gra h\xF6rnet.
+    Men dr\xF6j inte f\xF6r l\xE4nge."
+  - "S\xE5... B\xD6RJA ARBETA!!"
