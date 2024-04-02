@@ -13,7 +13,7 @@ public class HexDisplayManagerScipt : MonoBehaviour
     public BinaryEightDisplayScript binaryDisplay;
     public Sprite[] binDisplaySprites = new Sprite[2];
     private SpriteRenderer _BinDispRenderer;
-    
+    private bool Active = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,32 +24,37 @@ public class HexDisplayManagerScipt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow)) {
-            activeDisplay = displays[0];
-            _BinDispRenderer.sprite = binDisplaySprites[0];
-            index = 0;
+        if (Active)
+        {
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                activeDisplay = displays[0];
+                _BinDispRenderer.sprite = binDisplaySprites[0];
+                index = 0;
+            }
+            if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                activeDisplay = displays[1];
+                _BinDispRenderer.sprite = binDisplaySprites[1];
+                index = 1;
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha0) || Input.GetKeyDown(KeyCode.Keypad0)) UpdateDisplay(0);
+            if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1)) UpdateDisplay(1);
+            if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2)) UpdateDisplay(2);
+            if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3)) UpdateDisplay(3);
+            if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Keypad4)) UpdateDisplay(4);
+            if (Input.GetKeyDown(KeyCode.Alpha5) || Input.GetKeyDown(KeyCode.Keypad5)) UpdateDisplay(5);
+            if (Input.GetKeyDown(KeyCode.Alpha6) || Input.GetKeyDown(KeyCode.Keypad6)) UpdateDisplay(6);
+            if (Input.GetKeyDown(KeyCode.Alpha7) || Input.GetKeyDown(KeyCode.Keypad7)) UpdateDisplay(7);
+            if (Input.GetKeyDown(KeyCode.Alpha8) || Input.GetKeyDown(KeyCode.Keypad8)) UpdateDisplay(8);
+            if (Input.GetKeyDown(KeyCode.Alpha9) || Input.GetKeyDown(KeyCode.Keypad9)) UpdateDisplay(9);
+            if (Input.GetKeyDown(KeyCode.A)) UpdateDisplay(10);
+            if (Input.GetKeyDown(KeyCode.B)) UpdateDisplay(11);
+            if (Input.GetKeyDown(KeyCode.C)) UpdateDisplay(12);
+            if (Input.GetKeyDown(KeyCode.D)) UpdateDisplay(13);
+            if (Input.GetKeyDown(KeyCode.E)) UpdateDisplay(14);
+            if (Input.GetKeyDown(KeyCode.F)) UpdateDisplay(15);
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow)) {
-            activeDisplay = displays[1];
-            _BinDispRenderer.sprite = binDisplaySprites[1];
-            index = 1;
-        }
-        if(Input.GetKeyDown(KeyCode.Alpha0) || Input.GetKeyDown(KeyCode.Keypad0)) UpdateDisplay(0);
-        if(Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1)) UpdateDisplay(1);
-        if(Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2)) UpdateDisplay(2);
-        if(Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3)) UpdateDisplay(3);
-        if(Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Keypad4)) UpdateDisplay(4);
-        if(Input.GetKeyDown(KeyCode.Alpha5) || Input.GetKeyDown(KeyCode.Keypad5)) UpdateDisplay(5);
-        if(Input.GetKeyDown(KeyCode.Alpha6) || Input.GetKeyDown(KeyCode.Keypad6)) UpdateDisplay(6);
-        if(Input.GetKeyDown(KeyCode.Alpha7) || Input.GetKeyDown(KeyCode.Keypad7)) UpdateDisplay(7);
-        if(Input.GetKeyDown(KeyCode.Alpha8) || Input.GetKeyDown(KeyCode.Keypad8)) UpdateDisplay(8);
-        if(Input.GetKeyDown(KeyCode.Alpha9) || Input.GetKeyDown(KeyCode.Keypad9)) UpdateDisplay(9);
-        if(Input.GetKeyDown(KeyCode.A)) UpdateDisplay(10);
-        if(Input.GetKeyDown(KeyCode.B)) UpdateDisplay(11);
-        if(Input.GetKeyDown(KeyCode.C)) UpdateDisplay(12);
-        if(Input.GetKeyDown(KeyCode.D)) UpdateDisplay(13);
-        if(Input.GetKeyDown(KeyCode.E)) UpdateDisplay(14);
-        if(Input.GetKeyDown(KeyCode.F)) UpdateDisplay(15);
     }
     private void UpdateDisplay(int val) {
         activeDisplay.SetSprite(sprites[val]);
@@ -68,5 +73,10 @@ public class HexDisplayManagerScipt : MonoBehaviour
     }
     public int[] GetValues() {
         return hexValues;
+    }
+
+    public void SetActive(bool val)
+    {
+        Active = val;
     }
 }
