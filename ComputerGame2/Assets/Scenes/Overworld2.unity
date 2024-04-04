@@ -5879,6 +5879,7 @@ MonoBehaviour:
   animation: {fileID: 544150006}
   requiresPrevious: 0
   PreviousLevelRequiredKey: 2
+  saveposVal: 0
 --- !u!61 &544150010
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6904,11 +6905,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2667286371721458702, guid: 68ee4efe34d63584b8134f0a830aeb9e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 13.84399
       objectReference: {fileID: 0}
     - target: {fileID: 2667286371721458702, guid: 68ee4efe34d63584b8134f0a830aeb9e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.29999995
+      value: -0.3000002
       objectReference: {fileID: 0}
     - target: {fileID: 2667286371721458702, guid: 68ee4efe34d63584b8134f0a830aeb9e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7078,7 +7079,7 @@ Transform:
   m_GameObject: {fileID: 974536954}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -25.873114, y: 1.6364737, z: -10.108724}
+  m_LocalPosition: {x: -13.787092, y: 1.6364739, z: -10.108724}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8665,7 +8666,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1765819710005436560, guid: 8919a47c3e47444478dec6fe4cde5ef3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.93
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1765819710005436560, guid: 8919a47c3e47444478dec6fe4cde5ef3, type: 3}
       propertyPath: m_LocalPosition.y

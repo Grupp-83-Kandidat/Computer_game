@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
@@ -12,7 +13,23 @@ public class Movement : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
-    
+
+    private void Start()
+    {
+        Vector3 delta = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        Vector3 newPos = new Vector3(PositionManager.Overworld1Pos, 0, 0);
+        this.transform.position = transform.position + newPos;
+        /*string scene = SceneManager.GetActiveScene().name;
+        Debug.Log(scene);
+        if (scene == "Overworld1") {
+            this.transform.position = new Vector3(PositionManager.Overworld1Pos, 1f, 0f);
+            Debug.Log(this.transform.position);
+        }else if (scene == "Overworld2")
+        {
+            this.transform.position = new Vector3(PositionManager.Overworld2Pos, 1, 0);
+        }*/
+        Debug.Log(PositionManager.Overworld1Pos);
+    }
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");

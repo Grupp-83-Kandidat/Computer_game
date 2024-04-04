@@ -23,6 +23,7 @@ public class DisplayManagerScript : MonoBehaviour
     public BackgroundScript background;
     public DialogueHex dialogue;
     public GameObject _hintDisplay;
+    public GameObject _wellDonePrompt;
 
     private int _value;
     private int _score;
@@ -110,6 +111,7 @@ public class DisplayManagerScript : MonoBehaviour
         //UpdateAssembly(true);
         StopAllCoroutines();
         UpdateAssembly(true);
+        _wellDonePrompt.SetActive(true);
         int[] values = _inputManager.GetValues();
         switch (_stage)
         {
@@ -169,6 +171,7 @@ public class DisplayManagerScript : MonoBehaviour
         else
         {
             UpdateAssembly(false);
+            LevelsDoneManager.SetLevelDone(ScenesManager.Scene.HexPuzzle1);
         }
 
         //_score += 50;
