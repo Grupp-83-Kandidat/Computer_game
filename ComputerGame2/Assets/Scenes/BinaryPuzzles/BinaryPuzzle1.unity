@@ -1257,14 +1257,14 @@ MonoBehaviour:
   lines:
   - Spring till bandet din lilla nolla!
   - "Vad\xE5, kommer du inte ih\xE5g hur man anv\xE4nder maskinen?"
-  - "N\xE5 v\xE4ll, lyssna noggrant nu!"
+  - "N\xE5 v\xE4l, lyssna noggrant nu!"
   - "Den h\xE4r maskinen operarar bin\xE4rt, det betyder att fr\xE5n h\xF6ger till
     v\xE4nster"
   - "s\xE5 \xE4r n\xE4sta nummer v\xE4rt dubbelt s\xE5 mycket som det f\xF6rra!"
   - "S\xE5 displayerna fr\xE5n h\xF6ger till v\xE4nster..."
   - "\xE4r v\xE4rda 1, 2, 4 respektive 8."
-  - "Du kan s\xE4tta p\xE5 och st\xE4nga av varje display med dens motsvarande knapp"
-  - "Ditt jobb \xE4r att matcha nummren p\xE5 de sm\xE5 displayerna till den stora
+  - "Du kan s\xE4tta p\xE5 och st\xE4nga av varje display med dess motsvarande knapp"
+  - "Ditt jobb \xE4r att matcha numren p\xE5 de sm\xE5 displayerna till den stora
     displayen."
   - "L\xE5t mig visa dig:"
   - Den stora displayen visar 10.
@@ -1275,7 +1275,7 @@ MonoBehaviour:
   endingLines:
   - "Hmmph, du gjorde okej ifr\xE5n dig."
   - "N\xE4r du kommer tillbaka n\xE4sta g\xE5ng..."
-  - "s\xE5 v\xE4ntar det sv\xE5rare uppgifter!"
+  - "s\xE5 v\xE4ntar sv\xE5rare uppgifter!"
   textSpeed: 0.05
 --- !u!61 &511153994
 BoxCollider2D:
