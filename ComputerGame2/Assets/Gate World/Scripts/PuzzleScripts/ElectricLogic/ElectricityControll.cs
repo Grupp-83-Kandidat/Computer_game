@@ -23,7 +23,7 @@ public class ElectricityControll : MonoBehaviour
             return collision.transform.parent.GetComponent<Outlet>().conducting;
         case "CircuitSlot":
             return collision.transform.parent.GetComponent<CircuitBoardSlot>().conducting;
-        default: 
+        default:
             return false;
         }
     }

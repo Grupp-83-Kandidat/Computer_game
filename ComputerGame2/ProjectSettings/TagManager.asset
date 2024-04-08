@@ -18,6 +18,7 @@ TagManager:
   - Pulse
   - NAND
   - XNOR
+  - Clock
   layers:
   - Default
   - TransparentFX
