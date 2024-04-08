@@ -30,14 +30,4 @@ public class ButtonManagerScript : MonoBehaviour
         return buttonSum == targetSum;
     }
 
-    // Ska bort
-    public void AwakenButtons()
-    {
-        foreach (BinaryButtonScript button in buttons)
-        {
-            button.Awake();
-        }
-    }
-
-    
 }

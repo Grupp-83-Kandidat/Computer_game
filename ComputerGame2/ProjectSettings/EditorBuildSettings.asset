@@ -6,30 +6,39 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Overworld1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 51ce3a66550b98b278f174c6cf0879e1
   - enabled: 1
-    path: Assets/Scenes/BinaryPuzzle1.unity
+    path: Assets/Scenes/BinaryPuzzles/BinaryPuzzle1.unity
     guid: 257224647554dd8459e3e5307169e8a7
   - enabled: 1
-    path: Assets/Scenes/BinaryPuzzle2.unity
+    path: Assets/Scenes/BinaryPuzzles/BinaryPuzzle2.unity
     guid: 51dfd2591f0db7e45b3db302835e3bd5
   - enabled: 1
-    path: Assets/Scenes/GateIntroduction.unity
-    guid: 52bfe18aaab8f49e0bbbfe2a134ece4e
+    path: Assets/Scenes/Overworld2.unity
+    guid: eb1459394c4a2834cbebea74e50cb898
   - enabled: 1
-    path: Assets/Scenes/GateIntroduction2.unity
-    guid: 8ed1969506d7b45ab8fe5a3d40dbe270
+    path: Assets/Scenes/HexPuzzle1.unity
+    guid: 5aadbac749764fc4da1d2e025ed2ecc2
   - enabled: 1
-    path: Assets/Scenes/GateIntroduction3.unity
-    guid: ef2f3d76f57ae4cf28480182524a4332
+    path: Assets/Scenes/TerminalIntro.unity
+    guid: a7734e2d52a36a34aa5406521bf9b187
   - enabled: 1
-    path: Assets/Scenes/GateIntroduction4.unity
-    guid: ecb4f6977ee414696a25c3f4c490e8f8
+    path: Assets/Scenes/TerminalGate.unity
+    guid: 2b76f42d202c10f5e82a9fb2ce09c7d0
   - enabled: 1
-    path: Assets/Scenes/GateIntroduction5.unity
-    guid: b0deb437fe844429396ff00ef72726b1
+    path: Assets/Scenes/TerminalHex.unity
+    guid: c90d705c0b80a26a9980317781520f44
+  - enabled: 1
+    path: Assets/Scenes/GatePuzzles/GatePuzzle1.unity
+    guid: ebedabb6f9ff7ba4cb36dc7889782c03
+  - enabled: 1
+    path: Assets/Scenes/GatePuzzles/GatePuzzle2.unity
+    guid: dbe86e295e108b24e9640bc918591e53
+  - enabled: 1
+    path: Assets/Scenes/GatePuzzles/GatePuzzle3.unity
+    guid: 1a22f820d8349c148af783d0f7d984ce
   m_configObjects: {}

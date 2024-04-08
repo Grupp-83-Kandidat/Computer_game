@@ -11,28 +11,30 @@ public class BigDispManager : MonoBehaviour
     private GameObject[] _boxes = new GameObject[2];
     private Animator[] _animators = new Animator[2];
     private AssembledBoxSpawnerScript _assembledBoxSpawner;
+    private Dialogue2 _dialogue;
+    [SerializeField] GameObject HintPrompt;
+    [SerializeField] GameObject WellDoneTxt;
 
     private int _val;
     private int _index;
     private bool _tryValue = false;
     private int _score = 0;
+    private int _multiplier = 1;
+    private int _boxesCompleted;
+    private int _boxesToComplete = 5;
 
     void Start()
     {
         _longBoxSpawners = FindObjectsOfType<LongBoxSpawner>();
         _buttonParent = FindObjectOfType<ButtonManagerScript>();
+        _dialogue = FindObjectOfType<Dialogue2>();
         AddAssemblyLines();
         AddFrames();
         _assembledBoxSpawner = FindAnyObjectByType<AssembledBoxSpawnerScript>();
 
-        //Ska bort om vi l�gger till tutorial
-        //_buttonParent.AwakenButtons();
-
         UpdateAssembly(false);
-
-        //_tryValue = false;
         _index = 0;
-
+        _boxesCompleted = 0;
     }
 
     private void AddFrames()
@@ -44,10 +46,14 @@ public class BigDispManager : MonoBehaviour
 
     private void Update()
     {
-        //if (!_tryValue) return;
 
         if (_tryValue && _buttonParent.CompareValue(_val)) StartCoroutine(OnSuccess());
         
+    }
+
+    public int GetMultiplier()
+    {
+        return _multiplier;
     }
 
 
@@ -67,6 +73,7 @@ public class BigDispManager : MonoBehaviour
             StopBoxes();
             _tryValue = true;
             UpdateAssembly(false);
+            StartCoroutine(CountdownDispHint());
         }
     }
 
@@ -100,15 +107,66 @@ public class BigDispManager : MonoBehaviour
     {
         ClosingFrames(true);
         yield return new WaitForSeconds((float)0.4);
-        _score += 30;
+        _score += 30 * _multiplier;
+        _boxesCompleted++;
+        WellDoneTxt.SetActive(true);
         DestroyBoxes();
         _assembledBoxSpawner.CreateBox(_val);
         StartBoxes();
         ResetValues();
-        SpawnBoxes();
+        if (_boxesCompleted < _boxesToComplete - 1)
+        {
+            SpawnBoxes();
+        }
         ClosingFrames(false);
         UpdateAssembly(true);
+
+        if (_boxesCompleted < _boxesToComplete)
+        {
+            UpdateMultiplier();
+        }
+        else
+        {
+            EndPuzzle();
+        }
+    }
+
+    IEnumerator CountdownDispHint()
+    {
+        yield return new WaitForSeconds(10);
+        HintPrompt.SetActive(true);
+    }
+
+    private void EndPuzzle()
+    {
         StopAllCoroutines();
+        _dialogue.gameObject.SetActive(true);
+        _dialogue.StartEnd();
+        StartCoroutine(RollOutAssembly());
+    }
+
+    IEnumerator RollOutAssembly()
+    {
+        yield return new WaitForSeconds(3);
+        UpdateAssembly(false);
+        StopAllCoroutines();
+    }
+
+    private void UpdateMultiplier()
+    {
+        StopAllCoroutines();
+        if (_multiplier < 5) _multiplier += 1;
+        StartCoroutine(CountdownMult());
+    }
+
+
+    IEnumerator CountdownMult()
+    {
+        while (_multiplier > 1)
+        {
+            yield return new WaitForSeconds((float) 10);
+            if (_multiplier > 1) _multiplier -= 1;
+        }
     }
 
     private void ResetValues()
