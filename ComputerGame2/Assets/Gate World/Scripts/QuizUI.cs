@@ -18,7 +18,7 @@ public class QuizUI : MonoBehaviour
     private float audioLength;
     
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         for(int i = 0; i < options.Count; i++){
             Button localBtn = options[i];
@@ -54,7 +54,8 @@ public class QuizUI : MonoBehaviour
 
         questionText.text = question.questionInfo;
 
-        List<string> answerList = ShuffleList.ShuffleListItems<string>(question.options);
+        //List<string> answerList = ShuffleList.ShuffleListItems<string>(question.options);
+        List<string> answerList = question.options;
 
         for(int i = 0; i < options.Count; i++){
             options[i].GetComponentInChildren<Text>().text = answerList[i];
@@ -98,7 +99,7 @@ public class QuizUI : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
+    // Update is called once per frame (currently not used).
     void Update()
     {
         
