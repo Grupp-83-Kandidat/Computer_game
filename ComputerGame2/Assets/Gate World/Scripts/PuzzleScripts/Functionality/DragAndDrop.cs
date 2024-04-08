@@ -49,6 +49,7 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
     {
         if(!locked){
             if (parentAfterDrag && parentAfterDrag.GetComponent<InventorySlot>().CanPlace(transform)){
+                transform.root.Find("Score").GetComponent<Actions>().actionsTaken++;
                 transform.SetParent(parentAfterDrag);
             }
             else{
