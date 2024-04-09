@@ -12,6 +12,7 @@ public class GameFinished : Buttons
             Invoke("CompletedLevel", 500*Time.deltaTime);
         }
     }
+
     void CompletedLevel(){
         transform.parent.Find("VictorySign").gameObject.SetActive(true);
     }

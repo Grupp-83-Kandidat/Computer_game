@@ -69,7 +69,6 @@ public class CircuitBoardSlot : InventorySlot
     protected void TableCheck(string gate){   
         //Checks current input against the truth table
         if(truth_Table[gate].Contains((input1Conducting, input2Conducting))){
-            Debug.Log(truth_Table[gate]);
             conducting = true;
         }
         else{
