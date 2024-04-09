@@ -24,21 +24,27 @@ EditorBuildSettings:
     path: Assets/Scenes/HexPuzzle1.unity
     guid: 5aadbac749764fc4da1d2e025ed2ecc2
   - enabled: 1
-    path: Assets/Scenes/TerminalIntro.unity
+    path: Assets/Scenes/Overworld3.unity
+    guid: 7bc2006ff4279f14facddd27a3221cd1
+  - enabled: 1
+    path: Assets/Scenes/GatePuzzles/GatePuzzle.unity
+    guid: ce0aac9933f5d5045acdfa66f6dde016
+  - enabled: 1
+    path: Assets/Scenes/Terminals/TerminalIntro.unity
     guid: a7734e2d52a36a34aa5406521bf9b187
   - enabled: 1
-    path: Assets/Scenes/TerminalGate.unity
+    path: Assets/Scenes/Terminals/TerminalGate.unity
     guid: 2b76f42d202c10f5e82a9fb2ce09c7d0
   - enabled: 1
-    path: Assets/Scenes/TerminalHex.unity
+    path: Assets/Scenes/Terminals/TerminalHex.unity
     guid: c90d705c0b80a26a9980317781520f44
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GatePuzzles/GatePuzzle1.unity
     guid: ebedabb6f9ff7ba4cb36dc7889782c03
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GatePuzzles/GatePuzzle2.unity
     guid: dbe86e295e108b24e9640bc918591e53
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GatePuzzles/GatePuzzle3.unity
     guid: 1a22f820d8349c148af783d0f7d984ce
   m_configObjects: {}

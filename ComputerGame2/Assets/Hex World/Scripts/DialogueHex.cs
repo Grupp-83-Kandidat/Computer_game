@@ -1,49 +1,31 @@
 using System.Collections;
-using UnityEngine;
+using System.Collections.Generic;
 using TMPro;
-using System;
-using UnityEditor;
+using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-public class Dialogue2 : MonoBehaviour
+public class DialogueHex : MonoBehaviour
 {
     public TMP_Text lineText;
-    private BigDispManager _bigDisp;
-    private BinaryButtonScript[] _binaryButtonScripts;
+    [SerializeField] DisplayManagerScript dispManagerScript;
+    [SerializeField] HexDisplayManagerScipt inputManager;
+
     public string[] lines;
     public string[] endingLines;
     public float textSpeed;
     private int index;
     private bool ending;
-    
-    UnityEvent dialogueOver;
-   
+
+    // Start is called before the first frame update
     void Start()
     {
-        Init();
+        ending = false;
         lineText.text = string.Empty;
         startDialogue();
     }
 
-    private void Init()
-    {
-        _bigDisp = FindObjectOfType<BigDispManager>();
-        _binaryButtonScripts = FindObjectsOfType<BinaryButtonScript>();
-        CreateEvent();
-        ending = false;
-    }
-
-    private void CreateEvent()
-    {
-        dialogueOver = new UnityEvent();
-        dialogueOver.AddListener(_bigDisp.OnDialogueEnd);
-        foreach(BinaryButtonScript button in _binaryButtonScripts)
-        {
-            dialogueOver.AddListener(button.Awaken);
-        }
-    }
-
+    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -78,13 +60,12 @@ public class Dialogue2 : MonoBehaviour
 
     private IEnumerator LoadOverworld()
     {
-        AsyncOperation loaded = SceneManager.LoadSceneAsync("Overworld1");
+        AsyncOperation loaded = SceneManager.LoadSceneAsync("Overworld2");
         while (!loaded.isDone)
         {
             yield return null;
         }
     }
-
 
     void startDialogue()
     {
@@ -94,7 +75,8 @@ public class Dialogue2 : MonoBehaviour
 
     IEnumerator TypeLine(string[] linesToWrite)
     {
-        foreach (char c in linesToWrite[index].ToCharArray()) {
+        foreach (char c in linesToWrite[index].ToCharArray())
+        {
             lineText.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
@@ -116,18 +98,6 @@ public class Dialogue2 : MonoBehaviour
         }
     }
 
-    public void StartEnd()
-    {
-        index = 0;
-        ending = true;
-        lineText.text = string.Empty;
-        foreach (BinaryButtonScript button in _binaryButtonScripts)
-        {
-            button.Sleep();
-        }
-        StartCoroutine(TypeLine(endingLines));
-    }
-
     private void NextLine()
     {
         if (index < lines.Length - 1)
@@ -146,12 +116,23 @@ public class Dialogue2 : MonoBehaviour
     {
         if (ending)
         {
-            ScenesManager.Instance.LoadOverworld1();
+            ScenesManager.Instance.LoadOverworld2();
         }
         else
         {
-            dialogueOver.Invoke();
+            dispManagerScript.StartLevel();
+            inputManager.SetActive(true);
             gameObject.SetActive(false);
+            PositionManager.Overworld2Pos = -23f;
         }
     }
+
+    public void StartEnd()
+    {
+        index = 0;
+        lineText.text = string.Empty;
+        ending = true;
+        StartCoroutine(TypeLine(endingLines));
+    }
+
 }

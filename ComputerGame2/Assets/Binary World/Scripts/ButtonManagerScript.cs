@@ -30,4 +30,12 @@ public class ButtonManagerScript : MonoBehaviour
         return buttonSum == targetSum;
     }
 
+    public void ResetButtons()
+    {
+        foreach (BinaryButtonScript button in buttons)
+        {
+            button.SetOn(false);
+        }
+    }
+
 }

@@ -24,7 +24,7 @@ public class BigDisplayScript : MonoBehaviour
     private int _score = 0;
     private int _multiplier = 1;
     private int _boxesCompleted = 0;
-    private int _boxesToComplete = 5;
+    private int _boxesToComplete = 12;
     
     void Start()
     {
@@ -99,6 +99,7 @@ public class BigDisplayScript : MonoBehaviour
         _assembledBoxSpawner.CreateBox(_value);
         _feedbackText.gameObject.SetActive(true);
         _hintPrompt.SetActive(false);
+        _buttonParent.ResetButtons();
         
         if (_boxesCompleted < _boxesToComplete - 1)
         {

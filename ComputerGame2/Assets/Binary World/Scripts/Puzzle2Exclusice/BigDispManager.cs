@@ -114,6 +114,7 @@ public class BigDispManager : MonoBehaviour
         _assembledBoxSpawner.CreateBox(_val);
         StartBoxes();
         ResetValues();
+        _buttonParent.ResetButtons();
         if (_boxesCompleted < _boxesToComplete - 1)
         {
             SpawnBoxes();
