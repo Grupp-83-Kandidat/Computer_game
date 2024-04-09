@@ -3061,10 +3061,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 21300000, guid: 5d21bff0021d0574aaca772c57fd18db, type: 3}
+  - {fileID: 21300000, guid: 72b183d1f2adec947b00a19afa206c48, type: 3}
   - {fileID: 21300000, guid: fb50115313a03d94aab338c3e6a0efa2, type: 3}
   - {fileID: 21300000, guid: 779f2c6e70ad4b0438e74a3013fcf68a, type: 3}
-  - {fileID: 21300000, guid: 918a63f3ee43c9e43af125dcd632cd46, type: 3}
+  - {fileID: 21300000, guid: e5bc7a6e114895242abfaa0551ba1676, type: 3}
   img: {fileID: 1089984455}
   parent: {fileID: 1146405049}
 --- !u!114 &549357389
