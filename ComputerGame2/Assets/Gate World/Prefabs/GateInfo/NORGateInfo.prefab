@@ -508,7 +508,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: NOR GATE
+  m_text: NOR GRIND
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -642,9 +642,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This gate has to do with the "OR" gate, the only difference is the "N"
-    added in front. The "N" means NOT, so this gate reads as "NOT OR". This means
-    that it is the exact opposite of "OR".
+  m_text: "Den h\xE4r grinden har att g\xF6ra med \"OR\" grinden, skillnaden \xE4r
+    det tillagda \"N\" i b\xF6rjan. Det betyder \"Not\" och inneb\xE4r att det \xE4r
+    motsatsen till \"OR\" grinden."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -967,7 +967,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7704819581293503843}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.52509975, y: 0.52509975, z: 0.52509975}
   m_ConstrainProportionsScale: 0

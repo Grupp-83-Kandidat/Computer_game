@@ -101,7 +101,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1333568964501590267}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.52509975, y: 0.52509975, z: 0.52509975}
   m_ConstrainProportionsScale: 0
@@ -231,8 +231,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This gate is a combination of the "N" (NOT) and "X" (Exclusive). This is
-    the opposite of Exclusive OR.
+  m_text: "Den h\xE4r grinden \xE4r en kombination av \"N\" (Not) och \"X\" (Exclusive).
+    Det inneb\xE4r att den \xE4r motsatsen till \"XOR\""
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

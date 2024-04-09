@@ -19,7 +19,6 @@ public class Switches : MonoBehaviour, IPointerClickHandler
     // Start is called before the first frame update
     public void OnPointerClick(PointerEventData eventData)
     {
-
         if(!locked){
             switchedOn = !switchedOn;
             _source.PlayOneShot(_clip);

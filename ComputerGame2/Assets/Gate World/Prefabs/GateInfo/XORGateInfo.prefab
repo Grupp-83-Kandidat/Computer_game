@@ -311,7 +311,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3909606291565308884}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.52509975, y: 0.52509975, z: 0.52509975}
   m_ConstrainProportionsScale: 0
@@ -441,7 +441,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: XOR GATE
+  m_text: XOR GRIND
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -808,10 +808,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This gate has to do with the "OR" gate, the only difference is the "X"
-    added in front. The "X" mean exclusive, so this gate reads as "Exclusive OR".
-    This means that if both inputs are true it will output false, since it is not
-    exclusive.
+  m_text: "\"XOR\" grinden \xE4r som \"OR\" grinden med ett tillagt \"X\". X st\xE5r
+    f\xF6r exclusive s\xE5 man kan l\xE4sa grindens namn som \"Exclusive or\". Detta
+    inneb\xE4r att grindens output blir sann n\xE4r det \xE4r bara en input som \xE4r
+    sann. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
