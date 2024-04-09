@@ -23,6 +23,8 @@ public class ScenesManager : MonoBehaviour
         Overworld1,
         Overworld2,
         HexPuzzle1,
+        Overworld3,
+        GatePuzzle,
         TerminalIntro,
         TerminalHex,
         TerminalGate
