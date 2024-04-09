@@ -170,6 +170,7 @@ public class DisplayManagerScript : MonoBehaviour
         }
         else
         {
+            _hintDisplay.SetActive(false);
             UpdateAssembly(false);
             LevelsDoneManager.SetLevelDone(ScenesManager.Scene.HexPuzzle1);
         }

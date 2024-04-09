@@ -123,6 +123,7 @@ public class DialogueHex : MonoBehaviour
             dispManagerScript.StartLevel();
             inputManager.SetActive(true);
             gameObject.SetActive(false);
+            PositionManager.Overworld2Pos = -23f;
         }
     }
 
@@ -132,7 +133,6 @@ public class DialogueHex : MonoBehaviour
         lineText.text = string.Empty;
         ending = true;
         StartCoroutine(TypeLine(endingLines));
-        //levelsdonemanager
     }
 
 }

@@ -18,18 +18,16 @@ public class Movement : MonoBehaviour
     {
         Vector3 delta = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         Vector3 newPos = new Vector3(PositionManager.Overworld1Pos, 0, 0);
-        this.transform.position = transform.position + newPos;
-        /*string scene = SceneManager.GetActiveScene().name;
-        Debug.Log(scene);
+        string scene = SceneManager.GetActiveScene().name;
         if (scene == "Overworld1") {
-            this.transform.position = new Vector3(PositionManager.Overworld1Pos, 1f, 0f);
-            Debug.Log(this.transform.position);
+            newPos = new Vector3(PositionManager.Overworld1Pos, 0, 0f);
         }else if (scene == "Overworld2")
         {
-            this.transform.position = new Vector3(PositionManager.Overworld2Pos, 1, 0);
-        }*/
-        Debug.Log(PositionManager.Overworld1Pos);
+            newPos = new Vector3(PositionManager.Overworld2Pos, 0, 0);
+        }
+        this.transform.position = transform.position + newPos;
     }
+
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
