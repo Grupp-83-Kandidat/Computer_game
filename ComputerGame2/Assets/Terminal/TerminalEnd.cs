@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class TerminalGateScript : MonoBehaviour
+public class TerminalEnd : MonoBehaviour
 {
     [SerializeField]  public string[] lines;
     [SerializeField]  TMP_Text text;
@@ -30,7 +30,7 @@ public class TerminalGateScript : MonoBehaviour
                 {
                     Debug.Log("Got here");
                     StopAllCoroutines();
-                    ScenesManager.Instance.LoadOverworld3();
+                    ScenesManager.Instance.LoadMainMenuEnd();
                 }
             if (text.text.ToString() == lines[index]){
                 promptText.gameObject.SetActive(false);
@@ -66,7 +66,7 @@ public class TerminalGateScript : MonoBehaviour
         else{
             Debug.Log("Got here");
             StopAllCoroutines();
-            ScenesManager.Instance.LoadOverworld3();
+            ScenesManager.Instance.LoadMainMenuEnd();
         }
     }
 }

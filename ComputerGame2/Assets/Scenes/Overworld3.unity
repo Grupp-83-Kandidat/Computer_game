@@ -153,11 +153,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2667286371721458702, guid: 68ee4efe34d63584b8134f0a830aeb9e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 13.843731
       objectReference: {fileID: 0}
     - target: {fileID: 2667286371721458702, guid: 68ee4efe34d63584b8134f0a830aeb9e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.29999995
+      value: -0.3000002
       objectReference: {fileID: 0}
     - target: {fileID: 2667286371721458702, guid: 68ee4efe34d63584b8134f0a830aeb9e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -993,10 +993,10 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.002855539, y: 0.08394581}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1007,7 +1007,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 0.6099315, y: 0.427452}
   m_EdgeRadius: 0
 --- !u!114 &266270399
 MonoBehaviour:
@@ -1123,13 +1123,13 @@ Transform:
   m_GameObject: {fileID: 266270397}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.169, y: -1.774, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 19.591, y: -3.0314727, z: -0.09052262}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1055077499}
   - {fileID: 1388279984}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1786043127}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &280183396
 GameObject:
@@ -1993,7 +1993,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interactTxt: {fileID: 1232159879}
   sceneToBeat: 5
-  nextScene: 8
+  nextScene: 11
   exitRight: 1
 --- !u!61 &571659686
 BoxCollider2D:
@@ -2089,10 +2089,10 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.002855539, y: 0.08394581}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2103,7 +2103,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 0.6099315, y: 0.427452}
   m_EdgeRadius: 0
 --- !u!114 &572658948
 MonoBehaviour:
@@ -2219,13 +2219,13 @@ Transform:
   m_GameObject: {fileID: 572658946}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.208, y: -1.767, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 21.968, y: -3.0244727, z: -0.09052262}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 130263543}
   - {fileID: 280183399}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1786043127}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &590140732
 GameObject:
@@ -8585,8 +8585,8 @@ GameObject:
   - component: {fileID: 1678283837}
   - component: {fileID: 1678283839}
   - component: {fileID: 1678283838}
-  - component: {fileID: 1678283841}
   - component: {fileID: 1678283840}
+  - component: {fileID: 1678283841}
   m_Layer: 0
   m_Name: Gate1
   m_TagString: Untagged
@@ -8603,13 +8603,13 @@ Transform:
   m_GameObject: {fileID: 1678283836}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.3287, y: -1.7796, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 17.431301, y: -3.0370727, z: -0.09052262}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 99477660}
   - {fileID: 336947599}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1786043127}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1678283838
 Animator:
@@ -8713,10 +8713,10 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.002855539, y: 0.08394581}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -8727,7 +8727,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 0.6099315, y: 0.427452}
   m_EdgeRadius: 0
 --- !u!114 &1678283841
 MonoBehaviour:
@@ -8758,7 +8758,7 @@ MonoBehaviour:
   interactIcon: {fileID: 99477659}
   scene: 7
   animation: {fileID: 1678283838}
-  requiresPrevious: 1
+  requiresPrevious: 0
   PreviousLevelRequiredKey: 5
   saveposVal: 0
 --- !u!1 &1742850655
@@ -9026,6 +9026,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1678283837}
+  - {fileID: 266270402}
+  - {fileID: 572658951}
   - {fileID: 571659684}
   - {fileID: 1805625426}
   m_Father: {fileID: 907547788}
@@ -9080,7 +9083,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1765819710005436560, guid: 8919a47c3e47444478dec6fe4cde5ef3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.93
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1765819710005436560, guid: 8919a47c3e47444478dec6fe4cde5ef3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9152,7 +9155,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5773568695620070231, guid: 8919a47c3e47444478dec6fe4cde5ef3, type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5773568695620070231, guid: 8919a47c3e47444478dec6fe4cde5ef3, type: 3}
       propertyPath: m_SortingLayerID
@@ -9624,7 +9627,7 @@ Transform:
   m_GameObject: {fileID: 1973712771}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -25.873112, y: 1.6364737, z: -10.108724}
+  m_LocalPosition: {x: -13.786842, y: 1.6364739, z: -10.108724}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9816,6 +9819,3 @@ SceneRoots:
   - {fileID: 1274732102}
   - {fileID: 1356745578}
   - {fileID: 116182674}
-  - {fileID: 1678283837}
-  - {fileID: 266270402}
-  - {fileID: 572658951}

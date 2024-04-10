@@ -6905,7 +6905,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2667286371721458702, guid: 68ee4efe34d63584b8134f0a830aeb9e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.84399
+      value: 13.843731
       objectReference: {fileID: 0}
     - target: {fileID: 2667286371721458702, guid: 68ee4efe34d63584b8134f0a830aeb9e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7079,7 +7079,7 @@ Transform:
   m_GameObject: {fileID: 974536954}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.787092, y: 1.6364739, z: -10.108724}
+  m_LocalPosition: {x: -13.786842, y: 1.6364739, z: -10.108724}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8569,7 +8569,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interactTxt: {fileID: 1510641506}
   sceneToBeat: 5
-  nextScene: 8
+  nextScene: 11
   exitRight: 1
 --- !u!61 &1992589165
 BoxCollider2D:
