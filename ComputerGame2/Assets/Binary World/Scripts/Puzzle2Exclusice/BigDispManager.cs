@@ -21,7 +21,7 @@ public class BigDispManager : MonoBehaviour
     private int _score = 0;
     private int _multiplier = 1;
     private int _boxesCompleted;
-    private int _boxesToComplete = 5;
+    private int _boxesToComplete = 10;
 
     void Start()
     {
