@@ -5924,11 +5924,16 @@ MonoBehaviour:
   - "Vi har en v\xE4gg h\xE4r som beh\xF6ver m\xE5las."
   - "Ditt jobb \xE4r att \xF6vers\xE4tta de bin\xE4ra talen som kommer in..."
   - "till hexadecimala f\xE4rgkoder."
-  - "Anv\xE4nd pilarna p\xE5 tangentbordet f\xF6r att v\xE4lja sk\xE4rm att skriva
+  - "Bin\xE4ra tal g\xE5r att \xF6vers\xE4tta direkt till hexadecimala tal. "
+  - "Ett fyra bitars bin\xE4rt tal g\xE5r att skriva siffrorna 0-15 med. Samma som
+    ett hexadecimalt tal."
+  - "Efter siffran 9 anv\xE4nder man bokst\xE4ver f\xF6r att representera talen 10-15. "
+  - "S\xE5 A = 10, B = 11 osv. "
+  - "Anv\xE4nd pilarna p\xE5 tangentbordet f\xF6r att v\xE4lja display att skriva
     till"
-  - "Och skriv sen r\xE4tt nummer med tangentbordet"
-  - AAAAAAAAAAAA
-  - "G\xD6\xD6\xD6R DEEEE"
+  - "Och anv\xE4nd sedan siffrorna 0-9 och bokst\xE4verna A-F p\xE5 tangenbordet
+    f\xF6r att skriva till displayen. "
+  - "S\xE5, b\xF6rja mixa f\xE4rg!"
   endingLines:
   - "N\xE4men kolla!"
   - Vad fint det blev.

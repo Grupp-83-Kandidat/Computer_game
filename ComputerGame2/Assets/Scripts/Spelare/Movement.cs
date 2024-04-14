@@ -24,6 +24,9 @@ public class Movement : MonoBehaviour
         }else if (scene == "Overworld2")
         {
             newPos = new Vector3(PositionManager.Overworld2Pos, 0, 0);
+        }else if (scene == "Overworld3")
+        {
+            newPos = new Vector3(PositionManager.Overworld3Pos, 0, 0); 
         }
         this.transform.position = transform.position + newPos;
     }
