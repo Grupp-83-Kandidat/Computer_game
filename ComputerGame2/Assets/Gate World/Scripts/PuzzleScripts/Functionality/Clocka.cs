@@ -9,6 +9,8 @@ public class Clocka : ElectricityControll
 {
     public bool completed;
     [SerializeField] private List<Sprite> sprites;
+
+    [SerializeField] private int rightNum;
     private List<Collider2D> inputList = new(1);
     public List<Collider2D> inputs = new(4);
     Dictionary<List<bool>, int> binaryNum;
@@ -52,7 +54,9 @@ public class Clocka : ElectricityControll
             
             if(item.Key.SequenceEqual(conductingList)){
                 GetComponent<UnityEngine.UI.Image>().sprite = sprites[item.Value];
-                Debug.Log(sprites[item.Value]);
+                if(item.Value == rightNum){
+                    completed = true;
+                }
             }
         }
     }
