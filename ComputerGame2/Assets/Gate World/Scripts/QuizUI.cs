@@ -115,12 +115,18 @@ public class QuizUI : MonoBehaviour
         }
     }
     switch (btn.name){
-        case "NAND":
+        case "AND/OR":
+            quizManager.StartGame(0);
+            mainMenuPanel.SetActive(false);
+            GameMenuPanel.SetActive(true);
             break;
-        case "OR":
+        case "NOR":
+            quizManager.StartGame(1);
+            mainMenuPanel.SetActive(false);
+            GameMenuPanel.SetActive(true);
             break;
-        case "Mix":
-            break;        
+        //case "Mix":
+            //break;        
     }
     }
 
