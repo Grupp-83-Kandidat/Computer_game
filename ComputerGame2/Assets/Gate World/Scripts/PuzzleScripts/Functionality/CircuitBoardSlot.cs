@@ -12,7 +12,7 @@ public class CircuitBoardSlot : InventorySlot
 
     private List<Collider2D> input1List = new(1);
     private List<Collider2D> input2List = new(1);
-    public bool conduncting;
+    public bool conducting;
     public bool input1Conducting;
     public bool input2Conducting;
     private string gate;
@@ -61,7 +61,7 @@ public class CircuitBoardSlot : InventorySlot
             TableCheck(gate);
         }
         else{
-            conduncting = false;
+            conducting = false;
             gate = "";
         }
     }   
@@ -69,11 +69,10 @@ public class CircuitBoardSlot : InventorySlot
     protected void TableCheck(string gate){   
         //Checks current input against the truth table
         if(truth_Table[gate].Contains((input1Conducting, input2Conducting))){
-            Debug.Log(truth_Table[gate]);
-            conduncting = true;
+            conducting = true;
         }
         else{
-            conduncting = false;
+            conducting = false;
         }
     }
 }

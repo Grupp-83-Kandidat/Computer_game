@@ -21,6 +21,10 @@ public class DisplayManagerScript : MonoBehaviour
     public BucketPaintScript bucketPaint2;
     public BucketPaintScript bucketPaint3;
     public BackgroundScript background;
+    public DialogueHex dialogue;
+    public GameObject _hintDisplay;
+    public GameObject _wellDonePrompt;
+
     private int _value;
     private int _score;
     private bool _tryValue = false;
@@ -34,6 +38,7 @@ public class DisplayManagerScript : MonoBehaviour
     private List<BrickScript> _bricks = new List<BrickScript>();
     private int _bricksLength;
     private int _bricksIndex = 0;
+    private int _boxesCreated = 0;
     private GameObject[] AssemblyLines;
     // Start is called before the first frame update
     void Start()
@@ -63,12 +68,13 @@ public class DisplayManagerScript : MonoBehaviour
         //Debug.Log(_bricksLength);
 
         _stage = 0;
-        StartCoroutine(_boxSpawner.OnStart());
+        
     }
     // ---------------------- Getters -----------------------
     public int GetValue()
     {
         return _value;
+
     }
 
     public int GetScore()
@@ -85,6 +91,7 @@ public class DisplayManagerScript : MonoBehaviour
         _boxSpawner.StopBoxes();
         _tryValue = true;
         UpdateAssembly(false);
+        StartCoroutine(CountdownDispHint());
     }
 
     public void UpdateDisplay(int val)
@@ -94,10 +101,17 @@ public class DisplayManagerScript : MonoBehaviour
         _value = val;
     }
 
+    public void StartLevel()
+    {
+        StartCoroutine(_boxSpawner.OnStart());
+    }
+
     private void OnSuccess()
     {
         //UpdateAssembly(true);
+        StopAllCoroutines();
         UpdateAssembly(true);
+        _wellDonePrompt.SetActive(true);
         int[] values = _inputManager.GetValues();
         switch (_stage)
         {
@@ -144,9 +158,23 @@ public class DisplayManagerScript : MonoBehaviour
         }
         StartCoroutine(_inputManager.ResetDisplays());
         _tryValue = false;
-        _boxSpawner.StartBoxes();
-        //_assembledBoxSpawner.CreateBox(_value);
-        _boxSpawner.CreateBox();
+
+        if (_boxesCreated < 14)
+        {
+            _boxSpawner.StartBoxes();
+            //_assembledBoxSpawner.CreateBox(_value);
+
+            _boxSpawner.CreateBox();
+            _boxesCreated++;
+
+        }
+        else
+        {
+            _hintDisplay.SetActive(false);
+            UpdateAssembly(false);
+            LevelsDoneManager.SetLevelDone(ScenesManager.Scene.HexPuzzle1);
+        }
+
         //_score += 50;
     }
 
@@ -157,6 +185,13 @@ public class DisplayManagerScript : MonoBehaviour
             led.ChangeNumber(0); 
         }
     }
+
+    IEnumerator CountdownDispHint()
+    {
+        yield return new WaitForSeconds(10);
+        _hintDisplay.SetActive(true);
+    }
+
     // private void ResetLEDs(){
     //     foreach (HexUpperLEDScript led in UpperLEDs)
     //     {
@@ -166,13 +201,21 @@ public class DisplayManagerScript : MonoBehaviour
 
     IEnumerator ColorBrick() {
         yield return new WaitForSeconds(2.2f);
-        if (_bricksIndex < _bricksLength) {
-                    _bricks[_bricksIndex].GetComponent<SpriteRenderer>().material.SetColor("_Color", new Color(redVal,greenVal,blueVal,1f));
-                    _bricksIndex++;
-                }
-        else {
-                    // TODO: Exit Game
-                }
+        for (int i = 0; i < 21; i++)
+        {
+            if (_bricksIndex < _bricksLength)
+            {
+                _bricks[_bricksIndex].GetComponent<SpriteRenderer>().material.SetColor("_Color", new Color(redVal, greenVal, blueVal, 1f));
+                _bricksIndex++;
+            }
+            else
+            {
+                _inputManager.SetActive(false);
+                dialogue.gameObject.SetActive(true);
+                dialogue.StartEnd();
+                break;
+            }
+        }
     }
     IEnumerator ResetBucket() {
         yield return new WaitForSeconds(1.8f);

@@ -14,6 +14,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
     [SerializeField] private AudioSource _source;
 
 
+
     //The OnDrop function will detect when a object is "dropped", when a EndDrag event ends, all this is part of the eventsystems package
     public void OnDrop(PointerEventData eventData)
     {

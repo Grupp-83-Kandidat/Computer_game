@@ -23,8 +23,12 @@ public class ScenesManager : MonoBehaviour
         Overworld1,
         Overworld2,
         HexPuzzle1,
+        Overworld3,
+        GatePuzzle,
         TerminalIntro,
-        TerminalHex
+        TerminalHex,
+        TerminalGate,
+        TerminalEnd
     }
 
     public void LoadScene(Scene scene)
@@ -76,6 +80,20 @@ public class ScenesManager : MonoBehaviour
         }
     }
 
+    public void LoadMainMenuEnd()
+    {
+        StartCoroutine(LoadMainMenuAsync()); 
+    }
+
+    private IEnumerator LoadMainMenuAsync()
+    {
+        AsyncOperation loaded = SceneManager.LoadSceneAsync(Scene.MainMenu.ToString());
+        while (!loaded.isDone)
+        {
+            yield return null;
+        }
+    }
+
     public void LoadOverworld1()
     {
         StartCoroutine(LoadOverworld1Async());   
@@ -104,6 +122,22 @@ public class ScenesManager : MonoBehaviour
             yield return null; 
         }
     }
+
+
+    public void LoadOverworld3()
+    {
+        StartCoroutine(LoadOverworld3Async()); 
+    }
+
+    private IEnumerator LoadOverworld3Async()
+    {
+        AsyncOperation loaded = SceneManager.LoadSceneAsync(Scene.Overworld3.ToString()); 
+        while (!loaded.isDone)
+        {
+            yield return null; 
+        }
+    }
+
 
     public void QuitGame()
     {

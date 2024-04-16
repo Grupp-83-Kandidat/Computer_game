@@ -18,12 +18,12 @@ public class ElectricityControll : MonoBehaviour
     public bool CollisionHandler(Collider2D collision){
     switch (collision.tag){
         case "Wire":
-            return collision.transform.parent.GetComponent<WireCode>().conduncting;
+            return collision.transform.parent.GetComponent<WireCode>().conducting;
         case "Output":
-            return collision.transform.parent.GetComponent<Outlet>().conduncting;
+            return collision.transform.parent.GetComponent<Outlet>().conducting;
         case "CircuitSlot":
-            return collision.transform.parent.GetComponent<CircuitBoardSlot>().conduncting;
-        default: 
+            return collision.transform.parent.GetComponent<CircuitBoardSlot>().conducting;
+        default:
             return false;
         }
     }

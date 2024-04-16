@@ -544,6 +544,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outsideWallTransparent: {fileID: 21300000, guid: f8fd66b2065a61a469dbdac25ab6a398, type: 3}
   outsideWallFull: {fileID: 21300000, guid: 1e173d203bee8c04087996220ab02308, type: 3}
+  x_max: 10.5
+  x_min: 0
 --- !u!1 &244345849
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,7 +1118,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.423111, y: 1.6364737, z: -10.108724}
+  m_LocalPosition: {x: -9.149805, y: 1.6364737, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1895,6 +1897,7 @@ MonoBehaviour:
   animation: {fileID: 1033939601}
   requiresPrevious: 0
   PreviousLevelRequiredKey: 0
+  saveposVal: -15.5
 --- !u!61 &1033939600
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2001,7 +2004,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b30c22ff281818144ae66c1513ea8c80, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -7933,7 +7936,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interactTxt: {fileID: 454082625}
   sceneToBeat: 2
-  nextScene: 7
+  nextScene: 9
   exitRight: 1
 --- !u!61 &1719971943
 BoxCollider2D:
@@ -8487,8 +8490,9 @@ MonoBehaviour:
   interactIcon: {fileID: 1726933197}
   scene: 2
   animation: {fileID: 1979619945}
-  requiresPrevious: 0
+  requiresPrevious: 1
   PreviousLevelRequiredKey: 1
+  saveposVal: -14.3
 --- !u!61 &1979619944
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8595,7 +8599,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b30c22ff281818144ae66c1513ea8c80, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -8620,8 +8624,8 @@ Transform:
   m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1726933200}
   - {fileID: 2016297311}
+  - {fileID: 1726933200}
   m_Father: {fileID: 1264027032}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2016188080
@@ -8739,7 +8743,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 3b70a41ea033927c9ae29028e38d055c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -8808,7 +8812,7 @@ Transform:
   m_GameObject: {fileID: 2016297308}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.000415643, y: 0.0008333722, z: 0}
+  m_LocalPosition: {x: 0.0020003316, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9269,7 +9273,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1623470517, guid: 90617053b97765be4828ed925003df34, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9451,7 +9455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2667286371721458702, guid: 68ee4efe34d63584b8134f0a830aeb9e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 9.206694
       objectReference: {fileID: 0}
     - target: {fileID: 2667286371721458702, guid: 68ee4efe34d63584b8134f0a830aeb9e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9562,7 +9566,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1765819710005436560, guid: 8919a47c3e47444478dec6fe4cde5ef3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.48
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1765819710005436560, guid: 8919a47c3e47444478dec6fe4cde5ef3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9570,7 +9574,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1765819710005436560, guid: 8919a47c3e47444478dec6fe4cde5ef3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.10872382
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1765819710005436560, guid: 8919a47c3e47444478dec6fe4cde5ef3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9630,7 +9634,7 @@ PrefabInstance:
       objectReference: {fileID: 1840707284, guid: 7e0f4de48f516824193dc676e584ef56, type: 3}
     - target: {fileID: 5773568695620070231, guid: 8919a47c3e47444478dec6fe4cde5ef3, type: 3}
       propertyPath: m_SortingLayer
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5773568695620070231, guid: 8919a47c3e47444478dec6fe4cde5ef3, type: 3}
       propertyPath: m_SortingOrder

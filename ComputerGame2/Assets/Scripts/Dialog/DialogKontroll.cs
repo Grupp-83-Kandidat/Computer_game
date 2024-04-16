@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 
 public class DialogKontroll : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI NPCNameText;
+    [SerializeField] private TextMeshProUGUI NPCNameText;   
     [SerializeField] private TextMeshProUGUI NPCDialogText;
     [SerializeField] private float skrivHastighet = 8f;
     private Queue<string> paragrafer = new Queue<string>();
@@ -60,6 +60,8 @@ public class DialogKontroll : MonoBehaviour
         if (gameObject.activeSelf){
             gameObject.SetActive(false);
             konversation_klar = false;
+            transform.root.Find("GeneralInfo").GetComponent<DialogOrder>().next = true;
+            transform.parent.gameObject.SetActive(false);
         }
     }
 

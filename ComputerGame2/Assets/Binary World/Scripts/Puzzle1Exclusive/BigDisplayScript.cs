@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using UnityEngine.UIElements;
 using System;
+using TMPro;
 
 public class BigDisplayScript : MonoBehaviour
 {
@@ -15,13 +16,15 @@ public class BigDisplayScript : MonoBehaviour
     private BoxSpawnerScript _boxSpawner;
     private AssembledBoxSpawnerScript _assembledBoxSpawner;
     private Dialogue _dialogue;
+    [SerializeField] TMP_Text _feedbackText;
+    [SerializeField] GameObject _hintPrompt;
     
     private bool _tryValue = false;
     private int _value;
     private int _score = 0;
     private int _multiplier = 1;
     private int _boxesCompleted = 0;
-    private int _boxesToComplete = 5;
+    private int _boxesToComplete = 12;
     
     void Start()
     {
@@ -94,6 +97,9 @@ public class BigDisplayScript : MonoBehaviour
         _tryValue = false;
         _boxSpawner.StartBoxes();
         _assembledBoxSpawner.CreateBox(_value);
+        _feedbackText.gameObject.SetActive(true);
+        _hintPrompt.SetActive(false);
+        _buttonParent.ResetButtons();
         
         if (_boxesCompleted < _boxesToComplete - 1)
         {
@@ -143,6 +149,12 @@ public class BigDisplayScript : MonoBehaviour
         }
     }
 
+    IEnumerator CountdownDispHint()
+    {
+        yield return new WaitForSeconds(10);
+        _hintPrompt.SetActive(true);
+    }
+
     void OnCollisionEnter2D(Collision2D col){
         BoxScript box = (BoxScript) col.gameObject.GetComponent(typeof(BoxScript)); 
         UpdateDisplay(box.GetValue());
@@ -150,6 +162,7 @@ public class BigDisplayScript : MonoBehaviour
         UpdateAssembly(false);
         _boxSpawner.StopBoxes();
         _tryValue = true;
+        StartCoroutine(CountdownDispHint());
     }
 
 

@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32761bb218f9ca845b7dfcac32a92579, type: 3}
+  m_Name: GateWorld1
+  m_EditorClassIdentifier: 
+  namn: Mr. Bit
+  paragrafer:
+  - "Kom hit din sl\xF6fock!\n"
+  - "Dessa logiska grindar kommer inte koppla sig sj\xE4lva!"
+  - 'VA?!?! Vet du verkligen inte hur detta fungerar? '
+  - "N\xE5v\xE4l, l\xE5t mig f\xF6rklara. Lyssna noga nu. "
+  - "En logisk grind tar tv\xE5 ing\xE5ngar, i detta fall tv\xE5 ledare som leder
+    elektricitet, och l\xE5ter elektriciteten fl\xF6da genom den beroende p\xE5 om
+    ingen, en eller b\xE5da ledningarna leder elektricitet."
+  - "\xC4r du med s\xE5 l\xE5ngt?"
+  - "Hmmmm... Jag tror det n\xE4r jag ser det. "
+  - "Om en ledning leder elektricitet eller inte kan ses som 1 eller 0, 1 om den
+    leder och 0 om den inte g\xF6r det."
+  - "S\xE5 grinden f\xE5r en kombination av tv\xE5 ettor eller nollor. HAHAHA, EN
+    NOLLA! Precis som du.\n*host* *host* Hur som helst..."
+  - "Det finns en m\xE4ngd olika s\xE5 kallade \"logiska grindar\".\nEn av dem \xE4r
+    AND-grinden. Den sl\xE4pper igenom elektricitet (Utg\xE5ngen blir en 1) om b\xE5da
+    ing\xE5ngarna \xE4r 1."
+  - "Eller OR-grinden, som sl\xE4pper igenom elektricitet om en eller b\xE5da av
+    de anslutna ledningarna \xE4r en 1."
+  - "Om du gl\xF6mmer kan du titta i instruktionsboken i det \xF6vre h\xF6gra h\xF6rnet.
+    Men dr\xF6j inte f\xF6r l\xE4nge."
+  - "S\xE5... B\xD6RJA ARBETA!!"

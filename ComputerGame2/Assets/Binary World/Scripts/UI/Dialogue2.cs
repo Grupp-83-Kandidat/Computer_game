@@ -144,7 +144,14 @@ public class Dialogue2 : MonoBehaviour
 
     public void OnFinished()
     {
-        dialogueOver.Invoke();
-        gameObject.SetActive(false);
+        if (ending)
+        {
+            ScenesManager.Instance.LoadOverworld1();
+        }
+        else
+        {
+            dialogueOver.Invoke();
+            gameObject.SetActive(false);
+        }
     }
 }

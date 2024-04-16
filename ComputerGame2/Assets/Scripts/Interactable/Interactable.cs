@@ -9,7 +9,15 @@ public class Interactable : KollisionObjekt
     private bool approched = false;
     private float minDist = 0.3f;
 
+    private Vector3 ePos;
+
     [SerializeField] private GameObject interactIcon;
+
+    protected override void Start()
+    {
+        collider = GetComponent<Collider2D>();
+        ePos = interactIcon.transform.position;
+    }
 
     protected override void OnCollission(GameObject collidedObject){
 
@@ -24,6 +32,7 @@ public class Interactable : KollisionObjekt
             interactIcon.SetActive(true);
         }
         else if(dist > minDist){
+            interactIcon.transform.position = ePos;
             interactIcon.SetActive(false);
         }
     }

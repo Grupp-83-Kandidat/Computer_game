@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   namn: George
   paragrafer:
-  - 'Thank god you are here!
-
-'
-  - Mr.Pixel is in one of his moods aigain.
-  - And we desperately need more manpower
-  - Please hurry to the assembly line and help him out!!!
+  - "V\xE4lkomen till fabriken nollan!\t\n"
+  - "Om du ska l\xE4ra dig att bygga en dator s\xE5 \xE4r det bra att b\xF6rja h\xE4r
+    p\xE5 bandet!"
+  - "Bin\xE4ra tal representerar ju vad som \xE4r p\xE5 (1) och av (0) i en dator."
+  - "Sr.Bit n\xE4mnde att han beh\xF6ver alla h\xE4nder han kan f\xE5 s\xE5 det \xE4r
+    bara att skynda dig till f\xF6rsta d\xF6rren."

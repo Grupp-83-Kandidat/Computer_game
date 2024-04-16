@@ -12,6 +12,8 @@ public class BigDispManager : MonoBehaviour
     private Animator[] _animators = new Animator[2];
     private AssembledBoxSpawnerScript _assembledBoxSpawner;
     private Dialogue2 _dialogue;
+    [SerializeField] GameObject HintPrompt;
+    [SerializeField] GameObject WellDoneTxt;
 
     private int _val;
     private int _index;
@@ -19,7 +21,7 @@ public class BigDispManager : MonoBehaviour
     private int _score = 0;
     private int _multiplier = 1;
     private int _boxesCompleted;
-    private int _boxesToComplete = 5;
+    private int _boxesToComplete = 10;
 
     void Start()
     {
@@ -71,6 +73,7 @@ public class BigDispManager : MonoBehaviour
             StopBoxes();
             _tryValue = true;
             UpdateAssembly(false);
+            StartCoroutine(CountdownDispHint());
         }
     }
 
@@ -106,10 +109,12 @@ public class BigDispManager : MonoBehaviour
         yield return new WaitForSeconds((float)0.4);
         _score += 30 * _multiplier;
         _boxesCompleted++;
+        WellDoneTxt.SetActive(true);
         DestroyBoxes();
         _assembledBoxSpawner.CreateBox(_val);
         StartBoxes();
         ResetValues();
+        _buttonParent.ResetButtons();
         if (_boxesCompleted < _boxesToComplete - 1)
         {
             SpawnBoxes();
@@ -125,6 +130,12 @@ public class BigDispManager : MonoBehaviour
         {
             EndPuzzle();
         }
+    }
+
+    IEnumerator CountdownDispHint()
+    {
+        yield return new WaitForSeconds(10);
+        HintPrompt.SetActive(true);
     }
 
     private void EndPuzzle()

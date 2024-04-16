@@ -27,7 +27,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9000869967708669073}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -36,8 +36,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -313.7, y: 55.287}
-  m_SizeDelta: {x: 70, y: 70}
+  m_AnchoredPosition: {x: -325.6, y: 61.8}
+  m_SizeDelta: {x: 74, y: 35.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3844830075597241315
 CanvasRenderer:
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8a94c63dd8f8c864caefcc0902cee002, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7da474e5976f87643aac2b521ac3ea89, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -92,8 +92,7 @@ MonoBehaviour:
   itemSlots: 2
   instantiated: 0
   inventory: 1
-  image: {fileID: 0}
-  _clip: {fileID: 0}
+  _clip: {fileID: 8300000, guid: 408fa16950c5da04bad8ee40a2fff1e3, type: 3}
   _source: {fileID: 2446771632403590616}
 --- !u!82 &2446771632403590616
 AudioSource:
