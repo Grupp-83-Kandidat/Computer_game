@@ -19,12 +19,15 @@ public class CreateGates : MonoBehaviour
         for(int i = 0; i<Gates.Length; i++){
             CreateGate(Gates[i],nr_of_gates[i], i);
         }
-        if(Gates.Length != transform.childCount){
-            for(int i = 0; i < transform.childCount-Gates.Length; i++){
-                transform.GetChild(transform.childCount -1 -i).GetComponent<UnityEngine.UI.Image>().sprite = sprite;
+
+        for(int i = 0; i < transform.childCount; i++){
+            Debug.Log(nr_of_gates[i]);
+            if(nr_of_gates[i] == 0){
+                transform.GetChild(i).GetComponent<UnityEngine.UI.Image>().sprite = sprite;
             }
         }
     }
+
     protected void CreateGate(GameObject gate, int nr, int placement){
         //Vector3 offset = new(-1, 0, 0);
         for(int i = 0; i<nr; i++){
