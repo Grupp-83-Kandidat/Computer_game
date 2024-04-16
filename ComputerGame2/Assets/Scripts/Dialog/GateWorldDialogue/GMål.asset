@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 32761bb218f9ca845b7dfcac32a92579, type: 3}
-  m_Name: GateWorldGeneral
+  m_Name: "GM\xE5l"
   m_EditorClassIdentifier: 
   namn: Mr. Bit
   paragrafer:
-  - "Du kan anv\xE4nda dig av dessa knappar f\xF6r att s\xE4tta av och p\xE5 str\xF6mmen.\n"
-  - "Du kan dra dessa grindar till de beh\xE5llarna som finns utlagda"
+  - "H\xE4r kan du se vad ditt m\xE5l \xE4r"
