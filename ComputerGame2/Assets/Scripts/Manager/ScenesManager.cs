@@ -28,7 +28,10 @@ public class ScenesManager : MonoBehaviour
         TerminalIntro,
         TerminalHex,
         TerminalGate,
-        TerminalEnd
+        TerminalEnd,
+        GatePuzz,
+        LampPuzzel1,
+        RaknarPuzzel1
     }
 
     public void LoadScene(Scene scene)

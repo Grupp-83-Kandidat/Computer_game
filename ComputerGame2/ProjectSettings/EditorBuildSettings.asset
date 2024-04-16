@@ -26,8 +26,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Overworld3.unity
     guid: 7bc2006ff4279f14facddd27a3221cd1
-  - enabled: 1
-    path: Assets/Scenes/GatePuzzles/GatePuzzle.unity
+  - enabled: 0
+    path: Assets/Scenes/GatePuzzle.unity
     guid: ce0aac9933f5d5045acdfa66f6dde016
   - enabled: 1
     path: Assets/Scenes/Terminals/TerminalIntro.unity
@@ -50,4 +50,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/GatePuzzles/GatePuzzle3.unity
     guid: 1a22f820d8349c148af783d0f7d984ce
+  - enabled: 1
+    path: Assets/Scenes/GatePuzzles/GatePuzz.unity
+    guid: a27778b54edcb4f448eb529cfcd00587
+  - enabled: 1
+    path: Assets/Scenes/GatePuzzles/LampPuzzel1.unity
+    guid: 9aca29c041ec8924fb3259085931f099
+  - enabled: 1
+    path: Assets/Scenes/GatePuzzles/RaknarPuzzel1.unity
+    guid: 6dbb0d62275c3ee4eaa4b09bcfc50771
   m_configObjects: {}

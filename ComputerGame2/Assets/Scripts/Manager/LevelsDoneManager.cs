@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class LevelsDoneManager
 {
-    static List<ScenesManager.Scene> LevelDoneKeys = new List<ScenesManager.Scene>() { ScenesManager.Scene.BinaryPuzzle1, ScenesManager.Scene.BinaryPuzzle2, ScenesManager.Scene.HexPuzzle1};
+    static List<ScenesManager.Scene> LevelDoneKeys = new List<ScenesManager.Scene>() { ScenesManager.Scene.BinaryPuzzle1, ScenesManager.Scene.BinaryPuzzle2, ScenesManager.Scene.HexPuzzle1, ScenesManager.Scene.GatePuzz, ScenesManager.Scene.LampPuzzel1, ScenesManager.Scene.RaknarPuzzel1};
 
     
 
