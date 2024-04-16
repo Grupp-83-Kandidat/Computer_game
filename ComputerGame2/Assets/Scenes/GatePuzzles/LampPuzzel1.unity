@@ -6075,7 +6075,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _clip: {fileID: 8300000, guid: 087167bcbd5e37343b5a68ba21b71304, type: 3}
   _source: {fileID: 1210513740}
-  scene: 0
+  scene: 6
 --- !u!114 &1210513742
 MonoBehaviour:
   m_ObjectHideFlags: 0

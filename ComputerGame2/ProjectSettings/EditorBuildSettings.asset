@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Overworld3.unity
     guid: 7bc2006ff4279f14facddd27a3221cd1
   - enabled: 0
-    path: Assets/Scenes/GatePuzzle.unity
+    path: Assets/Scenes/GatePuzzles/GatePuzzle.unity
     guid: ce0aac9933f5d5045acdfa66f6dde016
   - enabled: 1
     path: Assets/Scenes/Terminals/TerminalIntro.unity
