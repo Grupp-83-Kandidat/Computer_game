@@ -8,7 +8,7 @@ public class StartDialogue : MonoBehaviour, IPointerClickHandler
     [SerializeField] private Dialoguetext dialoguetext;
     [SerializeField] private DialogKontroll dialogKontroll;
 
-    public void Start()
+    public void Awake()
     {
         dialogKontroll.DisplayNextParagraph(dialoguetext);
     }
@@ -22,4 +22,5 @@ public class StartDialogue : MonoBehaviour, IPointerClickHandler
             dialogKontroll.DisplayNextParagraph(dialoguetext);
         }
     }
+
 }

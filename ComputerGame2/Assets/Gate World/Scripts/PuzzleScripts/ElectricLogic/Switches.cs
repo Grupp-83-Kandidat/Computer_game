@@ -19,7 +19,7 @@ public class Switches : MonoBehaviour, IPointerClickHandler
     // Start is called before the first frame update
     public void OnPointerClick(PointerEventData eventData)
     {
-        transform.root.Find("Score").GetComponent<Actions>().actionsTaken++;
+        //transform.root.Find("Score").GetComponent<Actions>().actionsTaken++;
         if(!locked){
             switchedOn = !switchedOn;
             _source.PlayOneShot(_clip);

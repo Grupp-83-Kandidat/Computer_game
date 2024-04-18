@@ -40,14 +40,14 @@ EditorBuildSettings:
     guid: 73ff73e83d211186dadd9a6ce555bd12
   - enabled: 1
     path: Assets/Scenes/GatePuzzles/LampPuzzel1.unity
-    guid: 9aca29c041ec8924fb3259085931f099
+    guid: c8f9136993d9d8645afa49284d16b7a4
   - enabled: 1
     path: Assets/Scenes/GatePuzzles/LampPuzzel2.unity
-    guid: f81c73e3edb9c94438802bbe2ecff4f8
+    guid: 4d3e5d8c0ef832441a879cc772c358b4
   - enabled: 1
     path: Assets/Scenes/GatePuzzles/LampPuzzel3.unity
-    guid: 05e10be2078510e49bfe1f8e0c98555a
+    guid: 6607232bf8bede5499a8cc24b364a05e
   - enabled: 1
-    path: Assets/Scenes/GatePuzzles/RaknarPuzzel1.unity
+    path: Assets/Scenes/GatePuzzles/RaknarPuzzel.unity
     guid: 6dbb0d62275c3ee4eaa4b09bcfc50771
   m_configObjects: {}
