@@ -9,6 +9,8 @@ public class OutletControl : MonoBehaviour
 
     [SerializeField] float flickerSpeed = 3;
 
+    [SerializeField] List<bool> outlets = new List<bool>();
+
     private int currentChild = 0;
 
     void Start(){
@@ -24,6 +26,9 @@ public class OutletControl : MonoBehaviour
             case "Switches":
                 Unlock();
             break;
+            case "Fixed":
+                Fixed();
+            break;
         }
     }
 
@@ -38,6 +43,12 @@ public class OutletControl : MonoBehaviour
             currentChild++;
         }
         transform.GetChild(currentChild).GetComponent<Outlet>().conducting = true;
+    }
+
+    protected void Fixed(){
+        for(int i = 0; i < transform.childCount; i++){
+            transform.GetChild(i).GetComponent<Outlet>().conducting = outlets[i];
+        }
     }
 
     private void Unlock(){

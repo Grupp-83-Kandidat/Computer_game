@@ -31,7 +31,9 @@ public class ScenesManager : MonoBehaviour
         TerminalEnd,
         GatePuzz,
         LampPuzzel1,
-        RaknarPuzzel1
+        RaknarPuzzel1,
+        RaknarPuzzelv2_1,
+        LampPuzzelv2_1
     }
 
     public void LoadScene(Scene scene)
