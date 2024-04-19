@@ -2632,7 +2632,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Quit
+  m_text: "L\xE4mna"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6033,6 +6033,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 167019999}
     m_Modifications:
+    - target: {fileID: 299994921669925567, guid: a6a15ee4e2785544994d321b1fa84d75, type: 3}
+      propertyPath: m_text
+      value: Grindar
+      objectReference: {fileID: 0}
     - target: {fileID: 1351102189144044650, guid: a6a15ee4e2785544994d321b1fa84d75, type: 3}
       propertyPath: _transform
       value: 
@@ -6117,13 +6121,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1719432545442007349, guid: a6a15ee4e2785544994d321b1fa84d75, type: 3}
+      propertyPath: m_text
+      value: NAND-Grindar
+      objectReference: {fileID: 0}
+    - target: {fileID: 2221463715290012588, guid: a6a15ee4e2785544994d321b1fa84d75, type: 3}
+      propertyPath: m_text
+      value: XNOR-Grindar
+      objectReference: {fileID: 0}
     - target: {fileID: 3540138189168002569, guid: a6a15ee4e2785544994d321b1fa84d75, type: 3}
       propertyPath: m_text
       value: "HJ\xC4LP!"
       objectReference: {fileID: 0}
+    - target: {fileID: 5321577530117528900, guid: a6a15ee4e2785544994d321b1fa84d75, type: 3}
+      propertyPath: m_text
+      value: Hur spelet funkar
+      objectReference: {fileID: 0}
     - target: {fileID: 5540068771509617733, guid: a6a15ee4e2785544994d321b1fa84d75, type: 3}
       propertyPath: m_Name
       value: HelpPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5908415234849777755, guid: a6a15ee4e2785544994d321b1fa84d75, type: 3}
+      propertyPath: m_text
+      value: XOR-Grindar
+      objectReference: {fileID: 0}
+    - target: {fileID: 6293635902154882725, guid: a6a15ee4e2785544994d321b1fa84d75, type: 3}
+      propertyPath: m_text
+      value: NOR-Grindar
+      objectReference: {fileID: 0}
+    - target: {fileID: 6379938932370300812, guid: a6a15ee4e2785544994d321b1fa84d75, type: 3}
+      propertyPath: m_text
+      value: OR-Grindar
+      objectReference: {fileID: 0}
+    - target: {fileID: 7504324707826421269, guid: a6a15ee4e2785544994d321b1fa84d75, type: 3}
+      propertyPath: m_text
+      value: Hur grindar funkar
+      objectReference: {fileID: 0}
+    - target: {fileID: 8176762835337302579, guid: a6a15ee4e2785544994d321b1fa84d75, type: 3}
+      propertyPath: m_text
+      value: AND-Grindar
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1351102189144044650, guid: a6a15ee4e2785544994d321b1fa84d75, type: 3}
