@@ -743,10 +743,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1604796088}
-  - {fileID: 248825354}
   - {fileID: 1009680019}
   - {fileID: 2029869851}
   - {fileID: 603113694}
+  - {fileID: 248825354}
   - {fileID: 1781488820}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8887,7 +8887,7 @@ MonoBehaviour:
   - {fileID: 1957611052670171902, guid: 92a758f6081f1dc47831311fc5cf769b, type: 3}
   - {fileID: 5022802196309246666, guid: 74fc05d4d97c24543abaaafc7c4dfa21, type: 3}
   - {fileID: 5022802196309246666, guid: b6bcf5631daf51b4cbe55c9144a59718, type: 3}
-  nr_of_gates: 000000000000000000000000030000000000000001000000
+  nr_of_gates: 010000000100000000000000000000000000000000000000
   sprite: {fileID: 21300000, guid: c2176f6b979290648926555f4bb7d259, type: 3}
 --- !u!114 &2072596135
 MonoBehaviour:
