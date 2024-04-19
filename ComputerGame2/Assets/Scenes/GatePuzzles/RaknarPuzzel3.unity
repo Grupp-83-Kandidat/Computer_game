@@ -6603,7 +6603,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _clip: {fileID: 8300000, guid: 087167bcbd5e37343b5a68ba21b71304, type: 3}
   _source: {fileID: 1312959714}
-  scene: 6
+  scene: OverWorld3
 --- !u!114 &1312959716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8728,7 +8728,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _clip: {fileID: 8300000, guid: 087167bcbd5e37343b5a68ba21b71304, type: 3}
   _source: {fileID: 1599650029}
-  scene: 8
+  scene: RaknarPuzzel3
 --- !u!114 &1599650031
 MonoBehaviour:
   m_ObjectHideFlags: 0
