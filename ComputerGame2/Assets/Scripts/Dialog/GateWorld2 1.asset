@@ -12,5 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32761bb218f9ca845b7dfcac32a92579, type: 3}
   m_Name: GateWorld2 1
   m_EditorClassIdentifier: 
-  namn: 
-  paragrafer: []
+  namn: Mr bit
+  paragrafer:
+  - "Hej d\xE4r!"
+  - "Nu har du f\xE5tt en grundlig genomg\xE5ng av hur logiska grindar fungerar.
+    Nu \xE4r det dags att anv\xE4nda dessa kunskaper f\xF6r reducering av grindn\xE4t."
+  - "Detta g\xF6rs genom att ers\xE4tta AND/OR-logik med NAND-logik."
+  - "Varf\xF6r vill man d\xE5 ers\xE4tta AND/OR-logik med NAND-logik kanske du undrar?"
+  - "NAND-grindar kr\xE4ver generellt f\xE4rre transistorer f\xF6r att konstruera
+    \xE4n motsvarande AND och OR-grindar. F\xE4rre transistorer inneb\xE4r l\xE4gre
+    tillverkningskostnader och mindre kretsyta."
+  - "Dessutom, att anv\xE4nda NAND-grindar kan leda till enklare och mer str\xF6meffektiva
+    kretsdesigner, vilket \xE4r s\xE4rskilt f\xF6rdelaktigt i kraftk\xE4nsliga applikationer."
+  - "Du ska nu f\xE5 g\xF6ra tv\xE5 quiz f\xF6r att se hur detta kan g\xE5 till i
+    praktiken."
